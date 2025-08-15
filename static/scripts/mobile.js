@@ -21,29 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// On mobile, immediately show the About section as the first visible content.
-document.addEventListener('DOMContentLoaded', function () {
-    try {
-        if (window.innerWidth <= 900) {
-            var about = document.getElementById('about');
-            if (about) {
-                // Jump to the about section immediately (no smooth scroll) so it appears first
-                about.scrollIntoView({ block: 'start', inline: 'nearest' });
-                // Move focus for accessibility
-                var heading = about.querySelector('h2');
-                if (heading && typeof heading.focus === 'function') {
-                    heading.setAttribute('tabindex', '-1');
-                    heading.focus({ preventScroll: true });
-                }
-            }
-        }
-    } catch (e) {
-        // fail silently
-        console.error(e);
-    }
-});
-
-// Mobile dropdown toggle and accessibility (moved here from inline index.html)
+// Mobile dropdown toggle and accessibility (kept, but no custom scrolling)
 document.addEventListener('DOMContentLoaded', function () {
     try {
         var btn = document.querySelector('.mobile-dropdown-btn');
@@ -66,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (expanded) closeDropdown(); else openDropdown();
         });
 
-        // Close when clicking a link inside the dropdown
+        // Close when clicking a link inside the dropdown (allow normal href to proceed)
         dropdown.addEventListener('click', function (e) {
             var a = e.target.closest('a');
             if (a) closeDropdown();
@@ -85,3 +63,40 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error(e);
     }
 });
+
+// Ensure mobile header height is measured and applied so sticky/fixed nav doesn't cover anchors
+(function () {
+    function debounce(fn, wait) {
+        var t;
+        return function () {
+            var ctx = this, args = arguments;
+            clearTimeout(t);
+            t = setTimeout(function () { fn.apply(ctx, args); }, wait);
+        };
+    }
+
+    function applyMobileNavOffset() {
+        var nav = document.querySelector('.mobile-nav');
+        if (!nav) return;
+        var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        if (vw <= 900) {
+            var h = Math.ceil(nav.getBoundingClientRect().height);
+            document.documentElement.style.setProperty('--mobile-header-height', h + 'px');
+            // Apply padding to body so fixed header doesn't overlap content when position:fixed is used
+            document.body.style.paddingTop = h + 'px';
+        } else {
+            // Remove the mobile padding on larger screens
+            document.documentElement.style.removeProperty('--mobile-header-height');
+            document.body.style.paddingTop = null;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        try {
+            applyMobileNavOffset();
+            window.addEventListener('resize', debounce(applyMobileNavOffset, 120));
+        } catch (e) {
+            console.error(e);
+        }
+    });
+})();

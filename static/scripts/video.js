@@ -13,3 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Removed custom click interception so native anchor navigation and <base> behavior works

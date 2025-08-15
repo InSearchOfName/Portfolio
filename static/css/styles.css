@@ -458,6 +458,35 @@ section h2 {
     outline: none;
 }
 
+/* Social links styling (icons sized similar to skill icons) */
+.socials .social-links {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.6rem;
+}
+
+.socials .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.socials .social-icon {
+  width: 56px;
+  height: 56px;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 420px) {
+  .socials .social-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
 /* small screens: 5 icons in a row becomes 3 then 2 */
 @media (max-width: 600px) {
     .skill-list { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
@@ -685,7 +714,7 @@ section h2 {
         z-index: 1300;
         background: #fff;
         box-shadow: 0 2px 10px rgba(2,6,23,0.06);
-        padding: 0.4rem 0.6rem;
+        padding: 0.4rem 0; /* vertical spacing so button has room */
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -693,41 +722,15 @@ section h2 {
         box-sizing: border-box;
     }
 
-    /* Language toggle styling */
-    .mobile-lang-toggle {
-        background: transparent;
-        border: none;
-        font-weight: 700;
-        color: #111;
-        padding: 0.5rem 0.6rem;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        margin-left: auto; /* push to right */
-    }
+    /* Make sure dropdown positions relative to the nav and does not push content */
+    .mobile-nav .mobile-dropdown { position: absolute; top: calc(100% + 8px); left: 8px; right: 8px; }
 
-    .mobile-lang-dropdown {
-        position: absolute;
-        top: calc(100% + 8px);
-        right: 8px;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(2,6,23,0.12);
-        padding: 0.4rem;
-        z-index: 1400;
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
+    /* Slight content offset so the sticky nav does not cover the top of sections when jumping */
+    :root { --mobile-nav-height: 56px; }
+    @supports (position: sticky) {
+        .content-section { scroll-margin-top: calc(var(--mobile-nav-height) + 8px); }
+        section[id] { scroll-margin-top: calc(var(--mobile-nav-height) + 8px); }
     }
-    .mobile-lang-dropdown .mobile-lang-option {
-        background: none;
-        border: none;
-        padding: 0.5rem 0.8rem;
-        border-radius: 6px;
-        cursor: pointer;
-        text-align: left;
-        font-weight: 600;
-    }
-    .mobile-lang-dropdown .mobile-lang-option:hover { background: #f7f7f7; }
 }
 
 /* Tweak for very small devices */
@@ -799,4 +802,51 @@ section h2 {
 /* Ensure cards are completely hidden on mobile; mobile nav will be used instead */
 @media (max-width: 900px) {
     .cards-row { display: none !important; }
+}
+
+/* Mobile-only sticky navbar and anchor offset */
+@media (max-width: 900px) {
+  .mobile-nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    background: var(--nav-bg, rgba(255,255,255,0.96));
+    backdrop-filter: saturate(120%) blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+    left: 0;
+    right: 0;
+  }
+
+  /* CSS variable for mobile header height; tweak if needed */
+  :root {
+    --header-height: 64px;
+  }
+
+  /* Ensure anchor targets aren't hidden by the sticky mobile nav */
+  .content-section,
+  section {
+    scroll-margin-top: var(--header-height);
+  }
+}
+
+/* Fallback: use fixed positioning on mobile if sticky behaves unexpectedly */
+@media (max-width: 900px) {
+  :root { --mobile-header-height: 64px; }
+
+  .mobile-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+  }
+
+  /* Prevent the fixed header from covering content */
+  body {
+    padding-top: var(--mobile-header-height) !important;
+    box-sizing: border-box;
+  }
 }
