@@ -24,17 +24,17 @@
     <!-- Mobile-only traditional navbar (hidden on desktop via CSS) -->
     <nav class="mobile-nav" aria-label="Mobile navigation">
         <!-- Mobile menu button that toggles the full dropdown list -->
-        <button class="mobile-dropdown-btn" aria-expanded="false" aria-controls="mobile-dropdown-list" aria-label="Open menu">☰ Menu</button>
+        <button class="mobile-dropdown-btn" data-i18n="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-dropdown-list" aria-label="Open menu">☰ Menu</button>
 
         <!-- The dropdown contains all hrefs in a vertical list (hidden by default) -->
         <div id="mobile-dropdown-list" class="mobile-dropdown" hidden>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#seminars">Seminars</a></li>
-                <li><a href="#innovation">Innovation</a></li>
-                <li><a href="#personalDevelopment">Personal Development</a></li>
-                <li><a href="#internationalization">Internationalization</a></li>
-                <li><a href="#personalProject">Personal Projects</a></li>
+                <li><a href="#about"><span data-i18n="card-about-link">About</span></a></li>
+                <li><a href="#seminars"><span data-i18n="card-seminars-link">Seminars</span></a></li>
+                <li><a href="#innovation"><span data-i18n="card-innovation-link">Innovation</span></a></li>
+                <li><a href="#personalDevelopment"><span data-i18n="card-personalDevelopment-link">Personal Development</span></a></li>
+                <li><a href="#internationalization"><span data-i18n="card-internationalization-link">Internationalization</span></a></li>
+                <li><a href="#personalProject"><span data-i18n="card-personalProject-link">Personal Projects</span></a></li>
             </ul>
             <!-- Mobile language controls moved into the dropdown to avoid duplicates -->
             <div class="mobile-dropdown-lang">
@@ -139,7 +139,7 @@ I have a strong interest in cloud management and Linux administration, and while
 
                 <!-- Social links added by assistant -->
                 <div class="socials" aria-labelledby="socials-heading">
-                    <h4 id="socials-heading">Connect with me</h4>
+                    <h4 id="socials-heading" data-i18n="section-socials-title">Connect with me</h4>
                     <div class="social-links">
                         <a class="social-link" href="https://github.com/InSearchOfName" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
                             <img class="social-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub">
@@ -299,9 +299,20 @@ I have a strong interest in cloud management and Linux administration, and while
             </ul>
         </div>
     </section>
-    <section id="innovation">
-        <h2 data-i18n="section-innovation-title">Innovation</h2>
-        <p data-i18n="section-innovation-desc">TBD</p>
+    <section id="innovation" class="content-section">
+        <div class="section-inner">
+            <h2 data-i18n="section-innovation-title">Innovation</h2>
+            <p data-i18n="section-innovation-desc">TBA</p>
+
+            <ul class="entry-list seminar-list">
+                <li class="seminar-item entry-item">
+                    <h3><a href="https://platform.cybersecuritychallenge.be/" target="_blank" rel="noopener noreferrer" data-i18n="innovation-hackathon-title">Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)</a></h3>
+                    <p data-i18n="innovation-hackathon-desc">Een Security Challenge voor studenten in het hoger onderwijs, met uitdagingen op het gebied van cryptografie, reverse engineering, netwerkanalyse, web- en mobiele beveiliging en forensisch onderzoek.</p>
+                    <p class="meta"><strong data-i18n="label-location">Locatie activiteit:</strong> <a href="https://platform.cybersecuritychallenge.be/" target="_blank" rel="noopener noreferrer"><span data-i18n="innovation-hackathon-location">Online via het CTF-platform van Cyber Security Challenge</span></a> &nbsp; <strong data-i18n="label-date">Datum:</strong> <span data-i18n="innovation-hackathon-date">14/03/2025 10AM – 15/03/2025 6PM</span></p>
+                    <p class="meta"><strong data-i18n="innovation-hackathon-team-label">Team:</strong> <span data-i18n="innovation-hackathon-team">Backdoor Boys</span> &nbsp; <strong data-i18n="innovation-hackathon-placement-label">Plaatsing:</strong> <span data-i18n="innovation-hackathon-placement">116/358</span></p>
+                </li>
+            </ul>
+        </div>
     </section>
     <section id="personalDevelopment" class="content-section">
         <div class="section-inner">

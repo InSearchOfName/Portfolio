@@ -61,7 +61,15 @@ const translations = {
         "section-seminars-desc": "This section lists seminars and workshops I attended, including key takeaways and links where available.",
 
         "section-innovation-title": "Innovation",
-        "section-innovation-desc": "TBA",
+        "section-innovation-desc": "I take part in hackathons and experimentation events where I explore cybersecurity, CTFs and rapid prototyping.",
+        "innovation-hackathon-title": "Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)",
+        "innovation-hackathon-desc": "A security competition for higher-education students featuring challenges in cryptography, reverse engineering, network analysis, web & mobile security, and forensic investigation.",
+        "innovation-hackathon-location": "Online via the CTF platform of Cyber Security Challenge",
+        "innovation-hackathon-date": "14/03/2025 10AM – 15/03/2025 6PM",
+        "innovation-hackathon-team-label": "Team:",
+        "innovation-hackathon-team": "Backdoor Boys",
+        "innovation-hackathon-placement-label": "Placement:",
+        "innovation-hackathon-placement": "116/358",
 
         "section-personalDevelopment-title": "Personal Development",
         "section-personalDevelopment-desc": "Notes and resources about skills I work on: communication, leadership, and continuous learning.",
@@ -72,6 +80,10 @@ const translations = {
         "section-personalProject-title": "Personal Projects",
         "section-personalProject-desc": "Projects I built in my spare time to learn, experiment or solve interesting problems.",
         "section-about-note": "I also continue to develop small projects, such as Minecraft plugins, to keep exploring and practicing my technical skills.",
+
+        // Mobile and Socials (added)
+        "mobile-menu-btn": "☰ Menu",
+        "section-socials-title": "Connect with me",
 
         // Seminar labels and entries
         "label-location": "Location:",
@@ -172,17 +184,29 @@ const translations = {
         "section-seminars-desc": "Deze sectie bevat seminaries en workshops die ik heb gevolgd, inclusief belangrijkste inzichten en links indien beschikbaar.",
 
         "section-innovation-title": "Innovatie",
-        "section-innovation-desc": "Nog te bepalen",
+        "section-innovation-desc": "Ik neem deel aan hackathons en experimentele evenementen waarin ik cybersecurity, CTF's en snelle prototyping verken.",
+        "innovation-hackathon-title": "Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)",
+        "innovation-hackathon-desc": "Een securitycompetitie voor studenten in het hoger onderwijs met uitdagingen in cryptografie, reverse engineering, netwerkanalyse, web- en mobiele beveiliging en forensisch onderzoek.",
+        "innovation-hackathon-location": "Online via het CTF-platform van Cyber Security Challenge",
+        "innovation-hackathon-date": "14/03/2025 10AM – 15/03/2025 6PM",
+        "innovation-hackathon-team-label": "Team:",
+        "innovation-hackathon-team": "Backdoor Boys",
+        "innovation-hackathon-placement-label": "Plaatsing:",
+        "innovation-hackathon-placement": "116/358",
 
         "section-personalDevelopment-title": "Persoonlijke Ontwikkeling",
         "section-personalDevelopment-desc": "Notities en bronnen over vaardigheden waar ik aan werk: communicatie, leiderschap en continu leren.",
 
         "section-internationalization-title": "Internationalisatie",
-        "section-internationalization-desc": "Nog te bepalen",
+        "section-internationalization-desc": "TBA",
 
         "section-personalProject-title": "Persoonlijke Projecten",
         "section-personalProject-desc": "Projecten die ik in mijn vrije tijd bouwde om te leren, experimenteren of interessante problemen op te lossen.",
         "section-about-note": "Ik blijf ook kleine projecten ontwikkelen, zoals Minecraft-plugins, om mijn technische vaardigheden te blijven verkennen en oefenen.",
+
+        // Mobile and Socials (added)
+        "mobile-menu-btn": "☰ Menu",
+        "section-socials-title": "Connect met mij",
 
         // Seminar labels and entries
         "label-location": "Locatie:",
