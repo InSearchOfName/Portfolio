@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <div class="lang-switcher">
+        <button id="lang-dropdown-btn" class="lang-label" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-label-text">English</span>
+            <span class="dropdown-arrow">▾</span>
+        </button>
+        <div id="lang-dropdown" class="lang-dropdown-menu" aria-hidden="true">
+            <button id="lang-en" class="lang-option" type="button" tabindex="0">English</button>
+            <button id="lang-nl" class="lang-option" type="button" tabindex="0">Nederlands</button>
+        </div>
+    </div>
+    <div class="cards-row" id="cards-row">
+        <!-- English and Dutch cards, now using data-i18n for all text -->
+        <a href="#about" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-about-link">
+            <div class="image-preview">
+                <img src="static/img/aboutMeThumb.jpg" alt="">
+                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                    <source src="static/videos/aboutMe.mp4" type="video/webm">
+                </video>
+                <span>
+                    <div class="description preview-description">
+                        <h1 data-i18n="card-about-title">About Me</h1>
+                        
+                    </div>
+                </span>
+            </div>
+        </a>
+        <a href="#seminars" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-seminars-link">
+            <div class="image-preview">
+                <img src="static/img/seminarsThumb.jpg" alt="">
+                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                    <source src="static/videos/seminars.mp4" type="video/webm">
+                </video>
+                <span>
+                    <div class="description preview-description">
+                        <h1 data-i18n="card-seminars-title">Seminars</h1>
+                    </div>
+                </span>
+            </div>
+        </a>
+        <a href="#innovation" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-innovation-link">
+            <div class="image-preview">
+                <img src="static/img/innovationthumb.jpg" alt="">
+                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                    <source src="static/videos/innovation.mp4"video/webm">
+                </video>
+                <span>
+                    <div class="description preview-description">
+                        <h1 data-i18n="card-innovation-title">Innovation</h1>
+                    </div>
+                </span>
+            </div>
+        </a>
+        <a href="#personalDevelopment" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-personalDevelopment-link">
+            <div class="image-preview">
+                <img src="static/img/personaldevelopmentthumb.jpg" alt="">
+                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                    <source src="static/videos/personalDevelopment.mp4" type="video/webm">
+                </video>
+                <span>
+                    <div class="description preview-description">
+                        <h1 data-i18n="card-personalDevelopment-title">Personal Development</h1>
+                    </div>
+                </span>
+            </div>
+        </a>
+        <a href="#internationalization" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-internationalization-link">
+            <div class="image-preview">
+                <img src="static/img/internationalthumb.jpg" alt="">
+                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                    <source src="static/videos/international.mp4" type="video/webm">
+                </video>
+                <span>
+                    <div class="description preview-description">
+                        <h1 data-i18n="card-internationalization-title">Internationalization</h1>
+                    </div>
+                </span>
+            </div>
+        </a>
+        <a href="#personalProject" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-personalProject-link">
+            <div class="image-preview">
+                <img src="static/img/image.png" alt="">
+                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                    <source src="static/webm/test.webm" type="video/webm">
+                </video>
+                <span>
+                    <div class="description preview-description">
+                        <h1 data-i18n="card-personalProject-title">Personal Projects</h1>
+                    </div>
+                </span>
+            </div>
+        </a>
+        <!-- Add more cards here if needed -->
+    </div>
+
+    <!-- Add sections for each card below, with placeholder content -->
+    <section id="about">
+        <h2 data-i18n="section-about-title">About Me</h2>
+        <p data-i18n="section-about-desc">
+            Hello! I'm a developer and student with a strong interest in technology, design, and innovation. I enjoy building projects, learning new skills, and collaborating with others. Feel free to explore my portfolio and get in touch!
+        </p>
+    </section>
+    <section id="seminars">
+        <h2 data-i18n="section-seminars-title">Seminars</h2>
+        <p data-i18n="section-seminars-desc">This is the seminars section. Add your seminar details here.</p>
+    </section>
+    <section id="innovation">
+        <h2 data-i18n="section-innovation-title">Innovation</h2>
+        <p data-i18n="section-innovation-desc">This is the innovation section. Add your innovation details here.</p>
+    </section>
+    <section id="personalDevelopment">
+        <h2 data-i18n="section-personalDevelopment-title">Personal Development</h2>
+        <p data-i18n="section-personalDevelopment-desc">This is the personal development section. Add your personal development details here.</p>
+    </section>
+    <section id="internationalization">
+        <h2 data-i18n="section-internationalization-title">Internationalization</h2>
+        <p data-i18n="section-internationalization-desc">This is the internationalization section. Add your internationalization details here.</p>
+    </section>
+    <section id="personalProject">
+        <h2 data-i18n="section-personalProject-title">Personal Projects</h2>
+        <p data-i18n="section-personalProject-desc">This is the personal projects section. Add your project details here.</p>
+    </section>
+
+    <!-- Load GSAP correctly -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="static/scripts/video.js"></script>
+    <script src="static/scripts/fadein.js"></script>
+    <script src="static/scripts/translations.js"></script>
+</body>
+</html>

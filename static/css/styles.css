@@ -1,0 +1,373 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+.cards-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+    border: none;
+    /* Allow vertical scrolling */
+    overflow-x: visible;
+    overflow-y: visible;
+    /* Remove fixed height so page can scroll */
+    height: auto;
+    min-height: 0;
+    /* Add transition for flex-basis/width on all children for smooth reset */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: 100vh;
+    background: #000;
+    overflow: auto;
+    /* Smooth glide when navigating to anchors */
+    scroll-behavior: smooth;
+    /* Reserve space for the fixed language switcher so the section isn't hidden under it */
+    scroll-padding-top: 64px;
+}
+
+.main-container {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100dvh;
+    min-height: 100vh;
+    /* Fade/slide in animation on load */
+    opacity: 0;
+    transform: translateY(100vh);
+    transition:
+        opacity 0.5s cubic-bezier(.4,1,.6,1),
+        transform 0.5s cubic-bezier(.4,1,.6,1),
+        flex-basis 0.6s cubic-bezier(.4,1,.6,1),
+        width 0.6s cubic-bezier(.4,1,.6,1),
+        filter 0.2s,
+        box-shadow 0.25s linear;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    position: relative;
+    transform-origin: left bottom;
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+    z-index: 1;
+    /* Fix: ensure anchor tags styled as block for flex to work */
+    display: flex;
+}
+
+/* Towel reveal effect */
+.main-container::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0; top: 0;
+    background: #000;
+    z-index: 100;
+    pointer-events: none;
+    /* Use linear for no bounce */
+    animation: none;
+    opacity: 0;
+}
+
+.cards-row .main-container:nth-child(1)::before { animation-delay: 0.05s; }
+.cards-row .main-container:nth-child(2)::before { animation-delay: 0.15s; }
+.cards-row .main-container:nth-child(3)::before { animation-delay: 0.25s; }
+.cards-row .main-container:nth-child(4)::before { animation-delay: 0.35s; }
+.cards-row .main-container:nth-child(5)::before { animation-delay: 0.45s; }
+.cards-row .main-container:nth-child(6)::before { animation-delay: 0.55s; }
+
+@keyframes towel-reveal {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+}
+
+.cards-row:hover .main-container {
+    flex-basis: 10%;
+    width: 10%;
+    transition:
+        flex-basis 0.6s cubic-bezier(.4,1,.6,1),
+        width 0.6s cubic-bezier(.4,1,.6,1),
+        filter 0.2s,
+        box-shadow 0.25s linear;
+    /* Darken other cards when hovering any card in the row */
+    filter: brightness(0.65);
+}
+
+.cards-row .main-container:hover,
+.cards-row .main-container:focus-within {
+    flex-basis: 40%;
+    width: 40%;
+    z-index: 20;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    transition:
+        flex-basis 0.6s cubic-bezier(.4,1,.6,1),
+        width 0.6s cubic-bezier(.4,1,.6,1),
+        filter 0.2s,
+        box-shadow 0.25s linear;
+    /* Keep the hovered card at normal brightness */
+    filter: brightness(1);
+}
+
+.cards-row .main-container {
+    /* Ensure transition always applies for smooth reset */
+    transition:
+        opacity 0.7s cubic-bezier(.4,1,.6,1),
+        transform 0.7s cubic-bezier(.4,1,.6,1),
+        flex-basis 0.6s cubic-bezier(.4,1,.6,1),
+        width 0.6s cubic-bezier(.4,1,.6,1),
+        filter 0.2s,
+        box-shadow 0.25s linear !important;
+}
+
+.cards-row:not(:hover) .main-container {
+    /* When mouse leaves .cards-row, animate back with a slower transition */
+    transition:
+        flex-basis 1s cubic-bezier(.4,1,.6,1),
+        width 1s cubic-bezier(.4,1,.6,1),
+        filter 0.2s,
+        box-shadow 0.4s cubic-bezier(.4,1,.6,1);
+}
+
+.hover-container {
+    position: relative;
+    transition:
+        transform 0.25s linear,
+        box-shadow 0.25s linear,
+        margin 0.25s linear;
+}
+
+.hover-container:hover {
+    transform: none;
+    z-index: 20;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+/* Remove margin adjustments for hover-container since flex handles sizing now */
+.cards-row .main-container:first-child.hover-container:hover {
+    margin-left: 0;
+}
+.cards-row .main-container:last-child.hover-container:hover {
+    margin-right: 0;
+}
+
+.preview-description,
+.preview-video {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.hover-container:hover .preview-description,
+.hover-container:hover .preview-video {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.preview-video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.image-preview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.preview-description {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    color: #fff;
+    z-index: 2;
+    padding: 1em;
+    /* Avoid aggressive breaking that causes inconsistent spacing */
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    line-height: 1.45;
+}
+
+/* Make paragraph widths flexible and default to left alignment to avoid huge gaps from justification */
+p {
+    width: auto;
+    max-width: 95%;
+    margin: 0.25em 0;
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* Ensure description paragraphs are left-aligned even if inline styles exist */
+.description p {
+    text-align: left !important;
+}
+
+section {
+    scroll-margin-top: 64px;
+    min-height: 100vh;
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    color: #222;
+    padding: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+}
+
+/* Sleek language switcher buttons */
+#lang-en, #lang-nl {
+    background: #222;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 0.6em 1.4em;
+    border-radius: 2em;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin: 0 0.2em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+#lang-en:hover, #lang-nl:hover, #lang-en.active, #lang-nl.active {
+    background: #fff;
+    color: #222;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    transform: translateY(-2px) scale(1.04);
+}
+
+#lang-en:focus, #lang-nl:focus {
+    outline: 2px solid #0078d4;
+    outline-offset: 2px;
+}
+
+/* Language switcher dropdown styles */
+.lang-switcher {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+    user-select: none;
+}
+
+#lang-dropdown-btn {
+    background: #222;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 0.6em 1.4em 0.6em 1em;
+    border-radius: 2em;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+    position: relative;
+}
+
+#lang-dropdown-btn:hover, #lang-dropdown-btn:focus {
+    background: #fff;
+    color: #222;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.lang-label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.dropdown-arrow {
+    font-size: 1.1em;
+    margin-left: 0.3em;
+}
+
+.lang-dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background: #fff;
+    border-radius: 1em;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    min-width: 160px;
+    padding: 0.5em 0;
+    flex-direction: column;
+    gap: 0.2em;
+    z-index: 1001;
+}
+
+.lang-dropdown-menu.show {
+    display: flex !important;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background: #fff;
+    border-radius: 1em;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    min-width: 160px;
+    padding: 0.5em 0;
+    flex-direction: column;
+    gap: 0.2em;
+    z-index: 1001;
+}
+
+.lang-option {
+    background: none;
+    border: none;
+    color: #222;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.7em 1.5em 0.7em 2.5em;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 1.5em;
+    position: relative;
+    transition: background 0.18s, color 0.18s;
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.lang-option.active,
+.lang-option:hover,
+.lang-option:focus {
+    background: #222;
+    color: #fff;
+}
+
+/* Remove margin from h2 in sections */
+section h2 {
+    margin: 0;
+}
