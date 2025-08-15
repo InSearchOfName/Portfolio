@@ -113,12 +113,12 @@ const translations = {
         "development-projectweek-title": "Projectweek 2TIN",
         "development-projectweek-desc": "First week of the research project where we got to know our teams and an overview of what the project will entail.",
         "development-projectweek-location": "PXL-campus",
-        "development-projectweek-date": "10/02/2025 t.e.m. 14/03/2025",
+        "development-projectweek-date": "from 10/02/2025 till 14/03/2025",
 
         "development-pop-title": "POP-sessie 2TIN",
         "development-pop-desc": "Brein aan het werk! Niet storen! A session about smartphone addiction and how our focus is lower than before.",
         "development-pop-location": "PXL-campus, Corda-campus",
-        "development-pop-date": "18/02/2025 t.e.m. 25/03/2025",
+        "development-pop-date": "from 18/02/2025 till 25/03/2025",
 
         // Personal projects
         "personal-random-title": "Random Additions",
@@ -236,12 +236,12 @@ const translations = {
         "development-projectweek-title": "Projectweek 2TIN",
         "development-projectweek-desc": "Eerste week van het researchproject waarin we onze teams leren kennen en een overzicht krijgen van wat het project zal inhouden.",
         "development-projectweek-location": "PXL-campus",
-        "development-projectweek-date": "10/02/2025 t.e.m. 14/03/2025",
+        "development-projectweek-date": "10/02/2025 tot en met 14/03/2025",
 
         "development-pop-title": "POP-sessie 2TIN",
         "development-pop-desc": "Brein aan het werk! Niet storen! Een sessie over smartphoneverslaving en hoe onze focus tegenwoordig lager ligt dan vroeger.",
         "development-pop-location": "PXL-campus, Corda-campus",
-        "development-pop-date": "18/02/2025 t.e.m. 25/03/2025",
+        "development-pop-date": "18/02/2025 tot en met 25/03/2025",
 
         // Personal projects
         "personal-random-title": "Random Additions",
