@@ -35,16 +35,16 @@ body, html {
     min-width: 0;
     height: 100dvh;
     min-height: 100vh;
-    /* Fade/slide in animation on load */
+    /* Entrance state (fade/slide handled by JS if present) */
     opacity: 0;
     transform: translateY(100vh);
-    transition:
-        opacity 0.5s cubic-bezier(.4,1,.6,1),
-        transform 0.5s cubic-bezier(.4,1,.6,1),
-        flex-basis 0.6s cubic-bezier(.4,1,.6,1),
-        width 0.6s cubic-bezier(.4,1,.6,1),
-        filter 0.2s,
-        box-shadow 0.25s linear;
+    /* Consolidated transition declarations to avoid duplication */
+    transition: opacity 0.6s cubic-bezier(.4,1,.6,1),
+                transform 0.6s cubic-bezier(.4,1,.6,1),
+                flex-basis 0.6s cubic-bezier(.4,1,.6,1),
+                width 0.6s cubic-bezier(.4,1,.6,1),
+                filter 0.2s,
+                box-shadow 0.25s linear;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     overflow: hidden;
     position: relative;
@@ -53,49 +53,14 @@ body, html {
     flex-direction: column;
     margin-right: 0;
     z-index: 1;
-    /* Fix: ensure anchor tags styled as block for flex to work */
-    display: flex;
 }
 
-/* Towel reveal effect */
-.main-container::before {
-    content: "";
-    position: absolute;
-    left: 0; right: 0; bottom: 0; top: 0;
-    background: #000;
-    z-index: 100;
-    pointer-events: none;
-    /* Use linear for no bounce */
-    animation: none;
-    opacity: 0;
-}
-
-.cards-row .main-container:nth-child(1)::before { animation-delay: 0.05s; }
-.cards-row .main-container:nth-child(2)::before { animation-delay: 0.15s; }
-.cards-row .main-container:nth-child(3)::before { animation-delay: 0.25s; }
-.cards-row .main-container:nth-child(4)::before { animation-delay: 0.35s; }
-.cards-row .main-container:nth-child(5)::before { animation-delay: 0.45s; }
-.cards-row .main-container:nth-child(6)::before { animation-delay: 0.55s; }
-
-@keyframes towel-reveal {
-    0% {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100%);
-        opacity: 1;
-    }
-}
+/* Removed unused ::before towel-reveal and keyframes — kept markup simpler */
 
 .cards-row:hover .main-container {
     flex-basis: 10%;
     width: 10%;
-    transition:
-        flex-basis 0.6s cubic-bezier(.4,1,.6,1),
-        width 0.6s cubic-bezier(.4,1,.6,1),
-        filter 0.2s,
-        box-shadow 0.25s linear;
+    transition: flex-basis 0.6s cubic-bezier(.4,1,.6,1), width 0.6s cubic-bezier(.4,1,.6,1), filter 0.2s, box-shadow 0.25s linear;
     /* Darken other cards when hovering any card in the row */
     filter: brightness(0.65);
 }
@@ -106,12 +71,6 @@ body, html {
     width: 40%;
     z-index: 20;
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-    transition:
-        flex-basis 0.6s cubic-bezier(.4,1,.6,1),
-        width 0.6s cubic-bezier(.4,1,.6,1),
-        filter 0.2s,
-        box-shadow 0.25s linear;
-    /* Keep the hovered card at normal brightness */
     filter: brightness(1);
 }
 
@@ -483,6 +442,13 @@ section h2 {
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+.skill-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
 .skill-icon svg { width: 100%; height: 100%; display: block; }
 
 .skill-icon:focus-visible,
@@ -517,15 +483,4 @@ section h2 {
     }
     .content-section h2 { font-size: 1.6rem; }
     .content-section p { font-size: 1rem; }
-}
-
-/* Dim other cards when one is exiting */
-.cards-dim .main-container { filter: brightness(0.55); transition: filter 0.25s; }
-.cards-dim .main-container.card-exit { filter: brightness(1); }
-
-/* Animate the clicked card sliding upward and out of view */
-.main-container.card-exit {
-    transform: translateY(-120vh) scale(0.98);
-    opacity: 0;
-    transition: transform 0.4s cubic-bezier(.2,.8,.2,1), opacity 0.35s ease;
 }
