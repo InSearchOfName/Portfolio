@@ -484,3 +484,319 @@ section h2 {
     .content-section h2 { font-size: 1.6rem; }
     .content-section p { font-size: 1rem; }
 }
+
+/* Force seminar list into two columns on wider screens for a 2x4 layout */
+@media (min-width: 900px) {
+    .seminar-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .seminar-item {
+        /* ensure items align consistently in the grid */
+        align-self: start;
+    }
+}
+
+/* Mobile / small-screen layout improvements */
+@media (max-width: 900px) {
+    /* Stack cards vertically for natural scrolling on mobile */
+    .cards-row {
+        flex-direction: column;
+    }
+
+    .cards-row .main-container {
+        width: 100% !important;
+        flex-basis: auto !important;
+        height: auto;
+        min-height: 220px; /* compact but visible */
+        margin: 0 !important; /* ensure no top margin on anchor cards */
+        opacity: 1;
+        transform: none;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        border-radius: 0; /* remove rounding on mobile cards */
+        overflow: hidden;
+    }
+
+    /* No visual gap between stacked cards; keep any separation internal to the card */
+    .cards-row .main-container + .main-container {
+        margin-top: 0 !important;
+    }
+
+    /* Make image previews a fixed height so the layout is consistent */
+    .image-preview {
+        height: 220px;
+        display: block;
+    }
+
+    /* Ensure images are not rounded */
+    .image-preview img {
+        border-radius: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Ensure the description is visible and readable inline */
+    .preview-description {
+        position: relative;
+        background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 60%);
+        padding: 0.8rem 1rem;
+        color: #fff;
+        line-height: 1.4;
+    }
+
+    /* Remove heavy hover interactions on touch devices */
+    .cards-row:hover .main-container,
+    .cards-row .main-container:hover,
+    .cards-row .main-container:focus-within {
+        flex-basis: auto;
+        width: 100%;
+        filter: none;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    /* Disable preview-video layering on mobile (videos still in markup but hidden) */
+    .preview-video { display: none; }
+
+    /* Seminar list: single column for readability on narrow screens */
+    .seminar-list {
+        grid-template-columns: 1fr;
+    }
+
+    .content-section {
+        padding: 2rem 1rem;
+    }
+
+    /* About grid: stack columns and make skill panel flow naturally */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .about-right {
+        position: relative;
+        top: auto;
+        padding: 0.8rem;
+    }
+
+    /* Slightly smaller skill icons for mobile */
+    .skill-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    /* Make the menu button visually distinct and touch-friendly */
+    .mobile-nav { position: sticky; top: 0; }
+    .mobile-dropdown-btn {
+        -webkit-appearance: none;
+        appearance: none;
+        background: #111;
+        color: #fff;
+        border: none;
+        padding: 0.6rem 0.9rem;
+        border-radius: 0.6rem;
+        font-weight: 700;
+        font-size: 1rem;
+        margin: 0.6rem 0.8rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        box-shadow: 0 6px 18px rgba(15,15,15,0.18);
+        cursor: pointer;
+        transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s;
+    }
+    .mobile-dropdown-btn:active { transform: translateY(1px) scale(0.998); }
+    .mobile-dropdown-btn[aria-expanded="true"] {
+        background: #fff;
+        color: #111;
+        box-shadow: 0 8px 28px rgba(15,15,15,0.08);
+        border: 1px solid #eee;
+    }
+
+    /* Dropdown panel styling */
+    .mobile-dropdown {
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: calc(100% + 8px);
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 12px 30px rgba(2,6,23,0.14);
+        z-index: 1200;
+        padding: 0.5rem;
+        max-height: 60vh;
+        overflow: auto;
+        box-sizing: border-box;
+        transition: opacity 0.14s ease, transform 0.14s ease;
+    }
+    .mobile-dropdown.open { opacity: 1; transform: translateY(0); }
+
+    .mobile-dropdown ul { list-style: none; margin: 0; padding: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    .mobile-dropdown ul li a {
+        display: block;
+        padding: 0.9rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #111;
+        background: linear-gradient(180deg, #ffffff 0%, #fbfbfc 100%);
+        border: 1px solid rgba(0,0,0,0.05);
+        transition: background 0.12s ease, transform 0.08s ease, box-shadow 0.12s ease;
+    }
+    .mobile-dropdown ul li a:hover,
+    .mobile-dropdown ul li a:focus {
+        background: #f3f4f6;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(15,15,15,0.06);
+        outline: none;
+    }
+
+    /* Language controls inside dropdown */
+    .mobile-dropdown-lang {
+        display: flex;
+        gap: 0.5rem;
+        margin: 0.6rem 0 0.2rem 0;
+        justify-content: flex-end;
+        padding: 0 0.4rem;
+    }
+    .mobile-dropdown-lang .mobile-lang-option {
+        background: #111;
+        color: #fff;
+        border: none;
+        padding: 0.45rem 0.7rem;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.12s ease, transform 0.08s ease;
+    }
+    .mobile-dropdown-lang .mobile-lang-option.active {
+        background: #fff;
+        color: #111;
+        border: 1px solid #e6e6e6;
+    }
+
+    /* Ensure the dropdown doesn't create horizontal scroll */
+    .mobile-dropdown, .mobile-nav-list { max-width: calc(100vw - 16px); }
+
+    /* Ensure mobile nav is sticky and full-width */
+    .mobile-nav {
+        position: sticky !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1300;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(2,6,23,0.06);
+        padding: 0.4rem 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    /* Language toggle styling */
+    .mobile-lang-toggle {
+        background: transparent;
+        border: none;
+        font-weight: 700;
+        color: #111;
+        padding: 0.5rem 0.6rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-left: auto; /* push to right */
+    }
+
+    .mobile-lang-dropdown {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 8px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(2,6,23,0.12);
+        padding: 0.4rem;
+        z-index: 1400;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+    .mobile-lang-dropdown .mobile-lang-option {
+        background: none;
+        border: none;
+        padding: 0.5rem 0.8rem;
+        border-radius: 6px;
+        cursor: pointer;
+        text-align: left;
+        font-weight: 600;
+    }
+    .mobile-lang-dropdown .mobile-lang-option:hover { background: #f7f7f7; }
+}
+
+/* Tweak for very small devices */
+@media (max-width: 420px) {
+    .image-preview {
+        height: 180px;
+    }
+    .preview-description { padding: 0.6rem 0.8rem; font-size: 0.95rem; }
+    .skill-icon { width: 48px; height: 48px; }
+}
+
+/* Mobile nav: hidden by default, visible on small screens */
+.mobile-nav { display: none; }
+
+@media (max-width: 900px) {
+    .mobile-nav {
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 1100;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .mobile-nav-list {
+        display: flex;
+        gap: 0.4rem;
+        padding: 0.3rem 0.8rem; /* reduce padding to avoid overflow */
+        margin: 0;
+        list-style: none;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        max-width: 100vw; /* avoid exceeding viewport width */
+        box-sizing: border-box;
+    }
+    .mobile-nav-list li { scroll-snap-align: start; }
+    .mobile-nav-list a {
+        display: inline-block;
+        padding: 0.45rem 0.7rem;
+        border-radius: 0.6rem;
+        text-decoration: none;
+        color: #111;
+        background: #f7f7f7;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    /* Mobile language buttons styling */
+    .mobile-lang {
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+    }
+    .mobile-lang-option {
+        background: #222;
+        color: #fff;
+        border: none;
+        padding: 0.35rem 0.6rem;
+        font-weight: 700;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+    .mobile-lang-option.active { background: #fff; color: #222; }
+
+    /* Ensure the lang-switcher on desktop remains visible but hidden on mobile to avoid duplicate controls */
+    .lang-switcher { display: none; }
+}
+
+/* Ensure cards are completely hidden on mobile; mobile nav will be used instead */
+@media (max-width: 900px) {
+    .cards-row { display: none !important; }
+}
