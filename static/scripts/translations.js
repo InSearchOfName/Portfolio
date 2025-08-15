@@ -55,26 +55,86 @@ const translations = {
 
         // Section headers and paragraphs
         "section-about-title": "About Me",
-        "section-about-desc": "Hello! I'm a developer and student with a strong interest in technology, design, and innovation. I enjoy building projects, learning new skills, and collaborating with others. Feel free to explore my portfolio and get in touch!",
+        "section-about-desc": "Hi, I’m Tommy Quatretemps (AKA InSearchOfName), currently pursuing a Bachelor’s degree in Applied Computer Science at PXL University of Applied Sciences and Arts, specializing in Systems and Network Engineering. I have a strong interest in cloud management and Linux administration, and while I previously managed my personal Linux server, I have for now transitioned to cloud environments. My journey into cloud computing started when I set up my first Minecraft server, sparking a deep fascination with server management, networking, and cloud infrastructure.",
 
         "section-seminars-title": "Seminars",
         "section-seminars-desc": "This section lists seminars and workshops I attended, including key takeaways and links where available.",
 
         "section-innovation-title": "Innovation",
-        "section-innovation-desc": "Experiments, prototypes and notes related to innovative uses of technology and product design.",
+        "section-innovation-desc": "TBA",
 
         "section-personalDevelopment-title": "Personal Development",
         "section-personalDevelopment-desc": "Notes and resources about skills I work on: communication, leadership, and continuous learning.",
 
         "section-internationalization-title": "Internationalization",
-        "section-internationalization-desc": "Reflections on international experiences, exchange programs and cross-cultural projects.",
+        "section-internationalization-desc": "TBA",
 
         "section-personalProject-title": "Personal Projects",
         "section-personalProject-desc": "Projects I built in my spare time to learn, experiment or solve interesting problems.",
+        "section-about-note": "I also continue to develop small projects, such as Minecraft plugins, to keep exploring and practicing my technical skills.",
 
-        // Language names (for dropdown label)
-        "lang-en-label": "English",
-        "lang-nl-label": "Nederlands"
+        // Seminar labels and entries
+        "label-location": "Location:",
+        "label-date": "Date:",
+
+        "seminar-gluo-title": "Gluo: Multi-cloud (SNB)",
+        "seminar-gluo-desc": "A seminar on multi-cloud where we used Gluo hands-on labs to set up a multi-cloud infrastructure across AWS and Azure.",
+        "seminar-gluo-location": "Corda-campus",
+        "seminar-gluo-date": "4/3/2025",
+
+        "seminar-toreon-title": "Toreon: Ethical hacking (SNB/all)",
+        "seminar-toreon-desc": "A seminar on ethical hacking that explained how we could find our first CVE and included several CTF challenges.",
+        "seminar-toreon-location": "Corda-campus",
+        "seminar-toreon-date": "11/3/2025",
+
+        "seminar-police-title": "Police: Digital Investigation (SNB/all)",
+        "seminar-police-desc": "A seminar where police cases were presented to demonstrate their methods and the type of work they perform.",
+        "seminar-police-location": "Corda-campus",
+        "seminar-police-date": "1/04/2025",
+
+        "seminar-cegeka-title": "Cegeka: Azure Networking (SNB)",
+        "seminar-cegeka-desc": "A seminar on the nuances of configuring efficient, secure and scalable networks in Azure cloud.",
+        "seminar-cegeka-location": "Corda-campus",
+        "seminar-cegeka-date": "22/04/2025",
+
+        // Personal development entries
+        "development-projectweek-title": "Projectweek 2TIN",
+        "development-projectweek-desc": "First week of the research project where we got to know our teams and an overview of what the project will entail.",
+        "development-projectweek-location": "PXL-campus",
+        "development-projectweek-date": "10/02/2025 t.e.m. 14/03/2025",
+
+        "development-pop-title": "POP-sessie 2TIN",
+        "development-pop-desc": "Brein aan het werk! Niet storen! A session about smartphone addiction and how our focus is lower than before.",
+        "development-pop-location": "PXL-campus, Corda-campus",
+        "development-pop-date": "18/02/2025 t.e.m. 25/03/2025",
+
+        // Personal projects
+        "personal-random-title": "Random Additions",
+        "personal-random-desc": "A little minecraft plugin to build random stuff/items. Still working on it.",
+        "personal-random-link-text": "Repository",
+
+        "personal-k3s-title": "K3s-ansible",
+        "personal-k3s-desc": "A simple ansible script that autonomously sets up an k3s cluster. I see it as a finished project.",
+        "personal-k3s-link-text": "Repository",
+
+        // Skills
+        "section-skills-title": "Skills",
+        "skill-python": "Python",
+        "skill-ansible": "Ansible",
+        "skill-aws": "AWS",
+        "skill-azure": "Azure",
+        "skill-jenkins": "Jenkins",
+        "skill-github": "GitHub",
+        "skill-githubactions": "GitHub Actions",
+        "skill-java": "Java",
+        "skill-python": "Python",
+        "skill-linux": "Linux",
+        "skill-cloudflare": "Cloudflare",
+        "skill-docker": "Docker",
+        "skill-k3s": "k3s",
+        "skill-postgresql": "PostgreSQL",
+        "skill-mongodb": "MongoDB",
+
     },
     nl: {
         // Card link aria labels
@@ -106,26 +166,86 @@ const translations = {
 
         // Section headers and paragraphs
         "section-about-title": "Over Mij",
-        "section-about-desc": "Hallo! Ik ben een ontwikkelaar en student met een sterke interesse in technologie, design en innovatie. Ik bouw graag projecten, leer nieuwe vaardigheden en werk graag samen met anderen. Bekijk gerust mijn portfolio en neem contact op!",
+        "section-about-desc": "Hi, ik ben Tommy Quatretemps (ook bekend als InSearchOfName). Ik volg momenteel een bacheloropleiding Toegepaste Informatica aan de PXL University of Applied Sciences and Arts, met een specialisatie in Systems and Network Engineering. Ik heb een sterke interesse in cloudbeheer en Linux-administratie en hoewel ik vroeger mijn eigen Linux-server beheerde, ben ik voor nu overgestapt naar cloudomgevingen. Mijn reis in cloudcomputing begon toen ik mijn eerste Minecraft-server opzette, wat een diepe fascinatie voor serverbeheer, netwerken en cloudinfrastructuur opwekte.",
 
         "section-seminars-title": "Seminaries",
         "section-seminars-desc": "Deze sectie bevat seminaries en workshops die ik heb gevolgd, inclusief belangrijkste inzichten en links indien beschikbaar.",
 
         "section-innovation-title": "Innovatie",
-        "section-innovation-desc": "Experimenten, prototypes en notities over innovatieve toepassingen van technologie en productontwerp.",
+        "section-innovation-desc": "Nog te bepalen",
 
         "section-personalDevelopment-title": "Persoonlijke Ontwikkeling",
         "section-personalDevelopment-desc": "Notities en bronnen over vaardigheden waar ik aan werk: communicatie, leiderschap en continu leren.",
 
         "section-internationalization-title": "Internationalisatie",
-        "section-internationalization-desc": "Reflecties over internationale ervaringen, uitwisselingsprogramma's en cross-culturele projecten.",
+        "section-internationalization-desc": "Nog te bepalen",
 
         "section-personalProject-title": "Persoonlijke Projecten",
         "section-personalProject-desc": "Projecten die ik in mijn vrije tijd bouwde om te leren, experimenteren of interessante problemen op te lossen.",
+        "section-about-note": "Ik blijf ook kleine projecten ontwikkelen, zoals Minecraft-plugins, om mijn technische vaardigheden te blijven verkennen en oefenen.",
 
-        // Language names (for dropdown label)
-        "lang-en-label": "English",
-        "lang-nl-label": "Nederlands"
+        // Seminar labels and entries
+        "label-location": "Locatie:",
+        "label-date": "Datum:",
+
+        "seminar-gluo-title": "Gluo: Multi-cloud (SNB)",
+        "seminar-gluo-desc": "Een seminarie over multi-cloud, waarin we met Gluo hands-on labs hebben gedaan om een multi-cloud infrastructuur op te zetten in AWS en Azure.",
+        "seminar-gluo-location": "Corda-campus",
+        "seminar-gluo-date": "4/3/2025",
+
+        "seminar-toreon-title": "Toreon: Ethical hacking (SNB/all)",
+        "seminar-toreon-desc": "Een seminarie over Ethical hacking, waarin werd uitgelegd hoe we onze eerste CVE konden vinden. We kregen ook een paar CTF challenges.",
+        "seminar-toreon-location": "Corda-campus",
+        "seminar-toreon-date": "11/3/2025",
+
+        "seminar-police-title": "Politie: Digitaal onderzoek (SNB/all)",
+        "seminar-police-desc": "Seminarie waarin een paar cases van bij de politie werden naar voor gebracht om te tonen hoe zij te werk gaan en wat voor werk zij doen.",
+        "seminar-police-location": "Corda-campus",
+        "seminar-police-date": "1/04/2025",
+
+        "seminar-cegeka-title": "Cegeka: Azure Networking (SNB)",
+        "seminar-cegeka-desc": "Seminarie over de nuance van het configureren van efficiënte, veilige en schaalbare netwerken in Azure-cloud.",
+        "seminar-cegeka-location": "Corda-campus",
+        "seminar-cegeka-date": "22/04/2025",
+
+        // Personal development entries
+        "development-projectweek-title": "Projectweek 2TIN",
+        "development-projectweek-desc": "Eerste week van het researchproject waarin we onze teams leren kennen en een overzicht krijgen van wat het project zal inhouden.",
+        "development-projectweek-location": "PXL-campus",
+        "development-projectweek-date": "10/02/2025 t.e.m. 14/03/2025",
+
+        "development-pop-title": "POP-sessie 2TIN",
+        "development-pop-desc": "Brein aan het werk! Niet storen! Een sessie over smartphoneverslaving en hoe onze focus tegenwoordig lager ligt dan vroeger.",
+        "development-pop-location": "PXL-campus, Corda-campus",
+        "development-pop-date": "18/02/2025 t.e.m. 25/03/2025",
+
+        // Personal projects
+        "personal-random-title": "Random Additions",
+        "personal-random-desc": "Een klein Minecraft-plugin om willekeurige voorwerpen/constructies te bouwen. Nog steeds mee bezig.",
+        "personal-random-link-text": "Repository",
+
+        "personal-k3s-title": "K3s-ansible",
+        "personal-k3s-desc": "Een eenvoudige Ansible-script die autonoom een k3s-cluster opzet. Ik beschouw dit als een afgerond project.",
+        "personal-k3s-link-text": "Repository",
+
+        // Skills
+        "section-skills-title": "Vaardigheden",
+        "skill-python": "Python",
+        "skill-ansible": "Ansible",
+        "skill-aws": "AWS",
+        "skill-azure": "Azure",
+        "skill-jenkins": "Jenkins",
+        "skill-github": "GitHub",
+        "skill-githubactions": "GitHub Actions",
+        "skill-java": "Java",
+        "skill-python": "Python",
+        "skill-linux": "Linux",
+        "skill-cloudflare": "Cloudflare",
+        "skill-docker": "Docker",
+        "skill-k3s": "k3s",
+        "skill-postgresql": "PostgreSQL",
+        "skill-mongodb": "MongoDB",
+
     }
 };
 

@@ -26,10 +26,8 @@ body, html {
     min-height: 100vh;
     background: #000;
     overflow: auto;
-    /* Smooth glide when navigating to anchors */
+    /* Enable smooth scrolling for native anchor links */
     scroll-behavior: smooth;
-    /* Reserve space for the fixed language switcher so the section isn't hidden under it */
-    scroll-padding-top: 64px;
 }
 
 .main-container {
@@ -226,8 +224,8 @@ p {
 }
 
 section {
-    scroll-margin-top: 64px;
-    min-height: 100vh;
+    /* let sections size to their content instead of forcing full viewport height */
+    min-height: auto;
     width: 100%;
     display: block;
     position: relative;
@@ -370,4 +368,164 @@ section {
 /* Remove margin from h2 in sections */
 section h2 {
     margin: 0;
+}
+
+/* Section styling to fit the portfolio aesthetic */
+.content-section {
+    padding: 4rem 1.5rem;
+    background: #fff;
+    color: #111;
+    border-bottom: 1px solid #eee;
+}
+
+.content-section .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: #111;
+    font-weight: 700;
+}
+
+.content-section p {
+    font-size: 1.05rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.content-section .section-note {
+    color: #555;
+    font-style: italic;
+    background: #f7f7f7;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Seminar list styles */
+.seminar-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.seminar-item {
+    background: #f9f9fb;
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.seminar-item h3 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.05rem;
+}
+
+.seminar-item p { margin: 0.25rem 0; color: #444; }
+
+.seminar-item .meta { color: #666; font-size: 0.95rem; }
+
+/* About two-column layout: left = about text, right = skills panel */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px; /* main content + side panel */
+    gap: 2rem;
+    align-items: start;
+}
+
+.about-left {
+    grid-column: 1 / 2;
+}
+
+.about-right {
+    grid-column: 2 / 3;
+    background: #f9f9fb;
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 10px;
+    color: #222;
+    /* Keep the skills panel visible while scrolling on larger screens */
+    position: sticky;
+    top: 84px; /* leave room for the language switcher */
+}
+
+.about-right h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-icon {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.skill-icon svg { width: 100%; height: 100%; display: block; }
+
+.skill-icon:focus-visible,
+.skill-icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    outline: none;
+}
+
+/* small screens: 5 icons in a row becomes 3 then 2 */
+@media (max-width: 600px) {
+    .skill-list { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+    .skill-icon { width: 64px; height: 64px; }
+}
+
+/* Responsive: stack columns on smaller screens */
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-right {
+        position: relative;
+        top: auto;
+        margin-top: 1rem;
+    }
+}
+
+/* Keep sections responsive on small screens */
+@media (max-width: 600px) {
+    .content-section {
+        padding: 2rem 1rem;
+    }
+    .content-section h2 { font-size: 1.6rem; }
+    .content-section p { font-size: 1rem; }
+}
+
+/* Dim other cards when one is exiting */
+.cards-dim .main-container { filter: brightness(0.55); transition: filter 0.25s; }
+.cards-dim .main-container.card-exit { filter: brightness(1); }
+
+/* Animate the clicked card sliding upward and out of view */
+.main-container.card-exit {
+    transform: translateY(-120vh) scale(0.98);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(.2,.8,.2,1), opacity 0.35s ease;
 }
