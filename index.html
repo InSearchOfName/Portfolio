@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="static/css/styles.css">
-    <title data-i18n="page-title">Portfolio</title>
+    <title data-i18n="page-title">Tommy Quatretemps - InSearchOfName</title>
 </head>
 <body>
     <div class="lang-switcher">
@@ -44,7 +44,6 @@
      </nav>
 
     <div class="cards-row" id="cards-row">
-        <!-- English and Dutch cards, now using data-i18n for all text -->
         <a href="#about" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-about-link">
             <div class="image-preview">
                 <img src="static/img/aboutMeThumb.jpg" alt="" loading="eager" decoding="sync" fetchpriority="high">
@@ -55,7 +54,6 @@
                 <span>
                     <div class="description preview-description">
                         <h1 data-i18n="card-about-title">About Me</h1>
-                        
                     </div>
                 </span>
             </div>
@@ -130,10 +128,8 @@
                 </span>
             </div>
         </a>
-        <!-- Add more cards here if needed -->
     </div>
 
-    <!-- Add sections for each card below, with placeholder content -->
     <section id="about" class="content-section">
         <div class="section-inner about-grid">
             <div class="about-left">
@@ -143,7 +139,6 @@
                 <p data-i18n="section-about-enjoy">I enjoy learning new technologies and tackling creative challenges. My interest in cloud started when I set up my first Minecraft server I love exploring server management, networking, and cloud infrastructure.</p>
                 <p class="section-note" data-i18n="section-about-note">I also continue to develop small projects, such as Minecraft plugins, to keep exploring and practicing my technical skills.</p>
 
-                <!-- Social links added by assistant -->
                 <div class="socials" aria-labelledby="socials-heading">
                     <h4 id="socials-heading" data-i18n="section-socials-title">Connect with me</h4>
                     <div class="social-links">
@@ -278,7 +273,6 @@
                     <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span data-i18n="seminar-cegeka-location">Corda-campus</span><br><strong data-i18n="label-date">Datum:</strong> <span data-i18n="seminar-cegeka-date">22/04/2025</span></p>
                 </li>
 
-                <!-- Added 4 placeholders to make a 2x4 layout -->
                 <li class="seminar-item entry-item">
                     <h3 data-i18n="seminar-placeholder-1-title">Placeholder Seminar 5</h3>
                     <p data-i18n="seminar-placeholder-1-desc">Placeholder description for seminar 5. Update later.</p>
@@ -364,8 +358,6 @@
             </ul>
         </div>
     </section>
-
-    <!-- No inline loader script — resource loading is controlled via element attributes (thumbnails: eager/high, videos: preload/low, other images: lazy) -->
 
     <script src="static/scripts/video.js"></script>
     <script src="static/scripts/fadein.js"></script>

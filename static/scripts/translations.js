@@ -27,7 +27,7 @@ document.body.addEventListener('click', function () {
 const translations = {
     en: {
         // Page & language labels (head)
-        "page-title": "Portfolio - Tommy Quatretemps",
+        "page-title": "Tommy Quatretemps - InSearchOfName",
         "lang-en-label": "English",
         "lang-nl-label": "Nederlands",
 
@@ -173,7 +173,7 @@ const translations = {
     },
     nl: {
         // Page & language labels (head)
-        "page-title": "Portfolio - Tommy Quatretemps",
+        "page-title": "Tommy Quatretemps - InSearchOfName",
         "lang-en-label": "English",
         "lang-nl-label": "Nederlands",
 
@@ -198,7 +198,7 @@ const translations = {
 
         // About section
         "section-about-title": "Over Mij",
-        "section-about-intro": "Hey, ik ben Tommy Quatretemps (InSearchOfName). momenteel volg ik een bacheloropleiding Toegepaste Informatica aan de Hogeschool PXL, met een specialisatie in systeem en networkbeheer.",
+        "section-about-intro": "Hey, ik ben Tommy Quatretemps (InSearchOfName). momenteel volg ik een bacheloropleiding Toegepaste Informatica aan de Hogeschool PXL, met een specialisatie in systeem en netwerkbeheer.",
         "section-about-whatido": "Mijn focus ligt vooral op cloudbeheer en Linux-administratie. In het verleden beheerde ik mijn eigen Linux-server, maar tegenwoordig ligt de focus meer op cloudomgevingen en infrastructuurautomatisering.",
         "section-about-enjoy": "Ik leer graag nieuwe technologieën bij en ga graag uitdagingen aan. Ook vind ik het leuk om te experimenteren met serverbeheer, netwerken en cloudinfrastructuur.",
         "section-about-note": "Om ook bij te blijven leren bouw ik soms eens klein projecttje, zoals een minecraft-plugin of een ansible script om een k3s cluster op te zetten. Om mijn technische vaardigheden te blijven verbreden en oefenen.",
