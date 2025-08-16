@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Debounce helper: ensures function runs only after delay
+    // Debounce helper
     const debounce = (fn, delay) => {
         let timer;
         return (...args) => {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     };
 
-    // Select all hover containers
+    // Hover containers
     document.querySelectorAll('.hover-container').forEach(container => {
         const video = container.querySelector('.preview-video');
         if (!video) return;
@@ -19,18 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Function to lazy-load and play video
         const playVideo = () => {
             if (!video.dataset.loaded) {
-                // Set src for all <source> tags from data-src
                 video.querySelectorAll('source').forEach(src => {
                     if (src.dataset.src) src.src = src.dataset.src;
                 });
-                video.load(); // start loading the video
-                video.dataset.loaded = true; // mark as loaded
+                video.load();
+                video.dataset.loaded = true;
             }
             video.currentTime = 0;
-            video.play();
+            video.play().catch(err => {
+                // Ignore aborted play errors from lazy-load / user interaction
+                if (err.name !== 'AbortError') {
+                    console.error(err);
+                }
+            });
         };
 
-        // Debounced version to avoid rapid hover triggering
         const debouncedPlay = debounce(playVideo, 150); // 150ms delay
 
         container.addEventListener('mouseenter', debouncedPlay);
