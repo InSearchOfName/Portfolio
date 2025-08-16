@@ -26,72 +26,69 @@ document.body.addEventListener('click', function () {
 // Translation dictionary (complete keys used in index.html)
 const translations = {
     en: {
-        // Card link aria labels
-        "card-about-link": "About",
+        // Page & language labels (head)
+        "page-title": "Portfolio - Tommy Quatretemps",
+        "lang-en-label": "English",
+        "lang-nl-label": "Nederlands",
+
+        // Mobile/menu and top navigation (mobile dropdown)
+        "mobile-menu-btn": "☰ Menu",
+
+        // Card links (nav/menu entries)
+        "card-about-link": "About Me",
         "card-seminars-link": "Seminars",
         "card-innovation-link": "Innovation",
         "card-personalDevelopment-link": "Personal Development",
         "card-internationalization-link": "Internationalization",
         "card-personalProject-link": "Personal Projects",
 
-        // Card titles and descriptions
+        // Card titles
         "card-about-title": "About Me",
-        "card-about-desc": "Welcome! I'm a passionate developer and student, always eager to learn new technologies and tackle creative challenges. On this page, you'll find my projects, experiences, and interests.",
-
         "card-seminars-title": "Seminars",
-        "card-seminars-desc": "During my studies, I participated in various seminars that broadened my knowledge and skills. These seminars covered a wide range of topics such as technological innovations, personal development, and international cooperation. Through interactive sessions and inspiring speakers, I gained valuable insights that I could immediately apply to my studies and projects. Each seminar offered a unique opportunity to network and exchange experiences with peers, which significantly stimulated my professional growth.",
-
         "card-innovation-title": "Innovation",
-        "card-innovation-desc": "I explore creative uses of technology and experiment with new ideas. Here you'll find prototypes, experiments, and projects that push the boundaries of design and engineering.",
-
         "card-personalDevelopment-title": "Personal Development",
-        "card-personalDevelopment-desc": "I focus on continuous learning, soft skills, and personal growth through projects, reading, and collaborations.",
-
         "card-internationalization-title": "Internationalization",
-        "card-internationalization-desc": "My work and studies include international collaborations and experiences that broaden perspectives and intercultural skills.",
-
         "card-personalProject-title": "Personal Projects",
-        "card-personalProject-desc": "A collection of personal projects demonstrating technical skills, design thinking, and curiosity-driven experimentation.",
 
-        // Section headers and paragraphs
+        // About section (split paragraphs)
         "section-about-title": "About Me",
-        "section-about-desc": "Hi, I’m Tommy Quatretemps (AKA InSearchOfName), currently pursuing a Bachelor’s degree in Applied Computer Science at PXL University of Applied Sciences and Arts, specializing in Systems and Network Engineering. I have a strong interest in cloud management and Linux administration, and while I previously managed my personal Linux server, I have for now transitioned to cloud environments. My journey into cloud computing started when I set up my first Minecraft server, sparking a deep fascination with server management, networking, and cloud infrastructure.",
+        "section-about-intro": "Hi, I’m Tommy Quatretemps (InSearchOfName). I’m currently pursuing a Bachelor’s degree in Applied Computer Science at PXL University of Applied Sciences and Arts, specializing in Systems and Network Engineering.",
+        "section-about-whatido": "My main focus lies in cloud management and Linux administration. In the past, I managed my own Linux server, but nowadays the focus has shifted toward cloud environments and infrastructure automation.",
+        "section-about-enjoy": "I enjoy learning new technologies and tackling creative challenges. My interest in cloud started when I set up my first Minecraft server. I enjoy exploring server management, networking, and cloud infrastructure.",
+        "section-about-note": "To keep learning and practicing, I continue developing small projects, such as minecraft plugins, ansible scripts, etc...",
 
-        "section-seminars-title": "Seminars",
-        "section-seminars-desc": "This section lists seminars and workshops I attended, including key takeaways and links where available.",
-
-        "section-innovation-title": "Innovation",
-        "section-innovation-desc": "I take part in hackathons and experimentation events where I explore cybersecurity, CTFs and rapid prototyping.",
-        "innovation-hackathon-title": "Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)",
-        "innovation-hackathon-desc": "A security competition for higher-education students featuring challenges in cryptography, reverse engineering, network analysis, web & mobile security, and forensic investigation.",
-        "innovation-hackathon-location": "Online via the CTF platform of Cyber Security Challenge",
-        "innovation-hackathon-date": "14/03/2025 10AM – 15/03/2025 6PM",
-        "innovation-hackathon-team-label": "Team:",
-        "innovation-hackathon-team": "Backdoor Boys",
-        "innovation-hackathon-placement-label": "Placement:",
-        "innovation-hackathon-placement": "116/358",
-
-        "section-personalDevelopment-title": "Personal Development",
-        "section-personalDevelopment-desc": "Notes and resources about skills I work on: communication, leadership, and continuous learning.",
-
-        "section-internationalization-title": "Internationalization",
-        "section-internationalization-desc": "TBA",
-
-        "section-personalProject-title": "Personal Projects",
-        "section-personalProject-desc": "Projects I built in my spare time to learn, experiment or solve interesting problems.",
-        "section-about-note": "I also continue to develop small projects, such as Minecraft plugins, to keep exploring and practicing my technical skills.",
-
-        // Mobile and Socials (added)
-        "mobile-menu-btn": "☰ Menu",
+        // Socials
         "section-socials-title": "Connect with me",
+        "social-github-label": "GitHub profile",
+        "social-linkedin-label": "LinkedIn profile",
 
-        // Seminar labels and entries
-        "label-location": "Location:",
-        "label-date": "Date:",
+        // Skills heading (skill icons appear after socials)
+        "section-skills-title": "Skills",
+        "skill-aws": "AWS",
+        "skill-azure": "Azure",
+        "skill-ansible": "Ansible",
+        "skill-jenkins": "Jenkins",
+        "skill-github": "GitHub",
+        "skill-githubactions": "GitHub Actions",
+        "skill-java": "Java",
+        "skill-python": "Python",
+        "skill-linux": "Linux",
+        "skill-cloudflare": "Cloudflare",
+        "skill-docker": "Docker",
+        "skill-k3s": "k3s",
+        "skill-postgresql": "PostgreSQL",
+        "skill-mongodb": "MongoDB",
 
+        // Seminars section
+        "section-seminars-title": "Seminars",
+        "section-seminars-desc": "This section lists seminars and workshops I attended.",
+
+        // Seminar entries (Gluo, Toreon, Police, Cegeka, placeholders)
         "seminar-gluo-title": "Gluo: Multi-cloud (SNB)",
         "seminar-gluo-desc": "A seminar on multi-cloud where we used Gluo hands-on labs to set up a multi-cloud infrastructure across AWS and Azure.",
+        "label-location": "Location:",
         "seminar-gluo-location": "Corda-campus",
+        "label-date": "Date:",
         "seminar-gluo-date": "4/3/2025",
 
         "seminar-toreon-title": "Toreon: Ethical hacking (SNB/all)",
@@ -109,18 +106,62 @@ const translations = {
         "seminar-cegeka-location": "Corda-campus",
         "seminar-cegeka-date": "22/04/2025",
 
-        // Personal development entries
+        // Placeholder seminars
+        "seminar-placeholder-1-title": "Placeholder Seminar 5",
+        "seminar-placeholder-1-desc": "Placeholder description for seminar 5. Update later.",
+        "seminar-placeholder-1-location": "TBD",
+        "seminar-placeholder-1-date": "TBD",
+
+        "seminar-placeholder-2-title": "Placeholder Seminar 6",
+        "seminar-placeholder-2-desc": "Placeholder description for seminar 6. Update later.",
+        "seminar-placeholder-2-location": "TBD",
+        "seminar-placeholder-2-date": "TBD",
+
+        "seminar-placeholder-3-title": "Placeholder Seminar 7",
+        "seminar-placeholder-3-desc": "Placeholder description for seminar 7. Update later.",
+        "seminar-placeholder-3-location": "TBD",
+        "seminar-placeholder-3-date": "TBD",
+
+        "seminar-placeholder-4-title": "Placeholder Seminar 8",
+        "seminar-placeholder-4-desc": "Placeholder description for seminar 8. Update later.",
+        "seminar-placeholder-4-location": "TBD",
+        "seminar-placeholder-4-date": "TBD",
+
+        // Innovation section (appears after seminars in page; keep innovation entries nearby)
+        "section-innovation-title": "Innovation",
+        "section-innovation-desc": "",
+        "innovation-hackathon-title": "Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)",
+        "innovation-hackathon-desc": "A security competition for college/undergrad/grad students featuring challenges in cryptography, reverse engineering, network analysis, web & mobile security, DNS & forensic investigation.",
+        "innovation-hackathon-location": "Online via the CTF platform of Cyber Security Challenge",
+        "innovation-hackathon-date": "14/03/2025 10AM – 15/03/2025 6PM",
+        "innovation-hackathon-team-label": "Team:",
+        "innovation-hackathon-team": "Backdoor Boys",
+        "innovation-hackathon-placement-label": "Placement:",
+        "innovation-hackathon-placement": "116/358",
+
+        // Personal Development section (subsequent)
+        "section-personalDevelopment-title": "Personal Development",
+        "section-personalDevelopment-desc": " ",
+
+        // Development entries
         "development-projectweek-title": "Projectweek 2TIN",
         "development-projectweek-desc": "First week of the research project where we got to know our teams and an overview of what the project will entail.",
         "development-projectweek-location": "PXL-campus",
         "development-projectweek-date": "from 10/02/2025 till 14/03/2025",
 
         "development-pop-title": "POP-sessie 2TIN",
-        "development-pop-desc": "Brein aan het werk! Niet storen! A session about smartphone addiction and how our focus is lower than before.",
+        "development-pop-desc": "\"Brein aan het werk! Niet storen!\" A session about smartphone addiction and how our focus is lower than before.",
         "development-pop-location": "PXL-campus, Corda-campus",
         "development-pop-date": "from 18/02/2025 till 25/03/2025",
 
-        // Personal projects
+        // Internationalization & Personal projects sections
+        "section-internationalization-title": "Internationalization",
+        "section-internationalization-desc": "TBA",
+
+        "section-personalProject-title": "Personal Projects",
+        "section-personalProject-desc": "Projects I built in my spare time to learn, experiment or solve interesting problems.",
+
+        // Personal projects entries
         "personal-random-title": "Random Additions",
         "personal-random-desc": "A little minecraft plugin to build random stuff/items. Still working on it.",
         "personal-random-link-text": "Repository",
@@ -129,12 +170,49 @@ const translations = {
         "personal-k3s-desc": "A simple ansible script that autonomously sets up an k3s cluster. I see it as a finished project.",
         "personal-k3s-link-text": "Repository",
 
-        // Skills
-        "section-skills-title": "Skills",
-        "skill-python": "Python",
-        "skill-ansible": "Ansible",
+    },
+    nl: {
+        // Page & language labels (head)
+        "page-title": "Portfolio - Tommy Quatretemps",
+        "lang-en-label": "English",
+        "lang-nl-label": "Nederlands",
+
+        // Mobile/menu and top navigation
+        "mobile-menu-btn": "☰ Menu",
+
+        // Card links
+        "card-about-link": "Over Mij",
+        "card-seminars-link": "Seminaries",
+        "card-innovation-link": "Innovatie",
+        "card-personalDevelopment-link": "Persoonlijke Ontwikkeling",
+        "card-internationalization-link": "Internationalisatie",
+        "card-personalProject-link": "Persoonlijke Projecten",
+
+        // Card titles
+        "card-about-title": "Over Mij",
+        "card-seminars-title": "Seminaries",
+        "card-innovation-title": "Innovatie",
+        "card-personalDevelopment-title": "Persoonlijke Ontwikkeling",
+        "card-internationalization-title": "Internationalisatie",
+        "card-personalProject-title": "Persoonlijke Projecten",
+
+        // About section
+        "section-about-title": "Over Mij",
+        "section-about-intro": "Hey, ik ben Tommy Quatretemps (InSearchOfName). momenteel volg ik een bacheloropleiding Toegepaste Informatica aan de Hogeschool PXL, met een specialisatie in systeem en networkbeheer.",
+        "section-about-whatido": "Mijn focus ligt vooral op cloudbeheer en Linux-administratie. In het verleden beheerde ik mijn eigen Linux-server, maar tegenwoordig ligt de focus meer op cloudomgevingen en infrastructuurautomatisering.",
+        "section-about-enjoy": "Ik leer graag nieuwe technologieën bij en ga graag uitdagingen aan. Ook vind ik het leuk om te experimenteren met serverbeheer, netwerken en cloudinfrastructuur.",
+        "section-about-note": "Om ook bij te blijven leren bouw ik soms eens klein projecttje, zoals een minecraft-plugin of een ansible script om een k3s cluster op te zetten. Om mijn technische vaardigheden te blijven verbreden en oefenen.",
+
+        // Socials
+        "section-socials-title": "Conecteer met mij",
+        "social-github-label": "GitHub profiel",
+        "social-linkedin-label": "LinkedIn profiel",
+
+        // Skills heading
+        "section-skills-title": "Vaardigheden",
         "skill-aws": "AWS",
         "skill-azure": "Azure",
+        "skill-ansible": "Ansible",
         "skill-jenkins": "Jenkins",
         "skill-github": "GitHub",
         "skill-githubactions": "GitHub Actions",
@@ -147,74 +225,16 @@ const translations = {
         "skill-postgresql": "PostgreSQL",
         "skill-mongodb": "MongoDB",
 
-    },
-    nl: {
-        // Card link aria labels
-        "card-about-link": "Over",
-        "card-seminars-link": "Seminaries",
-        "card-innovation-link": "Innovatie",
-        "card-personalDevelopment-link": "Persoonlijke Ontwikkeling",
-        "card-internationalization-link": "Internationalisatie",
-        "card-personalProject-link": "Persoonlijke Projecten",
-
-        // Card titles and descriptions
-        "card-about-title": "Over Mij",
-        "card-about-desc": "Welkom! Ik ben een gepassioneerde ontwikkelaar en student, altijd leergierig naar nieuwe technologieën en creatieve uitdagingen. Op deze pagina vind je mijn projecten, ervaringen en interesses.",
-
-        "card-seminars-title": "Seminaries",
-        "card-seminars-desc": "Tijdens mijn studie heb ik deelgenomen aan diverse seminaries die mijn kennis en vaardigheden verbreed hebben. Deze behandelden onderwerpen zoals technologische innovaties, persoonlijke ontwikkeling en internationale samenwerking. Door interactieve sessies en inspirerende sprekers heb ik inzichten opgedaan die ik direct kon toepassen in mijn studie en projecten.",
-
-        "card-innovation-title": "Innovatie",
-        "card-innovation-desc": "Ik onderzoek creatieve toepassingen van technologie en experimenteer met nieuwe ideeën. Hier vind je prototypes, experimenten en projecten die ontwerp en techniek verkennen.",
-
-        "card-personalDevelopment-title": "Persoonlijke Ontwikkeling",
-        "card-personalDevelopment-desc": "Ik richt me op continu leren, soft skills en persoonlijke groei door projecten, lezen en samenwerking.",
-
-        "card-internationalization-title": "Internationalisatie",
-        "card-internationalization-desc": "Mijn werk en studie omvatten internationale samenwerkingen en ervaringen die perspectieven en interculturele vaardigheden verbreden.",
-
-        "card-personalProject-title": "Persoonlijke Projecten",
-        "card-personalProject-desc": "Een verzameling persoonlijke projecten die technische vaardigheden, ontwerpend denken en nieuwsgierigheid demonstreren.",
-
-        // Section headers and paragraphs
-        "section-about-title": "Over Mij",
-        "section-about-desc": "Hi, ik ben Tommy Quatretemps (ook bekend als InSearchOfName). Ik volg momenteel een bacheloropleiding Toegepaste Informatica aan de PXL University of Applied Sciences and Arts, met een specialisatie in Systems and Network Engineering. Ik heb een sterke interesse in cloudbeheer en Linux-administratie en hoewel ik vroeger mijn eigen Linux-server beheerde, ben ik voor nu overgestapt naar cloudomgevingen. Mijn reis in cloudcomputing begon toen ik mijn eerste Minecraft-server opzette, wat een diepe fascinatie voor serverbeheer, netwerken en cloudinfrastructuur opwekte.",
-
+        // Seminars
         "section-seminars-title": "Seminaries",
-        "section-seminars-desc": "Deze sectie bevat seminaries en workshops die ik heb gevolgd, inclusief belangrijkste inzichten en links indien beschikbaar.",
+        "section-seminars-desc": "Deze sectie bevat seminaries en workshops die ik heb gevolgd.",
 
-        "section-innovation-title": "Innovatie",
-        "section-innovation-desc": "Ik neem deel aan hackathons en experimentele evenementen waarin ik cybersecurity, CTF's en snelle prototyping verken.",
-        "innovation-hackathon-title": "Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)",
-        "innovation-hackathon-desc": "Een securitycompetitie voor studenten in het hoger onderwijs met uitdagingen in cryptografie, reverse engineering, netwerkanalyse, web- en mobiele beveiliging en forensisch onderzoek.",
-        "innovation-hackathon-location": "Online via het CTF-platform van Cyber Security Challenge",
-        "innovation-hackathon-date": "14/03/2025 10AM – 15/03/2025 6PM",
-        "innovation-hackathon-team-label": "Team:",
-        "innovation-hackathon-team": "Backdoor Boys",
-        "innovation-hackathon-placement-label": "Plaatsing:",
-        "innovation-hackathon-placement": "116/358",
-
-        "section-personalDevelopment-title": "Persoonlijke Ontwikkeling",
-        "section-personalDevelopment-desc": "Notities en bronnen over vaardigheden waar ik aan werk: communicatie, leiderschap en continu leren.",
-
-        "section-internationalization-title": "Internationalisatie",
-        "section-internationalization-desc": "TBA",
-
-        "section-personalProject-title": "Persoonlijke Projecten",
-        "section-personalProject-desc": "Projecten die ik in mijn vrije tijd bouwde om te leren, experimenteren of interessante problemen op te lossen.",
-        "section-about-note": "Ik blijf ook kleine projecten ontwikkelen, zoals Minecraft-plugins, om mijn technische vaardigheden te blijven verkennen en oefenen.",
-
-        // Mobile and Socials (added)
-        "mobile-menu-btn": "☰ Menu",
-        "section-socials-title": "Connect met mij",
-
-        // Seminar labels and entries
-        "label-location": "Locatie:",
-        "label-date": "Datum:",
-
+        // Seminar entries
         "seminar-gluo-title": "Gluo: Multi-cloud (SNB)",
         "seminar-gluo-desc": "Een seminarie over multi-cloud, waarin we met Gluo hands-on labs hebben gedaan om een multi-cloud infrastructuur op te zetten in AWS en Azure.",
+        "label-location": "Locatie:",
         "seminar-gluo-location": "Corda-campus",
+        "label-date": "Datum:",
         "seminar-gluo-date": "4/3/2025",
 
         "seminar-toreon-title": "Toreon: Ethical hacking (SNB/all)",
@@ -232,18 +252,62 @@ const translations = {
         "seminar-cegeka-location": "Corda-campus",
         "seminar-cegeka-date": "22/04/2025",
 
-        // Personal development entries
+        // Placeholder seminars
+        "seminar-placeholder-1-title": "Placeholder Seminar 5",
+        "seminar-placeholder-1-desc": "Placeholder description for seminar 5. Update later.",
+        "seminar-placeholder-1-location": "TBD",
+        "seminar-placeholder-1-date": "TBD",
+
+        "seminar-placeholder-2-title": "Placeholder Seminar 6",
+        "seminar-placeholder-2-desc": "Placeholder description for seminar 6. Update later.",
+        "seminar-placeholder-2-location": "TBD",
+        "seminar-placeholder-2-date": "TBD",
+
+        "seminar-placeholder-3-title": "Placeholder Seminar 7",
+        "seminar-placeholder-3-desc": "Placeholder description for seminar 7. Update later.",
+        "seminar-placeholder-3-location": "TBD",
+        "seminar-placeholder-3-date": "TBD",
+
+        "seminar-placeholder-4-title": "Placeholder Seminar 8",
+        "seminar-placeholder-4-desc": "Placeholder description for seminar 8. Update later.",
+        "seminar-placeholder-4-location": "TBD",
+        "seminar-placeholder-4-date": "TBD",
+
+        // Innovation
+        "section-innovation-title": "Innovatie",
+        "section-innovation-desc": " ",
+        "innovation-hackathon-title": "Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)",
+        "innovation-hackathon-desc": "Een securitycompetitie voor studenten in het hoger onderwijs met uitdagingen in cryptografie, reverse engineering, netwerkanalyse, web- en mobiele beveiliging en forensisch onderzoek.",
+        "innovation-hackathon-location": "Online via het CTF-platform van Cyber Security Challenge",
+        "innovation-hackathon-date": "14/03/2025 10AM – 15/03/2025 6PM",
+        "innovation-hackathon-team-label": "Team:",
+        "innovation-hackathon-team": "Backdoor Boys",
+        "innovation-hackathon-placement-label": "Plaatsing:",
+        "innovation-hackathon-placement": "116/358",
+
+        // Personal Development
+        "section-personalDevelopment-title": "Persoonlijke Ontwikkeling",
+        "section-personalDevelopment-desc": " ",
+
+        // Development entries
         "development-projectweek-title": "Projectweek 2TIN",
         "development-projectweek-desc": "Eerste week van het researchproject waarin we onze teams leren kennen en een overzicht krijgen van wat het project zal inhouden.",
         "development-projectweek-location": "PXL-campus",
         "development-projectweek-date": "10/02/2025 tot en met 14/03/2025",
 
         "development-pop-title": "POP-sessie 2TIN",
-        "development-pop-desc": "Brein aan het werk! Niet storen! Een sessie over smartphoneverslaving en hoe onze focus tegenwoordig lager ligt dan vroeger.",
+        "development-pop-desc": "\"Brein aan het werk! Niet storen!\" Een sessie over smartphoneverslaving en hoe onze focus tegenwoordig lager ligt dan vroeger.",
         "development-pop-location": "PXL-campus, Corda-campus",
         "development-pop-date": "18/02/2025 tot en met 25/03/2025",
 
-        // Personal projects
+        // Internationalization & Personal projects
+        "section-internationalization-title": "Internationalisatie",
+        "section-internationalization-desc": "TBA",
+
+        "section-personalProject-title": "Persoonlijke Projecten",
+        "section-personalProject-desc": "Projecten die ik in mijn vrije tijd bouwde om te leren, experimenteren of interessante problemen op te lossen.",
+
+        // Personal projects entries
         "personal-random-title": "Random Additions",
         "personal-random-desc": "Een klein Minecraft-plugin om willekeurige voorwerpen/constructies te bouwen. Nog steeds mee bezig.",
         "personal-random-link-text": "Repository",
@@ -251,24 +315,6 @@ const translations = {
         "personal-k3s-title": "K3s-ansible",
         "personal-k3s-desc": "Een eenvoudige Ansible-script die autonoom een k3s-cluster opzet. Ik beschouw dit als een afgerond project.",
         "personal-k3s-link-text": "Repository",
-
-        // Skills
-        "section-skills-title": "Vaardigheden",
-        "skill-python": "Python",
-        "skill-ansible": "Ansible",
-        "skill-aws": "AWS",
-        "skill-azure": "Azure",
-        "skill-jenkins": "Jenkins",
-        "skill-github": "GitHub",
-        "skill-githubactions": "GitHub Actions",
-        "skill-java": "Java",
-        "skill-python": "Python",
-        "skill-linux": "Linux",
-        "skill-cloudflare": "Cloudflare",
-        "skill-docker": "Docker",
-        "skill-k3s": "k3s",
-        "skill-postgresql": "PostgreSQL",
-        "skill-mongodb": "MongoDB",
 
     }
 };

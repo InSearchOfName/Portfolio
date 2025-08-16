@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="static/css/styles.css">
-    <title>Portfolio</title>
+    <title data-i18n="page-title">Portfolio</title>
 </head>
 <body>
     <div class="lang-switcher">
@@ -15,33 +15,33 @@
             <span class="dropdown-arrow">▾</span>
         </button>
         <div id="lang-dropdown" class="lang-dropdown-menu" aria-hidden="true">
-            <button id="lang-en" class="lang-option" type="button" tabindex="0">English</button>
-            <button id="lang-nl" class="lang-option" type="button" tabindex="0">Nederlands</button>
+            <button id="lang-en" class="lang-option" type="button" tabindex="0" data-i18n="lang-en-label">English</button>
+            <button id="lang-nl" class="lang-option" type="button" tabindex="0" data-i18n="lang-nl-label">Nederlands</button>
         </div>
     </div>
 
     <!-- Mobile-only traditional navbar (hidden on desktop via CSS) -->
     <nav class="mobile-nav" aria-label="Mobile navigation">
         <!-- Mobile menu button that toggles the full dropdown list -->
-        <button class="mobile-dropdown-btn" aria-expanded="false" aria-controls="mobile-dropdown-list" aria-label="Open menu">☰ Menu</button>
+        <button class="mobile-dropdown-btn" aria-expanded="false" aria-controls="mobile-dropdown-list" data-i18n="mobile-menu-btn">☰ Menu</button>
 
         <!-- The dropdown contains all hrefs in a vertical list (hidden by default) -->
-        <div id="mobile-dropdown-list" class="mobile-dropdown" hidden>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#seminars">Seminars</a></li>
-                <li><a href="#innovation">Innovation</a></li>
-                <li><a href="#personalDevelopment">Personal Development</a></li>
-                <li><a href="#internationalization">Internationalization</a></li>
-                <li><a href="#personalProject">Personal Projects</a></li>
-            </ul>
-            <!-- Mobile language controls moved into the dropdown to avoid duplicates -->
-            <div class="mobile-dropdown-lang">
-                <button type="button" class="mobile-lang-option" data-lang="en">EN</button>
-                <button type="button" class="mobile-lang-option" data-lang="nl">NL</button>
-            </div>
-        </div>
-    </nav>
+         <div id="mobile-dropdown-list" class="mobile-dropdown" hidden>
+             <ul>
+                <li><a href="#about"><span data-i18n="card-about-link">About</span></a></li>
+                <li><a href="#seminars"><span data-i18n="card-seminars-link">Seminars</span></a></li>
+                <li><a href="#innovation"><span data-i18n="card-innovation-link">Innovation</span></a></li>
+                <li><a href="#personalDevelopment"><span data-i18n="card-personalDevelopment-link">Personal Development</span></a></li>
+                <li><a href="#internationalization"><span data-i18n="card-internationalization-link">Internationalization</span></a></li>
+                <li><a href="#personalProject"><span data-i18n="card-personalProject-link">Personal Projects</span></a></li>
+             </ul>
+             <!-- Mobile language controls moved into the dropdown to avoid duplicates -->
+             <div class="mobile-dropdown-lang">
+                 <button type="button" class="mobile-lang-option" data-lang="en">EN</button>
+                 <button type="button" class="mobile-lang-option" data-lang="nl">NL</button>
+             </div>
+         </div>
+     </nav>
 
     <div class="cards-row" id="cards-row">
         <!-- English and Dutch cards, now using data-i18n for all text -->
@@ -132,54 +132,55 @@
         <div class="section-inner about-grid">
             <div class="about-left">
                 <h2 data-i18n="section-about-title">About Me</h2>
-                <p data-i18n="section-about-desc">Hi, I’m Tommy Quatretemps (AKA InSearchOfName), currently pursuing a Bachelor’s degree in Applied Computer Science at PXL University of Applied Sciences and Arts, specializing in Systems and Network Engineering.
-I have a strong interest in cloud management and Linux administration, and while I previously managed my personal Linux server, I have for now transitioned to cloud environments. My journey into cloud computing started when I set up my first Minecraft server, sparking a deep fascination with server management, networking, and cloud infrastructure.</p>
+                <p data-i18n="section-about-intro">Hi, I’m Tommy Quatretemps (AKA InSearchOfName). I’m currently pursuing a Bachelor’s degree in Applied Computer Science at PXL University of Applied Sciences and Arts, specializing in Systems and Network Engineering.</p>
+                <p data-i18n="section-about-whatido">I focus on cloud management and Linux administration. Previously I managed my own Linux server, and now I work more with cloud environments and infrastructure automation.</p>
+                <p data-i18n="section-about-enjoy">I enjoy learning new technologies and tackling creative challenges. My interest in cloud started when I set up my first Minecraft server I love exploring server management, networking, and cloud infrastructure.</p>
                 <p class="section-note" data-i18n="section-about-note">I also continue to develop small projects, such as Minecraft plugins, to keep exploring and practicing my technical skills.</p>
 
                 <!-- Social links added by assistant -->
                 <div class="socials" aria-labelledby="socials-heading">
-                    <h4 id="socials-heading">Connect with me</h4>
+                    <h4 id="socials-heading" data-i18n="section-socials-title">Connect with me</h4>
                     <div class="social-links">
-                        <a class="social-link" href="https://github.com/InSearchOfName" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub">
+                        <a class="social-link" href="https://github.com/InSearchOfName" target="_blank" rel="noopener noreferrer" data-i18n="social-github-label">
+                            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" data-i18n="social-github-label">
                         </a>
-                        <a class="social-link" href="https://www.linkedin.com/in/tommy-quatretemps/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+                        <a class="social-link" href="https://www.linkedin.com/in/tommy-quatretemps/" target="_blank" rel="noopener noreferrer" data-i18n="social-linkedin-label">
+                            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" data-i18n="social-linkedin-label">
                         </a>
-                    </div>
-                </div>
-            </div>
+                     </div>
+                 </div>
+             </div>
 
             <aside class="about-right" aria-labelledby="skills-heading">
                 <h3 id="skills-heading" data-i18n="section-skills-title">Skills</h3>
                 <ul class="skill-list">
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-aws" aria-hidden="false" title="AWS">
+                        <a class="skill-icon" data-i18n="skill-aws" aria-hidden="false" title="AWS">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" data-i18n="skill-aws">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-azure" aria-hidden="false" title="Azure">
+                        <a class="skill-icon" data-i18n="skill-azure" aria-hidden="false" title="Azure">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure" data-i18n="skill-azure">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-ansible" aria-hidden="false" title="Ansible">
+                        <a class="skill-icon" data-i18n="skill-ansible" aria-hidden="false" title="Ansible">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="Ansible" data-i18n="skill-ansible">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-jenkins" aria-hidden="false" title="Jenkins">
+                        <a class="skill-icon" data-i18n="skill-jenkins" aria-hidden="false" title="Jenkins">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" alt="Jenkins" data-i18n="skill-jenkins">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-githubactions" aria-hidden="false" title="GitHub Actions">
+                        <a class="skill-icon" data-i18n="skill-githubactions" aria-hidden="false" title="GitHub Actions">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" data-i18n="skill-githubactions">
                         </a>
                     </li>
@@ -191,49 +192,49 @@ I have a strong interest in cloud management and Linux administration, and while
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-java" aria-hidden="false" title="Java">
+                        <a class="skill-icon" data-i18n="skill-java" aria-hidden="false" title="Java">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" data-i18n="skill-java">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-python" aria-hidden="false" title="Python">
+                        <a class="skill-icon" data-i18n="skill-python" aria-hidden="false" title="Python">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" data-i18n="skill-python">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-linux" aria-hidden="false" title="Linux">
+                        <a class="skill-icon" data-i18n="skill-linux" aria-hidden="false" title="Linux">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" data-i18n="skill-linux">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-cloudflare" aria-hidden="false" title="Cloudflare">
+                        <a class="skill-icon" data-i18n="skill-cloudflare" aria-hidden="false" title="Cloudflare">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare" data-i18n="skill-cloudflare">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-docker" aria-hidden="false" title="Docker">
+                        <a class="skill-icon" data-i18n="skill-docker" aria-hidden="false" title="Docker">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" data-i18n="skill-docker">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-k3s" aria-hidden="false" title="k3s">
+                        <a class="skill-icon" data-i18n="skill-k3s" aria-hidden="false" title="k3s">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/k3s/k3s-original.svg" alt="k3s" data-i18n="skill-k3s">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-postgresql" aria-hidden="false" title="PostgreSQL">
+                        <a class="skill-icon" data-i18n="skill-postgresql" aria-hidden="false" title="PostgreSQL">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" data-i18n="skill-postgresql">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="#" class="skill-icon" data-i18n="skill-mongodb" aria-hidden="false" title="MongoDB">
+                        <a class="skill-icon" data-i18n="skill-mongodb" aria-hidden="false" title="MongoDB">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" data-i18n="skill-mongodb">
                         </a>
                     </li>
@@ -305,10 +306,10 @@ I have a strong interest in cloud management and Linux administration, and while
 
             <ul class="entry-list seminar-list">
                 <li class="seminar-item entry-item">
-                    <a href="https://platform.cybersecuritychallenge.be/" target="_blank"><h3>Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)</h3></a>
-                    <p>Een Security Challenge voor studenten in het hoger onderwijs, met uitdagingen op het gebied van cryptografie, reverse engineering, netwerkanalyse, web- en mobiele beveiliging en forensisch onderzoek.</p>
-                    <p class="meta"><strong>Locatie activiteit:</strong> Online via het CTF-platform van Cyber Security Challenge &nbsp; <strong>Datum:</strong> <span>14/03/2025 10AM – 15/03/2025 6PM</span></p>
-                    <p class="meta"><strong>Team:</strong> Backdoor Boys &nbsp; <strong>Plaatsing:</strong> 116/358</p>
+                    <a href="https://platform.cybersecuritychallenge.be/" target="_blank" rel="noopener noreferrer"><h3 data-i18n="innovation-hackathon-title">Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)</h3></a>
+                    <p data-i18n="innovation-hackathon-desc">A security competition for higher-education students featuring challenges in cryptography, reverse engineering, network analysis, web & mobile security, and forensic investigation.</p>
+                    <p class="meta"><strong data-i18n="label-location">Location:</strong> <a href="https://platform.cybersecuritychallenge.be/" target="_blank" rel="noopener noreferrer"><span data-i18n="innovation-hackathon-location">Online via the CTF platform of Cyber Security Challenge</span></a> &nbsp; <strong data-i18n="label-date">Date:</strong> <span data-i18n="innovation-hackathon-date">14/03/2025 10AM – 15/03/2025 6PM</span></p>
+                    <p class="meta"><strong data-i18n="innovation-hackathon-team-label">Team:</strong> <span data-i18n="innovation-hackathon-team">Backdoor Boys</span> &nbsp; <strong data-i18n="innovation-hackathon-placement-label">Placement:</strong> <span data-i18n="innovation-hackathon-placement">116/358</span></p>
                 </li>
             </ul>
         </div>
@@ -335,7 +336,7 @@ I have a strong interest in cloud management and Linux administration, and while
     </section>
     <section id="internationalization">
         <h2 data-i18n="section-internationalization-title">Internationalization</h2>
-        <p data-i18n="section-internationalization-desc">TBD</p>
+        <p data-i18n="section-internationalization-desc">TBA</p>
     </section>
     <section id="personalProject" class="content-section">
         <div class="section-inner">
