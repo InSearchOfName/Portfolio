@@ -279,7 +279,7 @@ const translations = {
         "innovation-hackathon-title": "Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)",
         "innovation-hackathon-desc": "Een securitycompetitie voor studenten in het hoger onderwijs met uitdagingen in cryptografie, reverse engineering, netwerkanalyse, web- en mobiele beveiliging en forensisch onderzoek.",
         "innovation-hackathon-location": "Online via het CTF-platform van Cyber Security Challenge",
-        "innovation-hackathon-date": "14/03/2025 10AM – 15/03/2025 6PM",
+        "innovation-hackathon-date": "14/03/2025 10:00 – 15/03/2025 18:00",
         "innovation-hackathon-team-label": "Team:",
         "innovation-hackathon-team": "Backdoor Boys",
         "innovation-hackathon-placement-label": "Plaatsing:",
