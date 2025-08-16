@@ -16,14 +16,14 @@ window.onload = () => {
         })
     }
 
-    // Animate cards in one by one from the bottom at medium speed
+    // Animate cards in one by one from the bottom a bit faster
     setTimeout(() => {
         const cards = document.querySelectorAll('.main-container');
         cards.forEach((card, i) => {
             setTimeout(() => {
                 card.style.opacity = "1";
                 card.style.transform = "translateY(0)";
-            }, i * 180 + 80); // medium speed
+            }, i * 90 + 40); // faster staggered entrance (was i * 180 + 80)
         });
-    }, 300);
+    }, 100); // start a little sooner (was 300)
 }
