@@ -47,8 +47,8 @@
         <!-- English and Dutch cards, now using data-i18n for all text -->
         <a href="#about" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-about-link">
             <div class="image-preview">
-                <img src="static/img/aboutMeThumb.jpg" alt="">
-                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                <img src="static/img/aboutMeThumb.jpg" alt="" loading="eager" decoding="sync" fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
                     <source src="static/videos/aboutMe.webm" type="video/webm">
                     <source src="static/videos/aboutMe.mp4" type="video/mp4">
                 </video>
@@ -62,8 +62,8 @@
         </a>
         <a href="#seminars" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-seminars-link">
             <div class="image-preview">
-                <img src="static/img/seminarsThumb.jpg" alt="">
-                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                <img src="static/img/seminarsThumb.jpg" alt="" loading="eager" decoding="sync" fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
                     <source src="static/videos/seminars.webm" type="video/webm">
                     <source src="static/videos/seminars.mp4" type="video/mp4">
                 </video>
@@ -76,8 +76,8 @@
         </a>
         <a href="#innovation" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-innovation-link">
             <div class="image-preview">
-                <img src="static/img/innovationthumb1.jpg" alt="">
-                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                <img src="static/img/innovationthumb1.jpg" alt="" loading="eager" decoding="sync" fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
                     <source src="static/videos/innovation.webm" type="video/webm">
                     <source src="static/videos/innovation.mp4" type="video/mp4">
                 </video>
@@ -90,8 +90,8 @@
         </a>
         <a href="#personalDevelopment" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-personalDevelopment-link">
             <div class="image-preview">
-                <img src="static/img/personaldevelopmentthumb.jpg" alt="">
-                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                <img src="static/img/personaldevelopmentthumb.jpg" alt="" loading="eager" decoding="sync" fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
                     <source src="static/videos/personalDevelopment.webm" type="video/webm">
                     <source src="static/videos/personalDevelopment.mp4" type="video/mp4">
                 </video>
@@ -104,8 +104,8 @@
         </a>
         <a href="#internationalization" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-internationalization-link">
             <div class="image-preview">
-                <img src="static/img/internationalthumb.jpg" alt="">
-                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                <img src="static/img/internationalthumb.jpg" alt="" loading="eager" decoding="sync" fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
                     <source src="static/videos/international.webm" type="video/webm">
                     <source src="static/videos/international.mp4" type="video/mp4">
                 </video>
@@ -118,8 +118,8 @@
         </a>
         <a href="#personalProject" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-personalProject-link">
             <div class="image-preview">
-                <img src="static/img/personalproject.jpg" alt="">
-                <video class="preview-video" loop muted playsinline aria-hidden="true">
+                <img src="static/img/personalproject.jpg" alt="" loading="eager" decoding="sync" fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
                     <source src="static/videos/personalProject.webm" type="video/webm">
                     <source src="static/videos/personalProject.mp4" type="video/mp4">
                 </video>
@@ -364,6 +364,8 @@
             </ul>
         </div>
     </section>
+
+    <!-- No inline loader script — resource loading is controlled via element attributes (thumbnails: eager/high, videos: preload/low, other images: lazy) -->
 
     <script src="static/scripts/video.js"></script>
     <script src="static/scripts/fadein.js"></script>
