@@ -1,6 +1,17 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
+body,html {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: 100vh;
+    background: #000;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
 .cards-row {
     display: flex;
     flex-direction: row;
@@ -10,24 +21,10 @@
     padding: 0;
     margin: 0;
     border: none;
-    /* Allow vertical scrolling */
     overflow-x: visible;
     overflow-y: visible;
-    /* Remove fixed height so page can scroll */
     height: auto;
     min-height: 0;
-    /* Add transition for flex-basis/width on all children for smooth reset */
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: auto;
-    min-height: 100vh;
-    background: #000;
-    overflow: auto;
-    /* Enable smooth scrolling for native anchor links */
-    scroll-behavior: smooth;
 }
 
 .main-container {
@@ -35,17 +32,15 @@ body, html {
     min-width: 0;
     height: 100dvh;
     min-height: 100vh;
-    /* Entrance state (fade/slide handled by JS if present) */
     opacity: 0;
     transform: translateY(100vh);
-    /* Consolidated transition declarations to avoid duplication */
-    transition: opacity 0.6s cubic-bezier(.4,1,.6,1),
-                transform 0.6s cubic-bezier(.4,1,.6,1),
-                flex-basis 0.6s cubic-bezier(.4,1,.6,1),
-                width 0.6s cubic-bezier(.4,1,.6,1),
-                filter 0.2s,
-                box-shadow 0.25s linear;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: opacity 0.6s cubic-bezier(.4, 1, .6, 1),
+        transform 0.6s cubic-bezier(.4, 1, .6, 1),
+        flex-basis 0.6s cubic-bezier(.4, 1, .6, 1),
+        width 0.6s cubic-bezier(.4, 1, .6, 1),
+        filter 0.2s,
+        box-shadow 0.25s linear;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     position: relative;
     transform-origin: left bottom;
@@ -55,13 +50,10 @@ body, html {
     z-index: 1;
 }
 
-/* Removed unused ::before towel-reveal and keyframes — kept markup simpler */
-
 .cards-row:hover .main-container {
     flex-basis: 10%;
     width: 10%;
-    transition: flex-basis 0.6s cubic-bezier(.4,1,.6,1), width 0.6s cubic-bezier(.4,1,.6,1), filter 0.2s, box-shadow 0.25s linear;
-    /* Darken other cards when hovering any card in the row */
+    transition: flex-basis 0.6s cubic-bezier(.4, 1, .6, 1), width 0.6s cubic-bezier(.4, 1, .6, 1), filter 0.2s, box-shadow 0.25s linear;
     filter: brightness(0.65);
 }
 
@@ -70,28 +62,26 @@ body, html {
     flex-basis: 40%;
     width: 40%;
     z-index: 20;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
     filter: brightness(1);
 }
 
 .cards-row .main-container {
-    /* Ensure transition always applies for smooth reset */
     transition:
-        opacity 0.7s cubic-bezier(.4,1,.6,1),
-        transform 0.7s cubic-bezier(.4,1,.6,1),
-        flex-basis 0.6s cubic-bezier(.4,1,.6,1),
-        width 0.6s cubic-bezier(.4,1,.6,1),
+        opacity 0.7s cubic-bezier(.4, 1, .6, 1),
+        transform 0.7s cubic-bezier(.4, 1, .6, 1),
+        flex-basis 0.6s cubic-bezier(.4, 1, .6, 1),
+        width 0.6s cubic-bezier(.4, 1, .6, 1),
         filter 0.2s,
         box-shadow 0.25s linear !important;
 }
 
 .cards-row:not(:hover) .main-container {
-    /* When mouse leaves .cards-row, animate back with a slower transition */
     transition:
-        flex-basis 1s cubic-bezier(.4,1,.6,1),
-        width 1s cubic-bezier(.4,1,.6,1),
+        flex-basis 1s cubic-bezier(.4, 1, .6, 1),
+        width 1s cubic-bezier(.4, 1, .6, 1),
         filter 0.2s,
-        box-shadow 0.4s cubic-bezier(.4,1,.6,1);
+        box-shadow 0.4s cubic-bezier(.4, 1, .6, 1);
 }
 
 .hover-container {
@@ -105,36 +95,7 @@ body, html {
 .hover-container:hover {
     transform: none;
     z-index: 20;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-}
-
-/* Remove margin adjustments for hover-container since flex handles sizing now */
-.cards-row .main-container:first-child.hover-container:hover {
-    margin-left: 0;
-}
-.cards-row .main-container:last-child.hover-container:hover {
-    margin-right: 0;
-}
-
-.preview-description,
-.preview-video {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-}
-
-.hover-container:hover .preview-description,
-.hover-container:hover .preview-video {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.preview-video {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    z-index: 1;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
 }
 
 .image-preview {
@@ -154,13 +115,13 @@ body, html {
 
 .preview-description {
     position: absolute;
-    bottom: 0; left: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     color: #fff;
     z-index: 2;
     padding: 1em;
-    /* Avoid aggressive breaking that causes inconsistent spacing */
     word-break: normal;
     overflow-wrap: break-word;
     hyphens: auto;
@@ -168,7 +129,29 @@ body, html {
     line-height: 1.45;
 }
 
-/* Make paragraph widths flexible and default to left alignment to avoid huge gaps from justification */
+.preview-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.preview-description,
+.preview-video {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.hover-container:hover .preview-description,
+.hover-container:hover .preview-video {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 p {
     width: auto;
     max-width: 95%;
@@ -177,13 +160,11 @@ p {
     line-height: 1.5;
 }
 
-/* Ensure description paragraphs are left-aligned even if inline styles exist */
 .description p {
     text-align: left !important;
 }
 
 section {
-    /* let sections size to their content instead of forcing full viewport height */
     min-height: auto;
     width: 100%;
     display: block;
@@ -196,8 +177,8 @@ section {
     border-bottom: 1px solid #eee;
 }
 
-/* Sleek language switcher buttons */
-#lang-en, #lang-nl {
+#lang-en,
+#lang-nl {
     background: #222;
     color: #fff;
     border: none;
@@ -209,23 +190,26 @@ section {
     letter-spacing: 0.03em;
     margin: 0 0.2em;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
 }
 
-#lang-en:hover, #lang-nl:hover, #lang-en.active, #lang-nl.active {
+#lang-en:hover,
+#lang-nl:hover,
+#lang-en.active,
+#lang-nl.active {
     background: #fff;
     color: #222;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
     transform: translateY(-2px) scale(1.04);
 }
 
-#lang-en:focus, #lang-nl:focus {
+#lang-en:focus,
+#lang-nl:focus {
     outline: 2px solid #0078d4;
     outline-offset: 2px;
 }
 
-/* Language switcher dropdown styles */
 .lang-switcher {
     position: fixed;
     top: 10px;
@@ -245,7 +229,7 @@ section {
     font-weight: 600;
     letter-spacing: 0.03em;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
     gap: 0.6em;
@@ -253,10 +237,11 @@ section {
     position: relative;
 }
 
-#lang-dropdown-btn:hover, #lang-dropdown-btn:focus {
+#lang-dropdown-btn:hover,
+#lang-dropdown-btn:focus {
     background: #fff;
     color: #222;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
     transform: translateY(-2px) scale(1.04);
 }
 
@@ -277,7 +262,7 @@ section {
     top: 110%;
     background: #fff;
     border-radius: 1em;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
     min-width: 160px;
     padding: 0.5em 0;
     flex-direction: column;
@@ -292,7 +277,7 @@ section {
     top: 110%;
     background: #fff;
     border-radius: 1em;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
     min-width: 160px;
     padding: 0.5em 0;
     flex-direction: column;
@@ -324,14 +309,12 @@ section {
     color: #fff;
 }
 
-/* Remove margin from h2 in sections */
 section h2 {
     margin: 0;
 }
 
-/* Section styling to fit the portfolio aesthetic */
 .content-section {
-    padding: 4rem 1.5rem;
+    padding: 0.5rem 0.5rem;
     background: #fff;
     color: #111;
     border-bottom: 1px solid #eee;
@@ -340,7 +323,7 @@ section h2 {
 .content-section .section-inner {
     max-width: 900px;
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .content-section h2 {
@@ -366,20 +349,19 @@ section h2 {
     display: inline-block;
 }
 
-/* Seminar list styles */
 .seminar-list {
     list-style: none;
     padding: 0;
     margin: 1rem 0 0 0;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(2, 1fr); /* two columns for seminars */
+    grid-template-columns: repeat(2, 1fr);
 }
 
 @media (max-width: 700px) {
-  .seminar-list {
-    grid-template-columns: 1fr; /* stack on small screens */
-  }
+    .seminar-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 .seminar-item {
@@ -387,7 +369,6 @@ section h2 {
     border: 1px solid #eee;
     padding: 1rem;
     border-radius: 10px;
-    /* Ensure full width in grid cell */
     width: 100%;
     box-sizing: border-box;
 }
@@ -397,14 +378,19 @@ section h2 {
     font-size: 1.05rem;
 }
 
-.seminar-item p { margin: 0.25rem 0; color: #444; }
+.seminar-item p {
+    margin: 0.25rem 0;
+    color: #444;
+}
 
-.seminar-item .meta { color: #666; font-size: 0.95rem; }
+.seminar-item .meta {
+    color: #666;
+    font-size: 0.95rem;
+}
 
-/* About two-column layout: left = about text, right = skills panel */
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 320px; /* main content + side panel */
+    grid-template-columns: 1fr 320px;
     gap: 2rem;
     align-items: start;
 }
@@ -420,9 +406,8 @@ section h2 {
     padding: 1rem;
     border-radius: 10px;
     color: #222;
-    /* Keep the skills panel visible while scrolling on larger screens */
     position: sticky;
-    top: 84px; /* leave room for the language switcher */
+    top: 84px;
 }
 
 .about-right h3 {
@@ -459,439 +444,137 @@ section h2 {
     object-fit: contain;
 }
 
-.skill-icon svg { width: 100%; height: 100%; display: block; }
+.skill-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 
 .skill-icon:focus-visible,
 .skill-icon:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     outline: none;
 }
 
-/* Social links styling (icons smaller than skill icons) */
 .social-links {
-  display: flex;
-  flex-direction: row; /* order icons left to right */
-  gap: 0.3rem;
-  align-items: center;
-  margin-top: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    align-items: center;
+    margin-top: 0.3rem;
 }
 
 .social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  margin-bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-bottom: 0;
 }
 
 .social-icon {
-  width: 56px;
-  height: 56px;
-  display: block;
-  object-fit: contain;
-  transition: width 0.15s, height 0.15s;
+    width: 56px;
+    height: 56px;
+    display: block;
+    object-fit: contain;
+    transition: width 0.15s, height 0.15s;
 }
 
-/* Mobile / small-screen layout improvements */
 @media (max-width: 900px) {
-    /* Stack cards vertically for natural scrolling on mobile */
     .cards-row {
-        flex-direction: column;
+        display: none !important;
     }
 
-    .cards-row .main-container {
-        width: 100% !important;
-        flex-basis: auto !important;
-        height: auto;
-        min-height: 220px; /* compact but visible */
-        margin: 0 !important; /* ensure no top margin on anchor cards */
-        opacity: 1;
-        transform: none;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        border-radius: 0; /* remove rounding on mobile cards */
-        overflow: hidden;
-    }
-
-    /* No visual gap between stacked cards; keep any separation internal to the card */
-    .cards-row .main-container + .main-container {
-        margin-top: 0 !important;
-    }
-
-    /* Make image previews a fixed height so the layout is consistent */
-    .image-preview {
-        height: 220px;
-        display: block;
-    }
-
-    /* Ensure images are not rounded */
-    .image-preview img {
-        border-radius: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* Ensure the description is visible and readable inline */
-    .preview-description {
-        position: relative;
-        background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 60%);
-        padding: 0.8rem 1rem;
-        color: #fff;
-        line-height: 1.4;
-    }
-
-    /* Remove heavy hover interactions on touch devices */
-    .cards-row:hover .main-container,
-    .cards-row .main-container:hover,
-    .cards-row .main-container:focus-within {
-        flex-basis: auto;
-        width: 100%;
-        filter: none;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    }
-
-    /* Disable preview-video layering on mobile (videos still in markup but hidden) */
-    .preview-video { display: none; }
-
-    /* Seminar list: single column for readability on narrow screens */
-    .seminar-list {
-        grid-template-columns: 1fr;
-    }
-
-    .content-section {
-        padding: 2rem 1rem;
-    }
-
-    /* About grid: stack columns and make skill panel flow naturally */
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    .about-right {
-        position: relative;
-        top: auto;
-        padding: 0.8rem;
-    }
-
-    /* Slightly smaller skill icons for mobile */
-    .skill-icon {
-        width: 56px;
-        height: 56px;
-    }
-
-    /* Make the menu button visually distinct and touch-friendly */
-    .mobile-nav { position: sticky; top: 0; }
-    .mobile-dropdown-btn {
-        -webkit-appearance: none;
-        appearance: none;
-        background: #111;
-        color: #fff;
-        border: none;
-        padding: 0.6rem 0.9rem;
-        border-radius: 0.6rem;
-        font-weight: 700;
-        font-size: 1rem;
-        margin: 0.6rem 0.8rem;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        box-shadow: 0 6px 18px rgba(15,15,15,0.18);
-        cursor: pointer;
-        transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s;
-    }
-    .mobile-dropdown-btn:active { transform: translateY(1px) scale(0.998); }
-    .mobile-dropdown-btn[aria-expanded="true"] {
-        background: #fff;
-        color: #111;
-        box-shadow: 0 8px 28px rgba(15,15,15,0.08);
-        border: 1px solid #eee;
-    }
-
-    /* Dropdown panel styling */
-    .mobile-dropdown {
-        position: absolute;
-        left: 8px;
-        right: 8px;
-        top: calc(100% + 8px);
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 12px 30px rgba(2,6,23,0.14);
-        z-index: 1200;
-        padding: 0.5rem;
-        max-height: 60vh;
-        overflow: auto;
-        box-sizing: border-box;
-        transition: opacity 0.14s ease, transform 0.14s ease;
-    }
-    .mobile-dropdown.open { opacity: 1; transform: translateY(0); }
-
-    .mobile-dropdown ul { list-style: none; margin: 0; padding: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem; }
-    .mobile-dropdown ul li a {
-        display: block;
-        padding: 0.9rem 1rem;
-        border-radius: 8px;
-        text-decoration: none;
-        color: #111;
-        background: linear-gradient(180deg, #ffffff 0%, #fbfbfc 100%);
-        border: 1px solid rgba(0,0,0,0.05);
-        transition: background 0.12s ease, transform 0.08s ease, box-shadow 0.12s ease;
-    }
-    .mobile-dropdown ul li a:hover,
-    .mobile-dropdown ul li a:focus {
-        background: #f3f4f6;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 18px rgba(15,15,15,0.06);
-        outline: none;
-    }
-
-    /* Language controls inside dropdown */
-    .mobile-dropdown-lang {
-        display: flex;
-        gap: 0.5rem;
-        margin: 0.6rem 0 0.2rem 0;
-        justify-content: flex-end;
-        padding: 0 0.4rem;
-    }
-    .mobile-dropdown-lang .mobile-lang-option {
-        background: #111;
-        color: #fff;
-        border: none;
-        padding: 0.45rem 0.7rem;
-        border-radius: 8px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: background 0.12s ease, transform 0.08s ease;
-    }
-    .mobile-dropdown-lang .mobile-lang-option.active {
-        background: #fff;
-        color: #111;
-        border: 1px solid #e6e6e6;
-    }
-
-    /* Ensure the dropdown doesn't create horizontal scroll */
-    .mobile-dropdown, .mobile-nav-list { max-width: calc(100vw - 16px); }
-
-    /* Ensure mobile nav is sticky and full-width */
     .mobile-nav {
-        position: sticky !important;
+        display: flex !important;
+        position: fixed !important;
         top: 0;
         left: 0;
         right: 0;
-        z-index: 1300;
+        width: 100vw;
+        z-index: 1200;
         background: #fff;
-        box-shadow: 0 2px 10px rgba(2,6,23,0.06);
-        padding: 0.4rem 0; /* vertical spacing so button has room */
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 0.5rem;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    body {
+        padding-top: 56px !important;
         box-sizing: border-box;
     }
 
-    /* Make sure dropdown positions relative to the nav and does not push content */
-    .mobile-nav .mobile-dropdown { position: absolute; top: calc(100% + 8px); left: 8px; right: 8px; }
-
-    /* Slight content offset so the sticky nav does not cover the top of sections when jumping */
-    :root { --mobile-nav-height: 56px; }
-    @supports (position: sticky) {
-        .content-section { scroll-margin-top: calc(var(--mobile-nav-height) + 8px); }
-        section[id] { scroll-margin-top: calc(var(--mobile-nav-height) + 8px); }
+    .lang-switcher {
+        display: none;
     }
 }
 
-/* Tweak for very small devices */
 @media (max-width: 420px) {
     .image-preview {
         height: 180px;
     }
-    .preview-description { padding: 0.6rem 0.8rem; font-size: 0.95rem; }
-    .skill-icon { width: 48px; height: 48px; }
-}
 
-/* Mobile nav: hidden by default, visible on small screens */
-.mobile-nav { display: none; }
-
-@media (max-width: 900px) {
-    .mobile-nav {
-        display: block;
-        position: sticky;
-        top: 0;
-        z-index: 1100;
-        background: #fff;
-        border-bottom: 1px solid #eee;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    .preview-description {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.95rem;
     }
-    .mobile-nav-list {
+
+    .skill-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .about-grid {
         display: flex;
-        gap: 0.4rem;
-        padding: 0.3rem 0.8rem; /* reduce padding to avoid overflow */
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .about-left,
+    .about-right {
+        width: 100%;
+        float: none;
         margin: 0;
-        list-style: none;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        max-width: 100vw; /* avoid exceeding viewport width */
         box-sizing: border-box;
-    }
-    .mobile-nav-list li { scroll-snap-align: start; }
-    .mobile-nav-list a {
-        display: inline-block;
-        padding: 0.45rem 0.7rem;
-        border-radius: 0.6rem;
-        text-decoration: none;
-        color: #111;
-        background: #f7f7f7;
-        font-weight: 600;
-        white-space: nowrap;
+        position: static;
     }
 
-    /* Mobile language buttons styling */
-    .mobile-lang {
-        display: flex;
-        gap: 0.4rem;
-        align-items: center;
+    .about-grid::after {
+        display: none;
     }
-    .mobile-lang-option {
-        background: #222;
-        color: #fff;
-        border: none;
-        padding: 0.35rem 0.6rem;
-        font-weight: 700;
-        border-radius: 0.5rem;
-        cursor: pointer;
-    }
-    .mobile-lang-option.active { background: #fff; color: #222; }
-
-    /* Ensure the lang-switcher on desktop remains visible but hidden on mobile to avoid duplicate controls */
-    .lang-switcher { display: none; }
 }
 
-/* Ensure cards are completely hidden on mobile; mobile nav will be used instead */
-@media (max-width: 900px) {
-    .cards-row { display: none !important; }
-}
-
-/* Mobile-only sticky navbar and anchor offset */
-@media (max-width: 900px) {
-  .mobile-nav {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    width: 100%;
-    background: var(--nav-bg, rgba(255,255,255,0.96));
-    backdrop-filter: saturate(120%) blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-    left: 0;
-    right: 0;
-  }
-
-  /* CSS variable for mobile header height; tweak if needed */
-  :root {
-    --header-height: 64px;
-  }
-
-  /* Ensure anchor targets aren't hidden by the sticky mobile nav */
-  .content-section,
-  section {
-    scroll-margin-top: var(--header-height);
-  }
-}
-
-/* Fallback: use fixed positioning on mobile if sticky behaves unexpectedly */
-@media (max-width: 900px) {
-  :root { --mobile-header-height: 64px; }
-
-  .mobile-nav {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    z-index: 99999 !important;
-  }
-
-  /* Prevent the fixed header from covering content */
-  body {
-    padding-top: var(--mobile-header-height) !important;
-    box-sizing: border-box;
-  }
-}
-
-/* About two-column layout: left = about text, right = skills panel */
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 320px; /* main content + side panel */
-    gap: 2rem;
-    align-items: start;
-}
-
-.about-left {
-    grid-column: 1 / 2;
-}
-
-.about-right {
-    grid-column: 2 / 3;
-    background: #f9f9fb;
-    border: 1px solid #eee;
-    padding: 1rem;
-    border-radius: 10px;
-    color: #222;
-    /* Keep the skills panel visible while scrolling on larger screens */
-    position: sticky;
-    top: 84px; /* leave room for the language switcher */
-}
-
-.about-right h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.1rem;
-}
-
-.skill-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.6rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Desktop: float skills panel so About text wraps and keep stacked layout on mobile */
 @media (min-width: 900px) {
     .about-grid {
-        display: block; /* use block so float works and text wraps */
+        display: block;
         position: relative;
     }
 
     .about-right {
         float: right;
-        width: 320px; /* increased to fit three icon columns */
+        width: 320px;
         margin-left: 1rem;
         background: #f9f9fb;
         border-radius: 10px;
         padding: 1rem;
         box-sizing: border-box;
-        /* keep sticky behaviour */
         position: sticky;
         top: 84px;
     }
 
     .about-left {
-        margin-right: 340px; /* leave room for the floated skills panel (width + spacing) */
+        margin-right: 340px;
     }
 
-    /* clearfix for the parent */
     .about-grid::after {
         content: "";
         display: block;
         clear: both;
     }
 
-    /* Make the skills icons evenly spaced inside the narrower skills panel */
     .skill-list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* restored to 3 columns on desktop */
+        grid-template-columns: repeat(3, 1fr);
         gap: 0.6rem;
         list-style: none;
         padding: 0;
@@ -900,38 +583,34 @@ section h2 {
     }
 }
 
-/* Mobile: float skills panel to the right so About text wraps around it on phones */
 @media (max-width: 600px) {
     .about-grid {
-        display: block; /* allow floats to work */
+        display: block;
         position: relative;
     }
 
     .about-right {
         float: right;
-        width: 140px; /* narrow skills column on phones */
-        margin: 0 0 1rem 1rem; /* space between text and skills */
+        width: 140px;
+        margin: 0 0 1rem 1rem;
         background: #f9f9fb;
         border-radius: 10px;
         padding: 0.6rem;
         box-sizing: border-box;
-        position: relative; /* disable sticky on phones */
+        position: relative;
         top: auto;
     }
 
-    /* Remove fixed margin on the content so paragraphs can flow under the float */
     .about-left {
         margin-right: 0;
     }
 
-    /* Clearfix so the parent grows to contain floated content */
     .about-grid::after {
         content: "";
         display: block;
         clear: both;
     }
 
-    /* Make skill icons fit evenly inside the narrower panel */
     .skill-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -939,5 +618,109 @@ section h2 {
         padding: 0;
         margin: 0;
         justify-items: center;
+    }
+}
+
+.mobile-nav {
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    padding: 0.4rem 0;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    box-sizing: border-box;
+}
+
+.mobile-nav-list {
+    display: flex;
+    gap: 0.4rem;
+    padding: 0.3rem 0.8rem;
+    margin: 0;
+    list-style: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+.mobile-nav-list li {
+    scroll-snap-align: start;
+}
+
+.mobile-nav-list a {
+    display: inline-block;
+    padding: 0.45rem 0.7rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    color: #111;
+    background: #f7f7f7;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.mobile-lang {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.mobile-lang-option {
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 0.35rem 0.6rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.mobile-lang-option.active {
+    background: #fff;
+    color: #222;
+}
+
+.mobile-dropdown-btn {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.6rem;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0.6rem 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 6px 18px rgba(15, 15, 15, 0.18);
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s;
+}
+
+.mobile-dropdown-btn:active {
+    transform: translateY(1px) scale(0.998);
+}
+
+.mobile-dropdown-btn[aria-expanded="true"] {
+    background: #fff;
+    color: #111;
+    box-shadow: 0 8px 28px rgba(15, 15, 15, 0.08);
+    border: 1px solid #eee;
+}
+
+@media (max-width: 900px) {
+    .mobile-nav {
+        display: flex !important;
+    }
+
+    .lang-switcher {
+        display: none;
     }
 }
