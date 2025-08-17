@@ -458,71 +458,29 @@ section h2 {
     outline: none;
 }
 
-/* Social links styling (icons sized similar to skill icons) */
-.socials .social-links {
+/* Social links styling (icons smaller than skill icons) */
+.social-links {
   display: flex;
-  gap: 0.6rem;
+  flex-direction: row; /* order icons left to right */
+  gap: 0.3rem;
   align-items: center;
-  margin-top: 0.6rem;
+  margin-top: 0.3rem;
 }
 
-.socials .social-link {
+.social-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  margin-bottom: 0;
 }
 
-.socials .social-icon {
+.social-icon {
   width: 56px;
   height: 56px;
   display: block;
   object-fit: contain;
-}
-
-@media (max-width: 420px) {
-  .socials .social-icon {
-    width: 48px;
-    height: 48px;
-  }
-}
-
-/* small screens: 5 icons in a row becomes 3 then 2 */
-@media (max-width: 600px) {
-    .skill-list { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
-    .skill-icon { width: 64px; height: 64px; }
-}
-
-/* Responsive: stack columns on smaller screens */
-@media (max-width: 900px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-    .about-right {
-        position: relative;
-        top: auto;
-        margin-top: 1rem;
-    }
-}
-
-/* Keep sections responsive on small screens */
-@media (max-width: 600px) {
-    .content-section {
-        padding: 2rem 1rem;
-    }
-    .content-section h2 { font-size: 1.6rem; }
-    .content-section p { font-size: 1rem; }
-}
-
-/* Force seminar list into two columns on wider screens for a 2x4 layout */
-@media (min-width: 900px) {
-    .seminar-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .seminar-item {
-        /* ensure items align consistently in the grid */
-        align-self: start;
-    }
+  transition: width 0.15s, height 0.15s;
 }
 
 /* Mobile / small-screen layout improvements */
@@ -849,4 +807,127 @@ section h2 {
     padding-top: var(--mobile-header-height) !important;
     box-sizing: border-box;
   }
+}
+
+/* About two-column layout: left = about text, right = skills panel */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px; /* main content + side panel */
+    gap: 2rem;
+    align-items: start;
+}
+
+.about-left {
+    grid-column: 1 / 2;
+}
+
+.about-right {
+    grid-column: 2 / 3;
+    background: #f9f9fb;
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 10px;
+    color: #222;
+    /* Keep the skills panel visible while scrolling on larger screens */
+    position: sticky;
+    top: 84px; /* leave room for the language switcher */
+}
+
+.about-right h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Desktop: float skills panel so About text wraps and keep stacked layout on mobile */
+@media (min-width: 900px) {
+    .about-grid {
+        display: block; /* use block so float works and text wraps */
+        position: relative;
+    }
+
+    .about-right {
+        float: right;
+        width: 320px; /* increased to fit three icon columns */
+        margin-left: 1rem;
+        background: #f9f9fb;
+        border-radius: 10px;
+        padding: 1rem;
+        box-sizing: border-box;
+        /* keep sticky behaviour */
+        position: sticky;
+        top: 84px;
+    }
+
+    .about-left {
+        margin-right: 340px; /* leave room for the floated skills panel (width + spacing) */
+    }
+
+    /* clearfix for the parent */
+    .about-grid::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    /* Make the skills icons evenly spaced inside the narrower skills panel */
+    .skill-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* restored to 3 columns on desktop */
+        gap: 0.6rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        justify-items: center;
+    }
+}
+
+/* Mobile: float skills panel to the right so About text wraps around it on phones */
+@media (max-width: 600px) {
+    .about-grid {
+        display: block; /* allow floats to work */
+        position: relative;
+    }
+
+    .about-right {
+        float: right;
+        width: 140px; /* narrow skills column on phones */
+        margin: 0 0 1rem 1rem; /* space between text and skills */
+        background: #f9f9fb;
+        border-radius: 10px;
+        padding: 0.6rem;
+        box-sizing: border-box;
+        position: relative; /* disable sticky on phones */
+        top: auto;
+    }
+
+    /* Remove fixed margin on the content so paragraphs can flow under the float */
+    .about-left {
+        margin-right: 0;
+    }
+
+    /* Clearfix so the parent grows to contain floated content */
+    .about-grid::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    /* Make skill icons fit evenly inside the narrower panel */
+    .skill-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 0;
+        margin: 0;
+        justify-items: center;
+    }
 }
