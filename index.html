@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="static/css/styles.css">
     <title data-i18n="page-title">Tommy Quatretemps - InSearchOfName</title>
 </head>
+
 <body>
     <div class="lang-switcher">
         <button id="lang-dropdown-btn" class="lang-label" type="button" aria-haspopup="true" aria-expanded="false">
@@ -15,39 +17,48 @@
             <span class="dropdown-arrow">▾</span>
         </button>
         <div id="lang-dropdown" class="lang-dropdown-menu" aria-hidden="true">
-            <button id="lang-en" class="lang-option" type="button" tabindex="0" data-i18n="lang-en-label">English</button>
-            <button id="lang-nl" class="lang-option" type="button" tabindex="0" data-i18n="lang-nl-label">Nederlands</button>
+            <button id="lang-en" class="lang-option" type="button" tabindex="0"
+                data-i18n="lang-en-label">English</button>
+            <button id="lang-nl" class="lang-option" type="button" tabindex="0"
+                data-i18n="lang-nl-label">Nederlands</button>
         </div>
     </div>
 
     <!-- Mobile-only traditional navbar (hidden on desktop via CSS) -->
     <nav class="mobile-nav" aria-label="Mobile navigation">
         <!-- Mobile menu button that toggles the full dropdown list -->
-        <button class="mobile-dropdown-btn" aria-expanded="false" aria-controls="mobile-dropdown-list" data-i18n="mobile-menu-btn">☰ Menu</button>
+        <button class="mobile-dropdown-btn" aria-expanded="false" aria-controls="mobile-dropdown-list"
+            data-i18n="mobile-menu-btn">☰ Menu</button>
 
         <!-- The dropdown contains all hrefs in a vertical list (hidden by default) -->
-         <div id="mobile-dropdown-list" class="mobile-dropdown" hidden>
-             <ul>
+        <div id="mobile-dropdown-list" class="mobile-dropdown" hidden>
+            <ul>
                 <li><a href="#about"><span data-i18n="card-about-link">About</span></a></li>
                 <li><a href="#seminars"><span data-i18n="card-seminars-link">Seminars</span></a></li>
                 <li><a href="#innovation"><span data-i18n="card-innovation-link">Innovation</span></a></li>
-                <li><a href="#personalDevelopment"><span data-i18n="card-personalDevelopment-link">Personal Development</span></a></li>
-                <li><a href="#internationalization"><span data-i18n="card-internationalization-link">Internationalization</span></a></li>
-                <li><a href="#personalProject"><span data-i18n="card-personalProject-link">Personal Projects</span></a></li>
-             </ul>
-             <!-- Mobile language controls moved into the dropdown to avoid duplicates -->
-             <div class="mobile-dropdown-lang">
-                 <button type="button" class="mobile-lang-option" data-lang="en">EN</button>
-                 <button type="button" class="mobile-lang-option" data-lang="nl">NL</button>
-             </div>
-         </div>
-     </nav>
+                <li><a href="#personalDevelopment"><span data-i18n="card-personalDevelopment-link">Personal
+                            Development</span></a></li>
+                <li><a href="#internationalization"><span
+                            data-i18n="card-internationalization-link">Internationalization</span></a></li>
+                <li><a href="#personalProject"><span data-i18n="card-personalProject-link">Personal Projects</span></a>
+                </li>
+            </ul>
+            <!-- Mobile language controls moved into the dropdown to avoid duplicates -->
+            <div class="mobile-dropdown-lang">
+                <button type="button" class="mobile-lang-option" data-lang="en">EN</button>
+                <button type="button" class="mobile-lang-option" data-lang="nl">NL</button>
+            </div>
+        </div>
+    </nav>
 
     <div class="cards-row" id="cards-row">
-        <a href="#about" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-about-link">
+        <a href="#about" class="main-container hover-container" style="text-decoration:none; color:inherit;"
+            data-i18n="card-about-link">
             <div class="image-preview">
-                <img src="static/img/aboutMeThumb.jpg" alt="Internals of a computer" loading="eager" decoding="sync" fetchpriority="high">
-                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
+                <img src="static/img/aboutMeThumb.jpg" alt="Internals of a computer" loading="eager" decoding="sync"
+                    fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline
+                    aria-hidden="true">
                     <source src="static/videos/aboutMe.webm" type="video/webm">
                     <source src="static/videos/aboutMe.mp4" type="video/mp4">
                 </video>
@@ -58,10 +69,13 @@
                 </span>
             </div>
         </a>
-        <a href="#seminars" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-seminars-link">
+        <a href="#seminars" class="main-container hover-container" style="text-decoration:none; color:inherit;"
+            data-i18n="card-seminars-link">
             <div class="image-preview">
-                <img src="static/img/seminarsThumb.jpg" alt="Whiteboard with a drawing" loading="eager" decoding="sync" fetchpriority="high">
-                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
+                <img src="static/img/seminarsThumb.jpg" alt="Whiteboard with a drawing" loading="eager" decoding="sync"
+                    fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline
+                    aria-hidden="true">
                     <source src="static/videos/seminars.webm" type="video/webm">
                     <source src="static/videos/seminars.mp4" type="video/mp4">
                 </video>
@@ -72,10 +86,13 @@
                 </span>
             </div>
         </a>
-        <a href="#innovation" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-innovation-link">
+        <a href="#innovation" class="main-container hover-container" style="text-decoration:none; color:inherit;"
+            data-i18n="card-innovation-link">
             <div class="image-preview">
-                <img src="static/img/innovationthumb1.jpg" alt="Network with connections" loading="eager" decoding="sync" fetchpriority="high">
-                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
+                <img src="static/img/innovationthumb1.jpg" alt="Network with connections" loading="eager"
+                    decoding="sync" fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline
+                    aria-hidden="true">
                     <source src="static/videos/innovation.webm" type="video/webm">
                     <source src="static/videos/innovation.mp4" type="video/mp4">
                 </video>
@@ -86,10 +103,13 @@
                 </span>
             </div>
         </a>
-        <a href="#personalDevelopment" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-personalDevelopment-link">
+        <a href="#personalDevelopment" class="main-container hover-container"
+            style="text-decoration:none; color:inherit;" data-i18n="card-personalDevelopment-link">
             <div class="image-preview">
-                <img src="static/img/personaldevelopmentthumb.jpg" alt="Book with glasses on" loading="eager" decoding="sync" fetchpriority="high">
-                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
+                <img src="static/img/personaldevelopmentthumb.jpg" alt="Book with glasses on" loading="eager"
+                    decoding="sync" fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline
+                    aria-hidden="true">
                     <source src="static/videos/personalDevelopment.webm" type="video/webm">
                     <source src="static/videos/personalDevelopment.mp4" type="video/mp4">
                 </video>
@@ -100,10 +120,13 @@
                 </span>
             </div>
         </a>
-        <a href="#internationalization" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-internationalization-link">
+        <a href="#internationalization" class="main-container hover-container"
+            style="text-decoration:none; color:inherit;" data-i18n="card-internationalization-link">
             <div class="image-preview">
-                <img src="static/img/internationalthumb.jpg" alt="Globe focused on the USA" loading="eager" decoding="sync" fetchpriority="high">
-                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
+                <img src="static/img/internationalthumb.jpg" alt="Globe focused on the USA" loading="eager"
+                    decoding="sync" fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline
+                    aria-hidden="true">
                     <source src="static/videos/international.webm" type="video/webm">
                     <source src="static/videos/international.mp4" type="video/mp4">
                 </video>
@@ -114,10 +137,13 @@
                 </span>
             </div>
         </a>
-        <a href="#personalProject" class="main-container hover-container" style="text-decoration:none; color:inherit;" data-i18n="card-personalProject-link">
+        <a href="#personalProject" class="main-container hover-container" style="text-decoration:none; color:inherit;"
+            data-i18n="card-personalProject-link">
             <div class="image-preview">
-                <img src="static/img/personalproject.jpg" alt="Minecraft with flying sheep exploding" loading="eager" decoding="sync" fetchpriority="high">
-                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline aria-hidden="true">
+                <img src="static/img/personalproject.jpg" alt="Minecraft with flying sheep exploding" loading="eager"
+                    decoding="sync" fetchpriority="high">
+                <video class="preview-video" preload="none" fetchpriority="low" loop muted playsinline
+                    aria-hidden="true">
                     <source src="static/videos/personalProject.webm" type="video/webm">
                     <source src="static/videos/personalProject.mp4" type="video/mp4">
                 </video>
@@ -134,167 +160,216 @@
         <div class="section-inner about-grid">
             <div class="about-left">
                 <h2 data-i18n="section-about-title">About Me</h2>
-                <p data-i18n="section-about-intro">Hi, I’m Tommy Quatretemps (AKA InSearchOfName). I’m currently pursuing a Bachelor’s degree in Applied Computer Science at PXL University of Applied Sciences and Arts, specializing in Systems and Network Engineering.</p>
-                <p data-i18n="section-about-whatido">I focus on cloud management and Linux administration. Previously I managed my own Linux server, and now I work more with cloud environments and infrastructure automation.</p>
-                <p data-i18n="section-about-enjoy">I enjoy learning new technologies and tackling creative challenges. My interest in cloud started when I set up my first Minecraft server I love exploring server management, networking, and cloud infrastructure.</p>
-                <p class="section-note" data-i18n="section-about-note">I also continue to develop small projects, such as Minecraft plugins, to keep exploring and practicing my technical skills.</p>
+                <p data-i18n="section-about-intro">Hi, I’m Tommy Quatretemps (AKA InSearchOfName). I’m currently
+                    pursuing a Bachelor’s degree in Applied Computer Science at PXL University of Applied Sciences and
+                    Arts, specializing in Systems and Network Engineering.</p>
+                <p data-i18n="section-about-whatido">I focus on cloud management and Linux administration. Previously I
+                    managed my own Linux server, and now I work more with cloud environments and infrastructure
+                    automation.</p>
+                <p data-i18n="section-about-enjoy">I enjoy learning new technologies and tackling creative challenges.
+                    My interest in cloud started when I set up my first Minecraft server I love exploring server
+                    management, networking, and cloud infrastructure.</p>
+                <p class="section-note" data-i18n="section-about-note">I also continue to develop small projects, such
+                    as Minecraft plugins, to keep exploring and practicing my technical skills.</p>
+            </div>
 
-                <div class="socials" aria-labelledby="socials-heading">
-                    <h4 id="socials-heading" data-i18n="section-socials-title">Connect with me</h4>
-                    <div class="social-links">
-                        <a class="social-link" href="https://github.com/InSearchOfName" target="_blank" rel="noopener noreferrer" data-i18n="social-github-label">
-                            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" data-i18n="social-github-label" loading="lazy" decoding="async" fetchpriority="low">
-                        </a>
-                        <a class="social-link" href="https://www.linkedin.com/in/tommy-quatretemps/" target="_blank" rel="noopener noreferrer" data-i18n="social-linkedin-label">
-                            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" data-i18n="social-linkedin-label" loading="lazy" decoding="async" fetchpriority="low">
-                        </a>
-                     </div>
-                 </div>
-             </div>
-
-            <aside class="about-right" aria-labelledby="skills-heading">
+            <div class="about-right" aria-labelledby="skills-heading">
                 <h3 id="skills-heading" data-i18n="section-skills-title">Skills</h3>
                 <ul class="skill-list">
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-aws" aria-hidden="false" title="AWS">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" data-i18n="skill-aws" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                                alt="AWS" data-i18n="skill-aws" loading="lazy" decoding="async" fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-azure" aria-hidden="false" title="Azure">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure" data-i18n="skill-azure" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg"
+                                alt="Azure" data-i18n="skill-azure" loading="lazy" decoding="async" fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-ansible" aria-hidden="false" title="Ansible">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="Ansible" data-i18n="skill-ansible" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg"
+                                alt="Ansible" data-i18n="skill-ansible" loading="lazy" decoding="async"
+                                fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-jenkins" aria-hidden="false" title="Jenkins">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" alt="Jenkins" data-i18n="skill-jenkins" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"
+                                alt="Jenkins" data-i18n="skill-jenkins" loading="lazy" decoding="async"
+                                fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a class="skill-icon" data-i18n="skill-githubactions" aria-hidden="false" title="GitHub Actions">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" data-i18n="skill-githubactions" loading="lazy" decoding="async" fetchpriority="low">
+                        <a class="skill-icon" data-i18n="skill-githubactions" aria-hidden="false"
+                            title="GitHub Actions">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg"
+                                alt="GitHub Actions" data-i18n="skill-githubactions" loading="lazy" decoding="async"
+                                fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
-                        <a href="https://github.com/InSearchOfName" class="skill-icon" data-i18n="skill-github" aria-hidden="false" title="GitHub" target="_blank" rel="noopener noreferrer">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" data-i18n="skill-github" loading="lazy" decoding="async" fetchpriority="low">
+                        <a href="https://github.com/InSearchOfName" class="skill-icon" data-i18n="skill-github"
+                            aria-hidden="false" title="GitHub" target="_blank" rel="noopener noreferrer">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                                alt="GitHub" data-i18n="skill-github" loading="lazy" decoding="async"
+                                fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-java" aria-hidden="false" title="Java">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" data-i18n="skill-java" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                                alt="Java" data-i18n="skill-java" loading="lazy" decoding="async" fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-python" aria-hidden="false" title="Python">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" data-i18n="skill-python" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                                alt="Python" data-i18n="skill-python" loading="lazy" decoding="async"
+                                fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-linux" aria-hidden="false" title="Linux">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" data-i18n="skill-linux" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+                                alt="Linux" data-i18n="skill-linux" loading="lazy" decoding="async" fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-cloudflare" aria-hidden="false" title="Cloudflare">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare" data-i18n="skill-cloudflare" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg"
+                                alt="Cloudflare" data-i18n="skill-cloudflare" loading="lazy" decoding="async"
+                                fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-docker" aria-hidden="false" title="Docker">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" data-i18n="skill-docker" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+                                alt="Docker" data-i18n="skill-docker" loading="lazy" decoding="async"
+                                fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-k3s" aria-hidden="false" title="k3s">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/k3s/k3s-original.svg" alt="k3s" data-i18n="skill-k3s" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/k3s/k3s-original.svg"
+                                alt="k3s" data-i18n="skill-k3s" loading="lazy" decoding="async" fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-postgresql" aria-hidden="false" title="PostgreSQL">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" data-i18n="skill-postgresql" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+                                alt="PostgreSQL" data-i18n="skill-postgresql" loading="lazy" decoding="async"
+                                fetchpriority="low">
                         </a>
                     </li>
 
                     <li class="skill-item entry-item">
                         <a class="skill-icon" data-i18n="skill-mongodb" aria-hidden="false" title="MongoDB">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" data-i18n="skill-mongodb" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+                                alt="MongoDB" data-i18n="skill-mongodb" loading="lazy" decoding="async"
+                                fetchpriority="low">
                         </a>
                     </li>
                 </ul>
-            </aside>
-        </div>
+                </aside>
+            </div>
     </section>
     <section id="seminars" class="content-section">
         <div class="section-inner">
             <h2 data-i18n="section-seminars-title">Seminars</h2>
-            <p data-i18n="section-seminars-desc">This section lists seminars and workshops I attended, including key takeaways and links where available.</p>
+            <p data-i18n="section-seminars-desc">This section lists seminars and workshops I attended, including key
+                takeaways and links where available.</p>
 
             <ul class="entry-list seminar-list">
                 <li class="seminar-item entry-item">
                     <h3 data-i18n="seminar-gluo-title">Gluo: Multi-cloud (SNB)</h3>
-                    <p data-i18n="seminar-gluo-desc">Een seminarie over multi-cloud, waarin we met Gluo hands-on labs hebben gedaan om een multi-cloud infrastructuur op te zetten in AWS en Azure.</p>
-                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span data-i18n="seminar-gluo-location">Corda-campus</span><br><strong data-i18n="label-date">Datum:</strong> <span data-i18n="seminar-gluo-date">4/3/2025</span></p>
+                    <p data-i18n="seminar-gluo-desc">Een seminarie over multi-cloud, waarin we met Gluo hands-on labs
+                        hebben gedaan om een multi-cloud infrastructuur op te zetten in AWS en Azure.</p>
+                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span
+                            data-i18n="seminar-gluo-location">Corda-campus</span><br><strong
+                            data-i18n="label-date">Datum:</strong> <span data-i18n="seminar-gluo-date">4/3/2025</span>
+                    </p>
                 </li>
 
                 <li class="seminar-item entry-item">
                     <h3 data-i18n="seminar-toreon-title">Toreon: Ethical hacking (SNB/all)</h3>
-                    <p data-i18n="seminar-toreon-desc">Een seminarie over Ethical hacking, waarin werd uitgelegd hoe we onze eerste CVE konden vinden. We kregen ook een paar CTF challenges.</p>
-                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span data-i18n="seminar-toreon-location">Corda-campus</span><br><strong data-i18n="label-date">Datum:</strong> <span data-i18n="seminar-toreon-date">11/3/2025</span></p>
+                    <p data-i18n="seminar-toreon-desc">Een seminarie over Ethical hacking, waarin werd uitgelegd hoe we
+                        onze eerste CVE konden vinden. We kregen ook een paar CTF challenges.</p>
+                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span
+                            data-i18n="seminar-toreon-location">Corda-campus</span><br><strong
+                            data-i18n="label-date">Datum:</strong> <span
+                            data-i18n="seminar-toreon-date">11/3/2025</span></p>
                 </li>
 
                 <li class="seminar-item entry-item">
                     <h3 data-i18n="seminar-police-title">Politie: Digitaal onderzoek (SNB/all)</h3>
-                    <p data-i18n="seminar-police-desc">Seminarie waarin een paar cases van bij de politie werden naar voor gebracht om te tonen hoe zij te werk gaan en wat voor werk zij doen.</p>
-                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span data-i18n="seminar-police-location">Corda-campus</span><br><strong data-i18n="label-date">Datum:</strong> <span data-i18n="seminar-police-date">1/04/2025</span></p>
+                    <p data-i18n="seminar-police-desc">Seminarie waarin een paar cases van bij de politie werden naar
+                        voor gebracht om te tonen hoe zij te werk gaan en wat voor werk zij doen.</p>
+                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span
+                            data-i18n="seminar-police-location">Corda-campus</span><br><strong
+                            data-i18n="label-date">Datum:</strong> <span
+                            data-i18n="seminar-police-date">1/04/2025</span></p>
                 </li>
 
                 <li class="seminar-item entry-item">
                     <h3 data-i18n="seminar-cegeka-title">Cegeka: Azure Networking (SNB)</h3>
-                    <p data-i18n="seminar-cegeka-desc">Seminarie over de nuance van het configureren van efficiënte, veilige en schaalbare netwerken in Azure-cloud.</p>
-                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span data-i18n="seminar-cegeka-location">Corda-campus</span><br><strong data-i18n="label-date">Datum:</strong> <span data-i18n="seminar-cegeka-date">22/04/2025</span></p>
+                    <p data-i18n="seminar-cegeka-desc">Seminarie over de nuance van het configureren van efficiënte,
+                        veilige en schaalbare netwerken in Azure-cloud.</p>
+                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span
+                            data-i18n="seminar-cegeka-location">Corda-campus</span><br><strong
+                            data-i18n="label-date">Datum:</strong> <span
+                            data-i18n="seminar-cegeka-date">22/04/2025</span></p>
                 </li>
 
                 <li class="seminar-item entry-item">
                     <h3 data-i18n="seminar-placeholder-1-title">Placeholder Seminar 5</h3>
                     <p data-i18n="seminar-placeholder-1-desc">Placeholder description for seminar 5. Update later.</p>
-                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span data-i18n="seminar-placeholder-1-location">TBD</span><br><strong data-i18n="label-date">Datum:</strong> <span data-i18n="seminar-placeholder-1-date">TBD</span></p>
+                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span
+                            data-i18n="seminar-placeholder-1-location">TBD</span><br><strong
+                            data-i18n="label-date">Datum:</strong> <span
+                            data-i18n="seminar-placeholder-1-date">TBD</span></p>
                 </li>
 
                 <li class="seminar-item entry-item">
                     <h3 data-i18n="seminar-placeholder-2-title">Placeholder Seminar 6</h3>
                     <p data-i18n="seminar-placeholder-2-desc">Placeholder description for seminar 6. Update later.</p>
-                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span data-i18n="seminar-placeholder-2-location">TBD</span><br><strong data-i18n="label-date">Datum:</strong> <span data-i18n="seminar-placeholder-2-date">TBD</span></p>
+                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span
+                            data-i18n="seminar-placeholder-2-location">TBD</span><br><strong
+                            data-i18n="label-date">Datum:</strong> <span
+                            data-i18n="seminar-placeholder-2-date">TBD</span></p>
                 </li>
 
                 <li class="seminar-item entry-item">
                     <h3 data-i18n="seminar-placeholder-3-title">Placeholder Seminar 7</h3>
                     <p data-i18n="seminar-placeholder-3-desc">Placeholder description for seminar 7. Update later.</p>
-                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span data-i18n="seminar-placeholder-3-location">TBD</span><br><strong data-i18n="label-date">Datum:</strong> <span data-i18n="seminar-placeholder-3-date">TBD</span></p>
+                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span
+                            data-i18n="seminar-placeholder-3-location">TBD</span><br><strong
+                            data-i18n="label-date">Datum:</strong> <span
+                            data-i18n="seminar-placeholder-3-date">TBD</span></p>
                 </li>
 
                 <li class="seminar-item entry-item">
                     <h3 data-i18n="seminar-placeholder-4-title">Placeholder Seminar 8</h3>
                     <p data-i18n="seminar-placeholder-4-desc">Placeholder description for seminar 8. Update later.</p>
-                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span data-i18n="seminar-placeholder-4-location">TBD</span><br><strong data-i18n="label-date">Datum:</strong> <span data-i18n="seminar-placeholder-4-date">TBD</span></p>
+                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span
+                            data-i18n="seminar-placeholder-4-location">TBD</span><br><strong
+                            data-i18n="label-date">Datum:</strong> <span
+                            data-i18n="seminar-placeholder-4-date">TBD</span></p>
                 </li>
             </ul>
         </div>
@@ -306,10 +381,23 @@
 
             <ul class="entry-list seminar-list">
                 <li class="seminar-item entry-item">
-                    <a href="https://platform.cybersecuritychallenge.be/" target="_blank" rel="noopener noreferrer"><h3 data-i18n="innovation-hackathon-title">Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)</h3></a>
-                    <p data-i18n="innovation-hackathon-desc">A security competition for higher-education students featuring challenges in cryptography, reverse engineering, network analysis, web & mobile security, and forensic investigation.</p>
-                    <p class="meta"><strong data-i18n="label-location">Location:</strong> <a href="https://platform.cybersecuritychallenge.be/" target="_blank" rel="noopener noreferrer"><span data-i18n="innovation-hackathon-location">Online via the CTF platform of Cyber Security Challenge</span></a><br><strong data-i18n="label-date">Date:</strong> <span data-i18n="innovation-hackathon-date">14/03/2025 10AM – 15/03/2025 6PM</span></p>
-                    <p class="meta"><strong data-i18n="innovation-hackathon-team-label">Team:</strong> <span data-i18n="innovation-hackathon-team">Backdoor Boys</span> &nbsp; <strong data-i18n="innovation-hackathon-placement-label">Placement:</strong> <span data-i18n="innovation-hackathon-placement">116/358</span></p>
+                    <a href="https://platform.cybersecuritychallenge.be/" target="_blank" rel="noopener noreferrer">
+                        <h3 data-i18n="innovation-hackathon-title">Hackathon: Cyber Security Challenge Belgium 2025
+                            (Online Qualifiers)</h3>
+                    </a>
+                    <p data-i18n="innovation-hackathon-desc">A security competition for higher-education students
+                        featuring challenges in cryptography, reverse engineering, network analysis, web & mobile
+                        security, and forensic investigation.</p>
+                    <p class="meta"><strong data-i18n="label-location">Location:</strong> <a
+                            href="https://platform.cybersecuritychallenge.be/" target="_blank"
+                            rel="noopener noreferrer"><span data-i18n="innovation-hackathon-location">Online via the CTF
+                                platform of Cyber Security Challenge</span></a><br><strong
+                            data-i18n="label-date">Date:</strong> <span data-i18n="innovation-hackathon-date">14/03/2025
+                            10AM – 15/03/2025 6PM</span></p>
+                    <p class="meta"><strong data-i18n="innovation-hackathon-team-label">Team:</strong> <span
+                            data-i18n="innovation-hackathon-team">Backdoor Boys</span> &nbsp; <strong
+                            data-i18n="innovation-hackathon-placement-label">Placement:</strong> <span
+                            data-i18n="innovation-hackathon-placement">116/358</span></p>
                 </li>
             </ul>
         </div>
@@ -317,19 +405,28 @@
     <section id="personalDevelopment" class="content-section">
         <div class="section-inner">
             <h2 data-i18n="section-personalDevelopment-title">Personal Development</h2>
-            <p data-i18n="section-personalDevelopment-desc">Notes and resources about skills I work on: communication, leadership, and continuous learning.</p>
+            <p data-i18n="section-personalDevelopment-desc">Notes and resources about skills I work on: communication,
+                leadership, and continuous learning.</p>
 
             <ul class="entry-list seminar-list development-list">
                 <li class="seminar-item entry-item">
                     <h3 data-i18n="development-projectweek-title">Projectweek 2TIN</h3>
-                    <p data-i18n="development-projectweek-desc">Eerste week van het researchproject waarin we onze teams leren kennen en een overzicht krijgen van wat we zullen doen tijdens het project.</p>
-                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span data-i18n="development-projectweek-location">PXL-campus</span><br><strong data-i18n="label-date">Datum:</strong> <span data-i18n="development-projectweek-date">10/02/2025 t.e.m. 14/03/2025</span></p>
+                    <p data-i18n="development-projectweek-desc">Eerste week van het researchproject waarin we onze teams
+                        leren kennen en een overzicht krijgen van wat we zullen doen tijdens het project.</p>
+                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span
+                            data-i18n="development-projectweek-location">PXL-campus</span><br><strong
+                            data-i18n="label-date">Datum:</strong> <span
+                            data-i18n="development-projectweek-date">10/02/2025 t.e.m. 14/03/2025</span></p>
                 </li>
 
                 <li class="seminar-item entry-item">
                     <h3 data-i18n="development-pop-title">POP-sessie 2TIN</h3>
-                    <p data-i18n="development-pop-desc">Brein aan het werk! Niet storen! Een sessie over smartphoneverslaving en hoe onze focus tegenwoordig lager ligt dan vroeger.</p>
-                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span data-i18n="development-pop-location">PXL-campus, Corda-campus</span><br><strong data-i18n="label-date">Datum:</strong> <span data-i18n="development-pop-date">18/02/2025 t.e.m. 25/03/2025</span></p>
+                    <p data-i18n="development-pop-desc">Brein aan het werk! Niet storen! Een sessie over
+                        smartphoneverslaving en hoe onze focus tegenwoordig lager ligt dan vroeger.</p>
+                    <p class="meta"><strong data-i18n="label-location">Locatie:</strong> <span
+                            data-i18n="development-pop-location">PXL-campus, Corda-campus</span><br><strong
+                            data-i18n="label-date">Datum:</strong> <span data-i18n="development-pop-date">18/02/2025
+                            t.e.m. 25/03/2025</span></p>
                 </li>
             </ul>
         </div>
@@ -341,19 +438,25 @@
     <section id="personalProject" class="content-section">
         <div class="section-inner">
             <h2 data-i18n="section-personalProject-title">Personal Projects</h2>
-            <p data-i18n="section-personalProject-desc">This is the personal projects section. Add your project details here.</p>
+            <p data-i18n="section-personalProject-desc">This is the personal projects section. Add your project details
+                here.</p>
 
             <ul class="entry-list seminar-list project-list">
                 <li class="seminar-item project-item entry-item">
                     <h3 data-i18n="personal-random-title">Random Additions</h3>
-                    <p data-i18n="personal-random-desc">A little minecraft plugin to build random stuff/items. Still working on it.</p>
-                    <p class="meta"><a href="https://github.com/InSearchOfName/InSearchOfNames-Random-Additions" target="_blank" rel="noopener noreferrer" data-i18n="personal-random-link-text">Repository</a></p>
+                    <p data-i18n="personal-random-desc">A little minecraft plugin to build random stuff/items. Still
+                        working on it.</p>
+                    <p class="meta"><a href="https://github.com/InSearchOfName/InSearchOfNames-Random-Additions"
+                            target="_blank" rel="noopener noreferrer"
+                            data-i18n="personal-random-link-text">Repository</a></p>
                 </li>
 
                 <li class="seminar-item project-item entry-item">
                     <h3 data-i18n="personal-k3s-title">K3s-ansible</h3>
-                    <p data-i18n="personal-k3s-desc">A simple ansible script that autonomously sets up an k3s cluster. I see it as a finished project.</p>
-                    <p class="meta"><a href="https://github.com/InSearchOfName/K3s-Ansible" target="_blank" rel="noopener noreferrer" data-i18n="personal-k3s-link-text">Repository</a></p>
+                    <p data-i18n="personal-k3s-desc">A simple ansible script that autonomously sets up an k3s cluster. I
+                        see it as a finished project.</p>
+                    <p class="meta"><a href="https://github.com/InSearchOfName/K3s-Ansible" target="_blank"
+                            rel="noopener noreferrer" data-i18n="personal-k3s-link-text">Repository</a></p>
                 </li>
             </ul>
         </div>
@@ -364,4 +467,5 @@
     <script src="static/scripts/translations.js"></script>
     <script src="static/scripts/mobile.js"></script>
 </body>
+
 </html>
