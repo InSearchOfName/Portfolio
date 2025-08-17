@@ -373,6 +373,13 @@ section h2 {
     margin: 1rem 0 0 0;
     display: grid;
     gap: 1rem;
+    grid-template-columns: repeat(2, 1fr); /* two columns for seminars */
+}
+
+@media (max-width: 700px) {
+  .seminar-list {
+    grid-template-columns: 1fr; /* stack on small screens */
+  }
 }
 
 .seminar-item {
@@ -380,6 +387,9 @@ section h2 {
     border: 1px solid #eee;
     padding: 1rem;
     border-radius: 10px;
+    /* Ensure full width in grid cell */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .seminar-item h3 {
