@@ -1,0 +1,19 @@
+services:
+  proxy:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+  nginx:
+    image: nginx:1.29.1-alpine
+    container_name: portfolio
+    #ports:
+    #  - "9999:80"
+    volumes:
+      - ..:/usr/share/nginx/html:ro       # Serves static files (adjust the path as needed)
+    restart: unless-stopped
