@@ -55,8 +55,8 @@ const displayDescription = computed(() => props.descriptionI18n ? t(props.descri
 
 <style scoped>
 .seminar-item {
-  background: #f9f9fb;
-  border: 1px solid #eee;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   padding: 1rem;
   border-radius: 10px;
   width: 100%;
@@ -66,32 +66,32 @@ const displayDescription = computed(() => props.descriptionI18n ? t(props.descri
 }
 
 .seminar-item:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-color: #ddd;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  border-color: var(--border-color);
 }
 
 .seminar-item h3 {
   margin: 0 0 0.4rem 0;
   font-size: 1.05rem;
   font-weight: 600;
-  color: #111;
+  color: var(--text-primary);
 }
 
 .seminar-item p {
   margin: 0.25rem 0;
-  color: #444;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
 .seminar-item .meta {
-  color: #666;
+  color: var(--text-tertiary);
   font-size: 0.95rem;
   margin-top: 0.5rem;
 }
 
 .seminar-item .meta strong {
-  color: #333;
+  color: var(--text-secondary);
   font-weight: 600;
 }
 
@@ -106,17 +106,17 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: #0066cc;
+  color: #0ea5e9;
 }
 
 a h3 {
   margin: 0 0 0.4rem 0;
   font-size: 1.05rem;
   font-weight: 600;
-  color: #111;
+  color: var(--text-primary);
 }
 
 a h3:hover {
-  color: #0066cc;
+  color: #0ea5e9;
 }
 </style>
