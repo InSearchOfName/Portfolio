@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 interface Card {
   id: string
@@ -13,6 +14,8 @@ interface Card {
   title: string
   i18nTitle: string
 }
+
+const { t } = useI18n()
 
 const cards = ref<Card[]>([
   {
@@ -151,7 +154,7 @@ onMounted(() => {
         </video>
         <span>
           <div class="description preview-description">
-            <h1 :data-i18n="card.i18nTitle">{{ card.title }}</h1>
+            <h1>{{ t(card.i18nTitle) }}</h1>
           </div>
         </span>
       </div>

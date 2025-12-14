@@ -1,0 +1,412 @@
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+</script>
+
+<template>
+  <section id="about" class="content-section">
+    <div class="section-inner about-grid">
+      <aside class="about-right" aria-labelledby="skills-heading">
+        <h3 id="skills-heading">{{ t('section-skills-title') }}</h3>
+        <ul class="skill-list">
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-aws" aria-hidden="false" title="AWS">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                alt="AWS"
+                data-i18n="skill-aws"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-azure" aria-hidden="false" title="Azure">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg"
+                alt="Azure"
+                data-i18n="skill-azure"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-ansible" aria-hidden="false" title="Ansible">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg"
+                alt="Ansible"
+                data-i18n="skill-ansible"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-jenkins" aria-hidden="false" title="Jenkins">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"
+                alt="Jenkins"
+                data-i18n="skill-jenkins"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-githubactions" aria-hidden="false" title="GitHub Actions">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg"
+                alt="GitHub Actions"
+                data-i18n="skill-githubactions"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a
+              href="https://github.com/InSearchOfName"
+              class="skill-icon"
+              data-i18n="skill-github"
+              aria-hidden="false"
+              title="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                alt="GitHub"
+                data-i18n="skill-github"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-java" aria-hidden="false" title="Java">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                alt="Java"
+                data-i18n="skill-java"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-python" aria-hidden="false" title="Python">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                alt="Python"
+                data-i18n="skill-python"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-linux" aria-hidden="false" title="Linux">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+                alt="Linux"
+                data-i18n="skill-linux"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-cloudflare" aria-hidden="false" title="Cloudflare">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg"
+                alt="Cloudflare"
+                data-i18n="skill-cloudflare"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-docker" aria-hidden="false" title="Docker">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+                alt="Docker"
+                data-i18n="skill-docker"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-k3s" aria-hidden="false" title="k3s">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/k3s/k3s-original.svg"
+                alt="k3s"
+                data-i18n="skill-k3s"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-postgresql" aria-hidden="false" title="PostgreSQL">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+                alt="PostgreSQL"
+                data-i18n="skill-postgresql"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+          <li class="skill-item entry-item">
+            <a class="skill-icon" data-i18n="skill-mongodb" aria-hidden="false" title="MongoDB">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+                alt="MongoDB"
+                data-i18n="skill-mongodb"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="about-left">
+        <h2>{{ t('section-about-title') }}</h2>
+        <p>{{ t('section-about-intro') }}</p>
+        <p>{{ t('section-about-whatido') }}</p>
+        <p>{{ t('section-about-enjoy') }}</p>
+        <p class="section-note">{{ t('section-about-note') }}</p>
+
+        <h4 id="socials-heading">{{ t('section-socials-title') }}</h4>
+        <div class="social-links">
+          <a
+            class="social-link"
+            href="https://github.com/InSearchOfName"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="social-github-label"
+            aria-label="GitHub profile"
+            title="GitHub profile"
+          >
+            <img
+              class="social-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+              alt="GitHub profile"
+              data-i18n="social-github-label"
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
+            />
+          </a>
+          <a
+            class="social-link"
+            href="https://www.linkedin.com/in/tommy-quatretemps/"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="social-linkedin-label"
+            aria-label="LinkedIn profile"
+            title="LinkedIn profile"
+          >
+            <img
+              class="social-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
+              alt="LinkedIn profile"
+              data-i18n="social-linkedin-label"
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.content-section {
+  padding: 0.5rem 0.5rem;
+  background: #fff;
+  color: #111;
+  border-bottom: 1px solid #eee;
+}
+
+.content-section .section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: #111;
+  font-weight: 700;
+  margin: 0;
+}
+
+.content-section p {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.content-section .section-note {
+  color: #555;
+  font-style: italic;
+  background: #f7f7f7;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.about-grid {
+  display: block;
+  position: relative;
+}
+
+.about-left {
+  margin-right: 340px;
+}
+
+.about-right {
+  float: right;
+  width: 320px;
+  margin-left: 1rem;
+  background: #f9f9fb;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1rem;
+  box-sizing: border-box;
+  position: sticky;
+  top: 84px;
+  color: #222;
+}
+
+.about-grid::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.about-right h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-icon {
+  display: inline-flex;
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.skill-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.skill-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.skill-icon:focus-visible,
+.skill-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  outline: none;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.social-icon {
+  width: 56px;
+  height: 56px;
+  display: block;
+  object-fit: contain;
+  transition: width 0.15s, height 0.15s;
+}
+
+h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100%;
+    float: none;
+    margin: 0;
+    box-sizing: border-box;
+    position: static;
+  }
+
+  .skill-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    justify-items: center;
+  }
+}
+</style>
