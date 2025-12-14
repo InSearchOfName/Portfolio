@@ -115,7 +115,8 @@ onMounted(() => {
 
   const images = document.querySelectorAll('.image-preview img')
   images.forEach((img) => {
-    if (img.complete) {
+    const imgElement = img as HTMLImageElement
+    if (imgElement.complete) {
       // Image already loaded from cache
       imageLoadHandler()
     } else {

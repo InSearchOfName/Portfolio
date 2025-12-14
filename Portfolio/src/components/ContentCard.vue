@@ -66,7 +66,7 @@ const displayDescription = computed(() => props.descriptionI18n ? t(props.descri
 }
 
 .seminar-item:hover {
-  box-shadow: 0 4px 12px var(--shadow-color);
+  box-shadow: 0 4px 12px var(--shadow-color-hover);
   border-color: var(--border-color);
 }
 
