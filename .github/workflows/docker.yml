@@ -58,6 +58,8 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:latest
+          build-args: |
+            BASE_URL=https://insearchof.name
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

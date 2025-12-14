@@ -15,6 +15,9 @@ COPY . .
 # Build the application
 RUN npm run build
 
+# Generate sitemap
+RUN node -e "const fs = require('fs'); const path = require('path'); const distDir = './dist'; const baseUrl = process.env.BASE_URL || 'https://portfolio.example.com'; const files = []; function walkDir(dir) { const items = fs.readdirSync(dir); items.forEach(item => { const itemPath = path.join(dir, item); const stat = fs.statSync(itemPath); if (stat.isDirectory() && item !== 'img' && item !== 'videos') { walkDir(itemPath); } else if (item.endsWith('.html') && item !== '404.html') { const relativePath = path.relative(distDir, itemPath).replace(/\\\\/g, '/').replace(/index\\.html$/, '').replace(/\\.html$/, ''); files.push(relativePath || 'index'); } }); } walkDir(distDir); const sitemap = '<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\\n' + files.map(file => \`  <url>\\n    <loc>\${baseUrl}/\${file}</loc>\\n    <lastmod>\${new Date().toISOString().split('T')[0]}</lastmod>\\n  </url>\\n\`).join('') + '</urlset>'; fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap);"
+
 # Production stage
 FROM nginx:alpine
 
