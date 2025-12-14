@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, computed } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 interface Card {
@@ -92,23 +92,53 @@ const cards = ref<Card[]>([
   }
 ])
 
-onMounted(() => {
-  // Animate cards in one by one from the bottom
-  setTimeout(() => {
-    const cardElements = document.querySelectorAll('.main-container')
-    cardElements.forEach((card, i) => {
-      setTimeout(() => {
-        card.classList.add('animated')
-      }, i * 90 + 40)
-    })
-  }, 100)
+// Track which videos have been loaded
+const loadedVideos = new Set<string>()
 
-  // Add video play/pause on hover
+onMounted(() => {
+  // Wait for images to load, then animate cards
+  let imagesLoaded = 0
+  const totalImages = document.querySelectorAll('.image-preview img').length
+
+  const imageLoadHandler = () => {
+    imagesLoaded++
+    if (imagesLoaded === totalImages) {
+      // All images loaded, now animate cards
+      const cardElements = document.querySelectorAll('.main-container')
+      cardElements.forEach((card, i) => {
+        setTimeout(() => {
+          card.classList.add('animated')
+        }, i * 90 + 40)
+      })
+    }
+  }
+
+  const images = document.querySelectorAll('.image-preview img')
+  images.forEach((img) => {
+    if (img.complete) {
+      // Image already loaded from cache
+      imageLoadHandler()
+    } else {
+      img.addEventListener('load', imageLoadHandler)
+    }
+  })
+
+  // Add video lazy-loading and play/pause on hover
   const cardElements = document.querySelectorAll('.hover-container')
   cardElements.forEach((card) => {
     const video = card.querySelector('video') as HTMLVideoElement
     if (video) {
       card.addEventListener('mouseenter', () => {
+        // Load video sources on first hover if not already loaded
+        if (!loadedVideos.has(video.id)) {
+          const sources = video.querySelectorAll('source')
+          sources.forEach((source) => {
+            source.src = source.getAttribute('data-src') || source.src
+          })
+          video.load()
+          loadedVideos.add(video.id)
+        }
+
         video.play().catch(() => {
           // Autoplay may be blocked by browser
         })
@@ -142,15 +172,15 @@ onMounted(() => {
         <video
           v-if="card.video"
           class="preview-video"
-          preload="auto"
-          fetchpriority="low"
+          :id="`video-${card.id}`"
+          preload="none"
           loop
           muted
           playsinline
           aria-hidden="true"
         >
-          <source :src="card.video.webm" type="video/webm" />
-          <source :src="card.video.mp4" type="video/mp4" />
+          <source :data-src="card.video.webm" type="video/webm" />
+          <source :data-src="card.video.mp4" type="video/mp4" />
         </video>
         <span>
           <div class="description preview-description">
