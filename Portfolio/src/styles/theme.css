@@ -1,0 +1,122 @@
+/* Light mode (default) */
+:root[data-theme="light"],
+:root {
+  --bg-primary: #fff;
+  --bg-secondary: #f7f7f7;
+  --bg-tertiary: #fff;
+  --bg-hover: #f0f0f0;
+  --bg-accent: #222;
+  
+  --text-primary: #111;
+  --text-secondary: #333;
+  --text-tertiary: #555;
+  --text-hover: #222;
+  --text-accent: #111;
+  
+  --border-color: #eee;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --shadow-color-hover: rgba(0, 0, 0, 0.13);
+  
+  --skill-bg: rgba(0, 0, 0, 0.05);
+  --skill-bg-hover: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode */
+:root[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #252525;
+  --bg-hover: #333;
+  --bg-accent: #0ea5e9;
+  
+  --text-primary: #f0f0f0;
+  --text-secondary: #d5d5d5;
+  --text-tertiary: #b0b0b0;
+  --text-hover: #f0f0f0;
+  --text-accent: #0a0a0a;
+  
+  --border-color: #333;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-color-hover: rgba(0, 0, 0, 0.5);
+  
+  --skill-bg: rgba(255, 255, 255, 0.08);
+  --skill-bg-hover: rgba(255, 255, 255, 0.12);
+}
+
+/* Global transitions */
+body,
+html,
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body,
+html {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Ensure sections have proper background */
+.content-section,
+section {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Links and text elements */
+a {
+  color: var(--bg-accent);
+}
+
+/* Form elements */
+button,
+input,
+textarea,
+select {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+button:hover,
+input:hover,
+textarea:hover,
+select:hover {
+  background: var(--bg-hover);
+  color: var(--text-hover);
+}
+
+/* Card elements */
+.card,
+.entry-item,
+.hover-container {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Heading elements */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
+/* Paragraph and text */
+p {
+  color: var(--text-secondary);
+}
+
+/* Strong/bold text */
+strong, b {
+  color: var(--text-primary);
+}
+
+/* Skill icons background */
+.skill-icon {
+  background: var(--skill-bg) !important;
+}
+
+.skill-icon:hover,
+.skill-icon:focus-visible {
+  background: var(--skill-bg-hover) !important;
+}

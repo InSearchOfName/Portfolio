@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useTheme } from '../composables/useTheme'
 
 const { locale, t } = useI18n()
+const { theme, setTheme } = useTheme()
 
 const isDropdownOpen = ref(false)
 const currentLang = ref(locale.value)
@@ -27,6 +29,10 @@ const selectLanguage = (code: string) => {
   isDropdownOpen.value = false
 }
 
+const toggleTheme = () => {
+  setTheme(theme.value === 'light' ? 'dark' : 'light')
+}
+
 // Close dropdown when clicking outside
 const closeDropdown = () => {
   isDropdownOpen.value = false
@@ -38,7 +44,17 @@ watch(locale, (newLocale) => {
 </script>
 
 <template>
-  <div class="lang-switcher" @blur="closeDropdown" tabindex="-1">
+  <div class="controls-container">
+    <button
+      class="theme-toggle"
+      type="button"
+      :title="theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'"
+      @click="toggleTheme"
+    >
+      <span v-if="theme === 'light'" class="theme-icon">🌙</span>
+      <span v-else class="theme-icon">☀️</span>
+    </button>
+    <div class="lang-switcher" @blur="closeDropdown" tabindex="-1">
     <button
       id="lang-dropdown-btn"
       class="lang-label"
@@ -70,21 +86,60 @@ watch(locale, (newLocale) => {
         {{ lang.label }}
       </button>
     </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.lang-switcher {
+.controls-container {
   position: fixed;
   top: 10px;
   right: 20px;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  user-select: none;
+}
+
+.theme-toggle {
+  background: var(--bg-secondary, #222);
+  color: var(--text-primary, #fff);
+  border: none;
+  outline: none;
+  width: 2.8em;
+  height: 2.8em;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  background: var(--bg-hover, #fff);
+  color: var(--text-hover, #222);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
+  transform: translateY(-2px) scale(1.1);
+}
+
+.theme-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-switcher {
   user-select: none;
 }
 
 #lang-dropdown-btn {
-  background: #222;
-  color: #fff;
+  background: var(--bg-secondary, #222);
+  color: var(--text-primary, #fff);
   border: none;
   outline: none;
   padding: 0.6em 1.4em 0.6em 1em;
@@ -103,8 +158,8 @@ watch(locale, (newLocale) => {
 
 #lang-dropdown-btn:hover,
 #lang-dropdown-btn:focus {
-  background: #fff;
-  color: #222;
+  background: var(--bg-hover, #fff);
+  color: var(--text-hover, #222);
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
   transform: translateY(-2px) scale(1.04);
 }
@@ -124,7 +179,8 @@ watch(locale, (newLocale) => {
   position: absolute;
   right: 0;
   top: 110%;
-  background: #fff;
+  background: var(--bg-tertiary, #fff);
+  color: var(--text-secondary, #222);
   border-radius: 1em;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
   min-width: 160px;
@@ -139,7 +195,8 @@ watch(locale, (newLocale) => {
   position: absolute;
   right: 0;
   top: 110%;
-  background: #fff;
+  background: var(--bg-tertiary, #fff);
+  color: var(--text-secondary, #222);
   border-radius: 1em;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
   min-width: 160px;
@@ -152,7 +209,7 @@ watch(locale, (newLocale) => {
 .lang-option {
   background: none;
   border: none;
-  color: #222;
+  color: var(--text-secondary, #222);
   font-size: 1rem;
   font-weight: 600;
   padding: 0.7em 1.5em 0.7em 2.5em;
@@ -169,13 +226,14 @@ watch(locale, (newLocale) => {
 .lang-option.active,
 .lang-option:hover,
 .lang-option:focus {
-  background: #222;
-  color: #fff;
+  background: var(--bg-accent, #222);
+  color: var(--text-accent, #fff);
 }
 
 @media (max-width: 900px) {
-  .lang-switcher {
-    display: none;
+  .controls-container {
+    flex-direction: column;
+    gap: 0.5em;
   }
 }
 </style>

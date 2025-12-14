@@ -245,9 +245,9 @@ const { t } = useI18n()
 <style scoped>
 .content-section {
   padding: 0.5rem 0.5rem;
-  background: #fff;
-  color: #111;
-  border-bottom: 1px solid #eee;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .content-section .section-inner {
@@ -259,25 +259,26 @@ const { t } = useI18n()
 .content-section h2 {
   font-size: 2rem;
   margin-bottom: 0.75rem;
-  color: #111;
+  color: var(--text-primary);
   font-weight: 700;
   margin: 0;
 }
 
 .content-section p {
   font-size: 1.05rem;
-  color: #333;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
 .content-section .section-note {
-  color: #555;
+  color: var(--text-tertiary);
   font-style: italic;
-  background: #f7f7f7;
+  background: var(--bg-secondary);
   padding: 0.8rem 1rem;
   border-radius: 8px;
   display: inline-block;
+  border: 1px solid var(--border-color);
 }
 
 .about-grid {
@@ -293,14 +294,14 @@ const { t } = useI18n()
   float: right;
   width: 320px;
   margin-left: 1rem;
-  background: #f9f9fb;
-  border: 1px solid #eee;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 1rem;
   box-sizing: border-box;
   position: sticky;
   top: 84px;
-  color: #222;
+  color: var(--text-primary);
 }
 
 .about-grid::after {
@@ -312,6 +313,7 @@ const { t } = useI18n()
 .about-right h3 {
   margin: 0 0 0.5rem 0;
   font-size: 1.1rem;
+  color: var(--text-primary);
 }
 
 .skill-list {
@@ -332,7 +334,8 @@ const { t } = useI18n()
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.3s ease;
+  background: var(--skill-bg);
 }
 
 .skill-icon img {
@@ -351,8 +354,9 @@ const { t } = useI18n()
 .skill-icon:focus-visible,
 .skill-icon:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px var(--shadow-color-hover);
   outline: none;
+  background: var(--skill-bg-hover);
 }
 
 .social-links {

@@ -211,6 +211,7 @@ onMounted(() => {
   overflow-y: visible;
   height: auto;
   min-height: 0;
+  background: #000;
 }
 
 .main-container {
@@ -314,7 +315,7 @@ onMounted(() => {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0) 100%);
   color: #fff;
   z-index: 2;
   padding: 1em;
