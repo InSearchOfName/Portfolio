@@ -1,36 +1,28 @@
 <script setup lang="ts">
-import CarouselCard from './components/CarouselCard.vue'
-import SettingsMenu from './components/SettingsMenu.vue'
-import AboutSection from './components/AboutSection.vue'
+import SiteHeader from './components/SiteHeader.vue'
+import HeroSection from './components/HeroSection.vue'
 import SeminarsSection from './components/SeminarsSection.vue'
-import InnovationSection from './components/InnovationSection.vue'
-import PersonalDevelopmentSection from './components/PersonalDevelopmentSection.vue'
 import InternationalizationSection from './components/InternationalizationSection.vue'
+import PersonalDevelopmentSection from './components/PersonalDevelopmentSection.vue'
+import InnovationSection from './components/InnovationSection.vue'
+import AboutSection from './components/AboutSection.vue'
 import PersonalProjectsSection from './components/PersonalProjectsSection.vue'
-import { useTheme } from './composables/useTheme'
-
-// Initialize theme immediately
-const { theme } = useTheme()
-document.documentElement.setAttribute('data-theme', theme.value)
 </script>
 
 <template>
-  <SettingsMenu />
-  <CarouselCard />
+  <SiteHeader />
+  <HeroSection />
   <AboutSection />
   <SeminarsSection />
-  <InnovationSection />
-  <PersonalDevelopmentSection />
   <InternationalizationSection />
+  <PersonalDevelopmentSection />
+  <InnovationSection />
   <PersonalProjectsSection />
 </template>
 
 <style>
 @import './styles/theme.css';
-
-* {
-  font-family: 'Poppins', sans-serif;
-}
+@import './styles/base.css';
 
 body,
 html {

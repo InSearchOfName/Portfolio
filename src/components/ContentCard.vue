@@ -1,27 +1,24 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import type { ContentMetaItem } from '../utils/contentMeta'
 
 interface Props {
   title?: string
   titleI18n?: string
   description?: string
   descriptionI18n?: string
-  metaItems?: Array<{
-    label?: string
-    labelI18n?: string
-    value?: string
-    valueI18n?: string
-    href?: string
-  }>
+  metaItems?: ContentMetaItem[]
   link?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {})
 const { t } = useI18n()
 
-const displayTitle = computed(() => props.titleI18n ? t(props.titleI18n) : props.title)
-const displayDescription = computed(() => props.descriptionI18n ? t(props.descriptionI18n) : props.description)
+const displayTitle = computed(() => (props.titleI18n ? t(props.titleI18n) : props.title))
+const displayDescription = computed(() =>
+  props.descriptionI18n ? t(props.descriptionI18n) : props.description,
+)
 </script>
 
 <template>
@@ -55,26 +52,31 @@ const displayDescription = computed(() => props.descriptionI18n ? t(props.descri
 
 <style scoped>
 .seminar-item {
-  background: var(--bg-secondary);
+  background: color-mix(in oklab, var(--bg-secondary) 80%, var(--bg-primary));
   border: 1px solid var(--border-color);
-  padding: 1rem;
-  border-radius: 10px;
+  padding: 1.1rem;
+  border-radius: var(--radius-lg);
   width: 100%;
   box-sizing: border-box;
   list-style: none;
-  transition: all 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .seminar-item:hover {
-  box-shadow: 0 4px 12px var(--shadow-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px var(--shadow-color-hover);
   border-color: var(--border-color);
 }
 
 .seminar-item h3 {
   margin: 0 0 0.4rem 0;
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.08rem;
+  font-weight: 700;
   color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 .seminar-item p {

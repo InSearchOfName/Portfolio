@@ -1,87 +1,78 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import ContentCard from './ContentCard.vue'
+import { createLocationDateMeta } from '../utils/contentMeta'
 
 const { t } = useI18n()
 </script>
 
 <template>
-  <section id="personalDevelopment" class="content-section">
-    <div class="section-inner">
-      <h2>{{ t('section-personalDevelopment-title') }}</h2>
-      <p>{{ t('section-personalDevelopment-desc') }}</p>
+  <section id="personalDevelopment" class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">{{ t('section-personalDevelopment-title') }}</h2>
+      </div>
+      <p class="section__lede">{{ t('section-personalDevelopment-desc') }}</p>
 
-      <ul class="entry-list seminar-list development-list">
+      <ul class="entry-list grid grid--2">
         <ContentCard
           title="Projectweek 2TIN"
           titleI18n="development-projectweek-title"
           description="First week of the research project where we got to know our teams and an overview of what the project will entail."
           descriptionI18n="development-projectweek-desc"
-          :metaItems="[
-            { label: 'Location:', labelI18n: 'label-location', value: 'PXL-campus', valueI18n: 'development-projectweek-location' },
-            { label: 'Date:', labelI18n: 'label-date', value: 'from 10/02/2025 till 14/03/2025', valueI18n: 'development-projectweek-date' }
-          ]"
+          :metaItems="
+            createLocationDateMeta({
+              location: 'PXL-campus',
+              locationI18n: 'development-projectweek-location',
+              date: 'from 10/02/2025 till 14/03/2025',
+              dateI18n: 'development-projectweek-date',
+            })
+          "
         />
         <ContentCard
-          title="POP-sessie 2TIN"
+          title="POP session 2TIN: Brain at work! Do not disturb!"
           titleI18n="development-pop-title"
-          description="'Brein aan het werk! Niet storen!' A session about smartphone addiction and how our focus is lower than before."
+          description="A session about smartphone habits and how focus today is lower than in the past."
           descriptionI18n="development-pop-desc"
-          :metaItems="[
-            { label: 'Location:', labelI18n: 'label-location', value: 'PXL-campus, Corda-campus', valueI18n: 'development-pop-location' },
-            { label: 'Date:', labelI18n: 'label-date', value: 'from 18/02/2025 till 25/03/2025', valueI18n: 'development-pop-date' }
-          ]"
+          :metaItems="
+            createLocationDateMeta({
+              location: 'PXL-campus, Corda-campus',
+              locationI18n: 'development-pop-location',
+              date: 'from 18/02/2025 till 25/03/2025',
+              dateI18n: 'development-pop-date',
+            })
+          "
+        />
+        <ContentCard
+          title="POP session 2TIN: POPping"
+          titleI18n="development-popping-title"
+          description="Team-building activities on how we can collaborate effectively in a team."
+          descriptionI18n="development-popping-desc"
+          :metaItems="
+            createLocationDateMeta({
+              location: 'PXL Campus',
+              locationI18n: 'development-popping-location',
+              date: '24/03/2025',
+              dateI18n: 'development-popping-date',
+            })
+          "
+        />
+        <ContentCard
+          title="POP session 3TIN: My team and I"
+          titleI18n="development-myteam-title"
+          description="A session on how we should work as a team and the core values that go with it."
+          descriptionI18n="development-myteam-desc"
+          :metaItems="
+            createLocationDateMeta({
+              location: 'PXL Campus, Corda Campus',
+              locationI18n: 'development-myteam-location',
+              date: '8/10/2025',
+              dateI18n: 'development-myteam-date',
+            })
+          "
         />
       </ul>
     </div>
   </section>
 </template>
 
-<style scoped>
-.content-section {
-  padding: 0.5rem 0.5rem;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.content-section .section-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.content-section h2 {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-  color: var(--text-primary);
-  font-weight: 700;
-  margin: 0;
-}
-
-.content-section p {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.seminar-list {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0 0 0;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-@media (max-width: 700px) {
-  .seminar-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-.entry-list {
-  list-style: none;
-}
-</style>

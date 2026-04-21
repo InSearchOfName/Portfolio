@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useTheme } from '../composables/useTheme'
 
-const { locale, t } = useI18n()
+const { locale } = useI18n()
 const { theme, setTheme } = useTheme()
 
 const isDropdownOpen = ref(false)
@@ -11,12 +11,12 @@ const currentLang = ref(locale.value)
 
 const languages = [
   { code: 'en', label: 'English', i18n: 'lang-en-label' },
-  { code: 'nl', label: 'Nederlands', i18n: 'lang-nl-label' }
+  { code: 'nl', label: 'Nederlands', i18n: 'lang-nl-label' },
 ]
 
-const getCurrentLabel = () => {
-  return languages.find(l => l.code === currentLang.value)?.label || 'English'
-}
+const currentLanguageLabel = computed(
+  () => languages.find((l) => l.code === currentLang.value)?.label ?? 'English'
+)
 
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value
@@ -55,37 +55,37 @@ watch(locale, (newLocale) => {
       <span v-else class="theme-icon">☀️</span>
     </button>
     <div class="lang-switcher" @blur="closeDropdown" tabindex="-1">
-    <button
-      id="lang-dropdown-btn"
-      class="lang-label"
-      type="button"
-      :aria-expanded="isDropdownOpen"
-      aria-haspopup="true"
-      @click="toggleDropdown"
-    >
-      <span class="lang-label-text">{{ getCurrentLabel() }}</span>
-      <span class="dropdown-arrow">▾</span>
-    </button>
-    <div
-      id="lang-dropdown"
-      class="lang-dropdown-menu"
-      :class="{ show: isDropdownOpen }"
-      :aria-hidden="!isDropdownOpen"
-    >
       <button
-        v-for="lang in languages"
-        :key="lang.code"
-        :id="`lang-${lang.code}`"
-        class="lang-option"
-        :class="{ active: currentLang === lang.code }"
+        id="lang-dropdown-btn"
+        class="lang-label"
         type="button"
-        tabindex="0"
-        :data-i18n="lang.i18n"
-        @click="selectLanguage(lang.code)"
+        :aria-expanded="isDropdownOpen"
+        aria-haspopup="true"
+        @click="toggleDropdown"
       >
-        {{ lang.label }}
+        <span class="lang-label-text">{{ currentLanguageLabel }}</span>
+        <span class="dropdown-arrow">▾</span>
       </button>
-    </div>
+      <div
+        id="lang-dropdown"
+        class="lang-dropdown-menu"
+        :class="{ show: isDropdownOpen }"
+        :aria-hidden="!isDropdownOpen"
+      >
+        <button
+          v-for="lang in languages"
+          :key="lang.code"
+          :id="`lang-${lang.code}`"
+          class="lang-option"
+          :class="{ active: currentLang === lang.code }"
+          type="button"
+          tabindex="0"
+          :data-i18n="lang.i18n"
+          @click="selectLanguage(lang.code)"
+        >
+          {{ lang.label }}
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -116,7 +116,11 @@ watch(locale, (newLocale) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s;
 }
 
 .theme-toggle:hover,
@@ -152,7 +156,11 @@ watch(locale, (newLocale) => {
   display: flex;
   align-items: center;
   gap: 0.6em;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s;
   position: relative;
 }
 
@@ -192,18 +200,6 @@ watch(locale, (newLocale) => {
 
 .lang-dropdown-menu.show {
   display: flex !important;
-  position: absolute;
-  right: 0;
-  top: 110%;
-  background: var(--bg-tertiary, #fff);
-  color: var(--text-secondary, #222);
-  border-radius: 1em;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
-  min-width: 160px;
-  padding: 0.5em 0;
-  flex-direction: column;
-  gap: 0.2em;
-  z-index: 1001;
 }
 
 .lang-option {
@@ -217,7 +213,9 @@ watch(locale, (newLocale) => {
   cursor: pointer;
   border-radius: 1.5em;
   position: relative;
-  transition: background 0.18s, color 0.18s;
+  transition:
+    background 0.18s,
+    color 0.18s;
   display: flex;
   align-items: center;
   gap: 0.7em;

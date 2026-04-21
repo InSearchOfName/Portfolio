@@ -1,40 +1,37 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+import ContentCard from './ContentCard.vue'
+import { createLocationDateMeta } from '../utils/contentMeta'
+
+const { t } = useI18n()
+</script>
 
 <template>
-  <section id="internationalization" class="content-section">
-    <div class="section-inner">
-      <h2 data-i18n="section-internationalization-title">Internationalization</h2>
-      <p data-i18n="section-internationalization-desc">TBA</p>
+  <section id="internationalization" class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">{{ t('section-internationalization-title') }}</h2>
+      </div>
+      <p class="section__lede">{{ t('section-internationalization-desc') }}</p>
+
+      <ul class="entry-list grid grid--2">
+        <ContentCard
+          title="FOSDEM"
+          titleI18n="internationalization-fosdem-title"
+          description="FOSDEM is an annual two-day conference in Brussels on free and open-source software. Developers from around the world share talks, workshops, and projects."
+          descriptionI18n="internationalization-fosdem-desc"
+          link="https://fosdem.org/"
+          :metaItems="
+            createLocationDateMeta({
+              location: 'ULB, Brussels',
+              locationI18n: 'internationalization-fosdem-location',
+              date: '31/01/2026 through 1/02/2026',
+              dateI18n: 'internationalization-fosdem-date',
+            })
+          "
+        />
+      </ul>
     </div>
   </section>
 </template>
 
-<style scoped>
-.content-section {
-  padding: 0.5rem 0.5rem;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.content-section .section-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.content-section h2 {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-  color: var(--text-primary);
-  font-weight: 700;
-  margin: 0;
-}
-
-.content-section p {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-</style>

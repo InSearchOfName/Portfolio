@@ -25,10 +25,10 @@ const cards = ref<Card[]>([
     image: '/img/aboutMeThumb.jpg',
     video: {
       webm: '/videos/aboutMe.webm',
-      mp4: '/videos/aboutMe.mp4'
+      mp4: '/videos/aboutMe.mp4',
     },
     title: 'About Me',
-    i18nTitle: 'card-about-title'
+    i18nTitle: 'card-about-title',
   },
   {
     id: 'seminars',
@@ -37,10 +37,10 @@ const cards = ref<Card[]>([
     image: '/img/seminarsThumb.jpg',
     video: {
       webm: '/videos/seminars.webm',
-      mp4: '/videos/seminars.mp4'
+      mp4: '/videos/seminars.mp4',
     },
     title: 'Seminars',
-    i18nTitle: 'card-seminars-title'
+    i18nTitle: 'card-seminars-title',
   },
   {
     id: 'innovation',
@@ -49,10 +49,10 @@ const cards = ref<Card[]>([
     image: '/img/innovationthumb1.jpg',
     video: {
       webm: '/videos/innovation.webm',
-      mp4: '/videos/innovation.mp4'
+      mp4: '/videos/innovation.mp4',
     },
     title: 'Innovation',
-    i18nTitle: 'card-innovation-link'
+    i18nTitle: 'card-innovation-link',
   },
   {
     id: 'personalDevelopment',
@@ -61,10 +61,10 @@ const cards = ref<Card[]>([
     image: '/img/personaldevelopmentthumb.jpg',
     video: {
       webm: '/videos/personalDevelopment.webm',
-      mp4: '/videos/personalDevelopment.mp4'
+      mp4: '/videos/personalDevelopment.mp4',
     },
     title: 'Personal Development',
-    i18nTitle: 'card-personalDevelopment-title'
+    i18nTitle: 'card-personalDevelopment-title',
   },
   {
     id: 'internationalization',
@@ -73,10 +73,10 @@ const cards = ref<Card[]>([
     image: '/img/internationalthumb.jpg',
     video: {
       webm: '/videos/international.webm',
-      mp4: '/videos/international.mp4'
+      mp4: '/videos/international.mp4',
     },
     title: 'Internationalization',
-    i18nTitle: 'card-internationalization-title'
+    i18nTitle: 'card-internationalization-title',
   },
   {
     id: 'personalProject',
@@ -85,11 +85,11 @@ const cards = ref<Card[]>([
     image: '/img/personalproject.jpg',
     video: {
       webm: '/videos/personalProject.webm',
-      mp4: '/videos/personalProject.mp4'
+      mp4: '/videos/personalProject.mp4',
     },
     title: 'Personal Projects',
-    i18nTitle: 'card-personalProject-title'
-  }
+    i18nTitle: 'card-personalProject-title',
+  },
 ])
 
 // Track which videos have been loaded
@@ -106,9 +106,12 @@ onMounted(() => {
       // All images loaded, now animate cards
       const cardElements = document.querySelectorAll('.main-container')
       cardElements.forEach((card, i) => {
-        setTimeout(() => {
-          card.classList.add('animated')
-        }, i * 90 + 40)
+        setTimeout(
+          () => {
+            card.classList.add('animated')
+          },
+          i * 90 + 40,
+        )
       })
     }
   }

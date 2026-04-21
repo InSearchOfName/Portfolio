@@ -1,67 +1,115 @@
 /* Light mode (default) */
-:root[data-theme="light"],
+:root[data-theme='light'],
 :root {
-  --bg-primary: #fff;
-  --bg-secondary: #f7f7f7;
-  --bg-tertiary: #fff;
-  --bg-hover: #f0f0f0;
-  --bg-accent: #222;
-  
-  --text-primary: #111;
-  --text-secondary: #333;
-  --text-tertiary: #555;
-  --text-hover: #222;
-  --text-accent: #111;
-  
-  --border-color: #eee;
-  --shadow-color: rgba(0, 0, 0, 0.08);
-  --shadow-color-hover: rgba(0, 0, 0, 0.13);
-  
-  --skill-bg: rgba(0, 0, 0, 0.05);
-  --skill-bg-hover: rgba(0, 0, 0, 0.1);
+  --bg-primary: #fff8f1;
+  --bg-secondary: #fdebd8;
+  --bg-tertiary: #fffdf8;
+  --bg-hover: #f9ddbf;
+  --bg-accent: #c85d1c;
+
+  --text-primary: #2b1d11;
+  --text-secondary: #5a4130;
+  --text-tertiary: #8b654a;
+  --text-hover: #2b1d11;
+  --text-accent: #ffffff;
+
+  --border-color: #f1cfae;
+  --shadow-color: rgba(120, 70, 30, 0.12);
+  --shadow-color-hover: rgba(120, 70, 30, 0.2);
+
+  --skill-bg: rgba(200, 93, 28, 0.1);
+  --skill-bg-hover: rgba(200, 93, 28, 0.16);
 }
 
 /* Dark mode */
-:root[data-theme="dark"] {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #1a1a1a;
-  --bg-tertiary: #252525;
-  --bg-hover: #333;
-  --bg-accent: #0ea5e9;
-  
-  --text-primary: #f0f0f0;
-  --text-secondary: #d5d5d5;
-  --text-tertiary: #b0b0b0;
-  --text-hover: #f0f0f0;
-  --text-accent: #0a0a0a;
-  
-  --border-color: #333;
-  --shadow-color: rgba(0, 0, 0, 0.3);
-  --shadow-color-hover: rgba(0, 0, 0, 0.5);
-  
-  --skill-bg: rgba(255, 255, 255, 0.08);
-  --skill-bg-hover: rgba(255, 255, 255, 0.12);
+:root[data-theme='dark'] {
+  --bg-primary: #1b120c;
+  --bg-secondary: #2a1b12;
+  --bg-tertiary: #3a2518;
+  --bg-hover: #4a2f1d;
+  --bg-accent: #ff9d4d;
+
+  --text-primary: #fff0e2;
+  --text-secondary: #f5ceb0;
+  --text-tertiary: #d9a982;
+  --text-hover: #fff0e2;
+  --text-accent: #2a1b12;
+
+  --border-color: #5a3a24;
+  --shadow-color: rgba(0, 0, 0, 0.35);
+  --shadow-color-hover: rgba(0, 0, 0, 0.55);
+
+  --skill-bg: rgba(255, 157, 77, 0.18);
+  --skill-bg-hover: rgba(255, 157, 77, 0.26);
 }
 
-/* Global transitions */
-body,
-html,
-* {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+/* Theme color transitions (fallback when View Transitions API is unavailable) */
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  html,
+  * {
+    transition-property: background-color, color, border-color, box-shadow, fill, stroke;
+    transition-duration: 0.42s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  img,
+  video,
+  canvas {
+    transition-property: none;
+  }
+}
+
+/* View Transitions API — full-page theme crossfade */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.48s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  ::view-transition-old(root) {
+    animation-name: theme-out;
+  }
+
+  ::view-transition-new(root) {
+    animation-name: theme-in;
+  }
+}
+
+@keyframes theme-out {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    filter: blur(6px);
+  }
+}
+
+@keyframes theme-in {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
 }
 
 body,
 html {
   background: var(--bg-primary);
   color: var(--text-primary);
-}
-
-/* Ensure sections have proper background */
-.content-section,
-section {
-  background: var(--bg-primary) !important;
-  color: var(--text-primary) !important;
-  border-color: var(--border-color) !important;
 }
 
 /* Links and text elements */
@@ -97,7 +145,12 @@ select:hover {
 }
 
 /* Heading elements */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-primary);
 }
 
@@ -107,7 +160,8 @@ p {
 }
 
 /* Strong/bold text */
-strong, b {
+strong,
+b {
   color: var(--text-primary);
 }
 

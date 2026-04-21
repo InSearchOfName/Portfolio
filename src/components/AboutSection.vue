@@ -5,8 +5,8 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <section id="about" class="content-section">
-    <div class="section-inner about-grid">
+  <section id="about" class="section">
+    <div class="container about-grid">
       <aside class="about-right" aria-labelledby="skills-heading">
         <h3 id="skills-heading">{{ t('section-skills-title') }}</h3>
         <ul class="skill-list">
@@ -59,7 +59,12 @@ const { t } = useI18n()
             </a>
           </li>
           <li class="skill-item entry-item">
-            <a class="skill-icon" data-i18n="skill-githubactions" aria-hidden="false" title="GitHub Actions">
+            <a
+              class="skill-icon"
+              data-i18n="skill-githubactions"
+              aria-hidden="false"
+              title="GitHub Actions"
+            >
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg"
                 alt="GitHub Actions"
@@ -127,7 +132,12 @@ const { t } = useI18n()
             </a>
           </li>
           <li class="skill-item entry-item">
-            <a class="skill-icon" data-i18n="skill-cloudflare" aria-hidden="false" title="Cloudflare">
+            <a
+              class="skill-icon"
+              data-i18n="skill-cloudflare"
+              aria-hidden="false"
+              title="Cloudflare"
+            >
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg"
                 alt="Cloudflare"
@@ -163,7 +173,12 @@ const { t } = useI18n()
             </a>
           </li>
           <li class="skill-item entry-item">
-            <a class="skill-icon" data-i18n="skill-postgresql" aria-hidden="false" title="PostgreSQL">
+            <a
+              class="skill-icon"
+              data-i18n="skill-postgresql"
+              aria-hidden="false"
+              title="PostgreSQL"
+            >
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
                 alt="PostgreSQL"
@@ -190,11 +205,14 @@ const { t } = useI18n()
       </aside>
 
       <div class="about-left">
-        <h2>{{ t('section-about-title') }}</h2>
-        <p>{{ t('section-about-intro') }}</p>
-        <p>{{ t('section-about-whatido') }}</p>
-        <p>{{ t('section-about-enjoy') }}</p>
-        <p class="section-note">{{ t('section-about-note') }}</p>
+        <div class="section__header">
+          <h2 class="section__title">{{ t('section-about-title') }}</h2>
+        </div>
+        <p class="section__lede">{{ t('section-about-intro') }}</p>
+        <p>{{ t('section-about-workstyle') }}</p>
+        <p>{{ t('section-about-teamwork') }}</p>
+        <p>{{ t('section-about-technical') }}</p>
+        <p>{{ t('section-about-ambition') }}</p>
 
         <h4 id="socials-heading">{{ t('section-socials-title') }}</h4>
         <div class="social-links">
@@ -243,44 +261,6 @@ const { t } = useI18n()
 </template>
 
 <style scoped>
-.content-section {
-  padding: 0.5rem 0.5rem;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.content-section .section-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.content-section h2 {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-  color: var(--text-primary);
-  font-weight: 700;
-  margin: 0;
-}
-
-.content-section p {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.content-section .section-note {
-  color: var(--text-tertiary);
-  font-style: italic;
-  background: var(--bg-secondary);
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  display: inline-block;
-  border: 1px solid var(--border-color);
-}
-
 .about-grid {
   display: block;
   position: relative;
@@ -296,16 +276,17 @@ const { t } = useI18n()
   margin-left: 1rem;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: var(--radius-lg);
   padding: 1rem;
   box-sizing: border-box;
   position: sticky;
-  top: 84px;
+  top: 1.25rem;
   color: var(--text-primary);
+  box-shadow: 0 10px 40px var(--shadow-color);
 }
 
 .about-grid::after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
@@ -329,12 +310,15 @@ const { t } = useI18n()
   display: inline-flex;
   width: 72px;
   height: 72px;
-  border-radius: 10px;
+  border-radius: 14px;
   overflow: hidden;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.3s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.3s ease;
   background: var(--skill-bg);
 }
 
@@ -380,7 +364,9 @@ const { t } = useI18n()
   height: 56px;
   display: block;
   object-fit: contain;
-  transition: width 0.15s, height 0.15s;
+  transition:
+    width 0.15s,
+    height 0.15s;
 }
 
 h4 {
