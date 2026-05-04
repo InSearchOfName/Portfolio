@@ -30,14 +30,6 @@ const { t } = useI18n()
           >
             {{ t('hero-cta-github') }}
           </a>
-          <a
-            class="btn"
-            href="https://www.linkedin.com/in/tommy-quatretemps/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ t('hero-cta-linkedin') }}
-          </a>
         </div>
       </div>
     </div>

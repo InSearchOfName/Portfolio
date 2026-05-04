@@ -10,6 +10,7 @@ interface Props {
   descriptionI18n?: string
   metaItems?: ContentMetaItem[]
   link?: string
+  as?: 'li' | 'div'
 }
 
 const props = withDefaults(defineProps<Props>(), {})
@@ -22,7 +23,7 @@ const displayDescription = computed(() =>
 </script>
 
 <template>
-  <li class="seminar-item entry-item">
+  <component :is="props.as ?? 'li'" class="seminar-item entry-item">
     <a v-if="link" :href="link" target="_blank" rel="noopener noreferrer">
       <h3>{{ displayTitle }}</h3>
     </a>
@@ -47,7 +48,7 @@ const displayDescription = computed(() =>
     </template>
 
     <slot></slot>
-  </li>
+  </component>
 </template>
 
 <style scoped>

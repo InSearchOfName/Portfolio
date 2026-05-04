@@ -20,7 +20,7 @@ const { t } = useI18n()
           titleI18n="personal-bookwriter-title"
           description="A client-side Minecraft Fabric mod: run .write in chat to fill writable books from your inventory, with titles, automatic splitting across volumes, and async signing so the game stays responsive."
           descriptionI18n="personal-bookwriter-desc"
-          link="https://github.com/InSearchOfName/Book-Writer"
+          link="https://modrinth.com/mod/insearchofnames-book-writer"
           :metaItems="createRepositoryMeta('https://github.com/InSearchOfName/Book-Writer')"
         />
         <ContentCard
@@ -28,7 +28,7 @@ const { t } = useI18n()
           titleI18n="personal-ytshorts-title"
           description="A lightweight Firefox add-on that hides YouTube Shorts shelves and suggestions with simple injected CSS."
           descriptionI18n="personal-ytshorts-desc"
-          link="https://github.com/InSearchOfName/Fuck-YTshorts"
+          link="https://addons.mozilla.org/en-US/firefox/addon/fuck-ytshorts-v0_1/"
           :metaItems="createRepositoryMeta('https://github.com/InSearchOfName/Fuck-YTshorts')"
         />
         <ContentCard

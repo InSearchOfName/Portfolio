@@ -235,25 +235,6 @@ const { t } = useI18n()
               fetchpriority="low"
             />
           </a>
-          <a
-            class="social-link"
-            href="https://www.linkedin.com/in/tommy-quatretemps/"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="social-linkedin-label"
-            aria-label="LinkedIn profile"
-            title="LinkedIn profile"
-          >
-            <img
-              class="social-icon"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
-              alt="LinkedIn profile"
-              data-i18n="social-linkedin-label"
-              loading="lazy"
-              decoding="async"
-              fetchpriority="low"
-            />
-          </a>
         </div>
       </div>
     </div>
