@@ -47,7 +47,6 @@ const { t } = useI18n()
 <style scoped>
 .hero {
   padding-block: clamp(3rem, 6vw, 5.5rem);
-  border-bottom: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
 }

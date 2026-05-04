@@ -46,7 +46,7 @@ const { t } = useI18n()
         <ContentCard
           title="Hackathon: Cyber Security Challenge Belgium 2025 (Online Qualifiers)"
           titleI18n="innovation-hackathon-title"
-          description="A security competition for higher-education students featuring challenges in cryptography, reverse engineering, network analysis, web & mobile security, and forensic investigation."
+          description="A security competition for higher-education students featuring challenges in cryptography, reverse engineering, network analysis, web & mobile security, and forensic investigation. Participation: Team (Backdoor Boys)."
           descriptionI18n="innovation-hackathon-desc"
           link="https://platform.cybersecuritychallenge.be/"
           :metaItems="[
@@ -80,7 +80,7 @@ const { t } = useI18n()
         <ContentCard
           title="Hackathon: Cyber Security Challenge Belgium 2026 (Online Qualifiers)"
           titleI18n="innovation-hackathon-2026-title"
-          description="A security competition for higher-education students featuring challenges in cryptography, reverse engineering, network analysis, web & mobile security, and forensic investigation."
+          description="A security competition for higher-education students featuring challenges in cryptography, reverse engineering, network analysis, web & mobile security, and forensic investigation. Participation: Solo."
           descriptionI18n="innovation-hackathon-2026-desc"
           link="https://platform.cybersecuritychallenge.be/"
           :metaItems="[

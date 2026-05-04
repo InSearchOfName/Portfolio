@@ -30,8 +30,85 @@ const { t } = useI18n()
             })
           "
         />
+
+        <ContentCard
+          title="Berlin Trip"
+          titleI18n="internationalization-berlintrip-title"
+          description="Study trip to Germany focused on higher education, industry innovation, and local tech communities."
+          descriptionI18n="internationalization-berlintrip-desc"
+          :metaItems="
+            createLocationDateMeta({
+              location: 'Germany (Bielefeld, Hannover, Berlin)',
+              locationI18n: 'internationalization-berlintrip-location',
+              date: '22/04/2026 through 25/04/2026',
+              dateI18n: 'internationalization-berlintrip-date',
+            })
+          "
+        >
+          <ul class="trip-itinerary">
+            <li>
+              <p class="trip-itinerary__title">
+                <strong>{{ t('internationalization-berlintrip-bielefeld-title') }}</strong>
+              </p>
+              <p>{{ t('internationalization-berlintrip-bielefeld-desc') }}</p>
+            </li>
+            <li>
+              <p class="trip-itinerary__title">
+                <strong>
+                  <a
+                    href="https://www.hannovermesse.de/en/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {{ t('internationalization-berlintrip-hannover-title') }}
+                  </a>
+                </strong>
+              </p>
+              <p>{{ t('internationalization-berlintrip-hannover-desc') }}</p>
+            </li>
+            <li>
+              <p class="trip-itinerary__title">
+                <strong>{{ t('internationalization-berlintrip-berlin-title') }}</strong>
+              </p>
+              <p>
+                {{ t('internationalization-berlintrip-berlin-desc-before') }}
+                <a href="https://www.ccc.de/en/" target="_blank" rel="noopener noreferrer">
+                  {{ t('internationalization-berlintrip-ccc-label') }}
+                </a>
+                {{ t('internationalization-berlintrip-berlin-desc-after') }}
+              </p>
+            </li>
+          </ul>
+        </ContentCard>
       </ul>
     </div>
   </section>
 </template>
+
+<style scoped>
+.entry-list.grid {
+  align-items: start;
+}
+
+.entry-list.grid--2 {
+  grid-template-columns: 1fr;
+}
+
+.trip-itinerary {
+  margin: var(--space-3) 0 0 0;
+  padding-left: 1.25rem;
+}
+
+.trip-itinerary li {
+  margin: 0 0 var(--space-3) 0;
+}
+
+.trip-itinerary li:last-child {
+  margin-bottom: 0;
+}
+
+.trip-itinerary__title {
+  margin-top: 0.55rem;
+}
+</style>
 

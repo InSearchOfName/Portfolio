@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import SettingsMenu from './SettingsMenu.vue'
 
@@ -18,10 +18,33 @@ const links = computed(() => [
 const close = () => {
   isOpen.value = false
 }
+
+const headerEl = ref<HTMLElement | null>(null)
+let headerResizeObserver: ResizeObserver | null = null
+
+const setHeaderHeightVar = () => {
+  if (!headerEl.value) return
+  const { height } = headerEl.value.getBoundingClientRect()
+  document.documentElement.style.setProperty('--site-header-height', `${Math.round(height)}px`)
+}
+
+onMounted(() => {
+  setHeaderHeightVar()
+
+  if (typeof ResizeObserver !== 'undefined') {
+    headerResizeObserver = new ResizeObserver(() => setHeaderHeightVar())
+    if (headerEl.value) headerResizeObserver.observe(headerEl.value)
+  }
+})
+
+onBeforeUnmount(() => {
+  headerResizeObserver?.disconnect()
+  headerResizeObserver = null
+})
 </script>
 
 <template>
-  <header class="header">
+  <header ref="headerEl" class="header">
     <div class="container header__inner">
       <a class="brand" href="#top" @click="close">
         <span class="brand__name">{{ t('brand-name') }}</span>
@@ -56,7 +79,8 @@ const close = () => {
 
 <style scoped>
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 900;
   background: color-mix(in oklab, var(--bg-primary) 85%, transparent);
   backdrop-filter: blur(14px);

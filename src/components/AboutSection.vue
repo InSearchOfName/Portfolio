@@ -262,33 +262,30 @@ const { t } = useI18n()
 
 <style scoped>
 .about-grid {
-  display: block;
-  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-areas: 'left right';
+  gap: var(--space-6);
+  align-items: start;
 }
 
 .about-left {
-  margin-right: 340px;
+  grid-area: left;
+  min-width: 0;
 }
 
 .about-right {
-  float: right;
+  grid-area: right;
   width: 320px;
-  margin-left: 1rem;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 1rem;
   box-sizing: border-box;
   position: sticky;
-  top: 1.25rem;
+  top: calc(var(--site-header-height) + var(--space-4));
   color: var(--text-primary);
   box-shadow: 0 10px 40px var(--shadow-color);
-}
-
-.about-grid::after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 .about-right h3 {
@@ -374,19 +371,17 @@ h4 {
   margin-bottom: 0.75rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 860px) {
   .about-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'left'
+      'right';
+    gap: var(--space-4);
   }
 
-  .about-left,
   .about-right {
     width: 100%;
-    float: none;
-    margin: 0;
-    box-sizing: border-box;
     position: static;
   }
 

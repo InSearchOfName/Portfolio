@@ -11,6 +11,8 @@
   --radius-md: 12px;
   --radius-sm: 10px;
 
+  --site-header-height: 76px;
+
   --container: 1120px;
 
   --space-1: 0.25rem;
@@ -29,8 +31,16 @@ body {
   height: 100%;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   margin: 0;
+  overflow-x: hidden;
+  overflow-anchor: none;
   font-family:
     'Poppins',
     system-ui,
@@ -43,13 +53,18 @@ body {
   text-rendering: optimizeLegibility;
   background:
     radial-gradient(
-      1100px 680px at -10% -12%,
-      color-mix(in oklab, var(--bg-accent) 15%, transparent),
+      900px 520px at 16% 12%,
+      color-mix(in oklab, var(--bg-accent) 22%, transparent),
       transparent 62%
     ),
     radial-gradient(
-      1200px 680px at 110% -20%,
-      color-mix(in oklab, var(--bg-accent) 11%, transparent),
+      980px 560px at 78% 20%,
+      color-mix(in oklab, var(--bg-accent) 16%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      1200px 700px at 50% 100%,
+      color-mix(in oklab, var(--bg-accent) 10%, transparent),
       transparent 64%
     ),
     var(--bg-primary);
@@ -84,8 +99,8 @@ a:hover {
 
 .section {
   padding-block: clamp(2.5rem, 4.4vw, 4rem);
-  border-bottom: 1px solid var(--border-color);
   position: relative;
+  scroll-margin-top: calc(var(--site-header-height) + var(--space-3));
 }
 
 .section--muted {
