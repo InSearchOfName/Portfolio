@@ -1,0 +1,176 @@
+/* Light mode (default) */
+:root[data-theme='light'],
+:root {
+  --bg-primary: #fff8f1;
+  --bg-secondary: #fdebd8;
+  --bg-tertiary: #fffdf8;
+  --bg-hover: #f9ddbf;
+  --bg-accent: #c85d1c;
+
+  --text-primary: #2b1d11;
+  --text-secondary: #5a4130;
+  --text-tertiary: #8b654a;
+  --text-hover: #2b1d11;
+  --text-accent: #ffffff;
+
+  --border-color: #f1cfae;
+  --shadow-color: rgba(120, 70, 30, 0.12);
+  --shadow-color-hover: rgba(120, 70, 30, 0.2);
+
+  --skill-bg: rgba(200, 93, 28, 0.1);
+  --skill-bg-hover: rgba(200, 93, 28, 0.16);
+}
+
+/* Dark mode */
+:root[data-theme='dark'] {
+  --bg-primary: #1b120c;
+  --bg-secondary: #2a1b12;
+  --bg-tertiary: #3a2518;
+  --bg-hover: #4a2f1d;
+  --bg-accent: #ff9d4d;
+
+  --text-primary: #fff0e2;
+  --text-secondary: #f5ceb0;
+  --text-tertiary: #d9a982;
+  --text-hover: #fff0e2;
+  --text-accent: #2a1b12;
+
+  --border-color: #5a3a24;
+  --shadow-color: rgba(0, 0, 0, 0.35);
+  --shadow-color-hover: rgba(0, 0, 0, 0.55);
+
+  --skill-bg: rgba(255, 157, 77, 0.18);
+  --skill-bg-hover: rgba(255, 157, 77, 0.26);
+}
+
+/* Theme color transitions (fallback when View Transitions API is unavailable) */
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  html,
+  * {
+    transition-property: background-color, color, border-color, box-shadow, fill, stroke;
+    transition-duration: 0.42s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  img,
+  video,
+  canvas {
+    transition-property: none;
+  }
+}
+
+/* View Transitions API — full-page theme crossfade */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.48s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  ::view-transition-old(root) {
+    animation-name: theme-out;
+  }
+
+  ::view-transition-new(root) {
+    animation-name: theme-in;
+  }
+}
+
+@keyframes theme-out {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    filter: blur(6px);
+  }
+}
+
+@keyframes theme-in {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+}
+
+body,
+html {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Links and text elements */
+a {
+  color: var(--bg-accent);
+}
+
+/* Form elements */
+button,
+input,
+textarea,
+select {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+button:hover,
+input:hover,
+textarea:hover,
+select:hover {
+  background: var(--bg-hover);
+  color: var(--text-hover);
+}
+
+/* Card elements */
+.card,
+.entry-item,
+.hover-container {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Heading elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+}
+
+/* Paragraph and text */
+p {
+  color: var(--text-secondary);
+}
+
+/* Strong/bold text */
+strong,
+b {
+  color: var(--text-primary);
+}
+
+/* Skill icons background */
+.skill-icon {
+  background: var(--skill-bg) !important;
+}
+
+.skill-icon:hover,
+.skill-icon:focus-visible {
+  background: var(--skill-bg-hover) !important;
+}
